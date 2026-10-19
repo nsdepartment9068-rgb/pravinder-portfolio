@@ -113,21 +113,53 @@ section{padding:82px 0}.section-head{max-width:720px;margin-bottom:35px}.kicker{
       <article class="card project-card reveal"><div class="card-icon">⌁</div><div class="project-type">Analytics</div><h3>Regression & Exploratory Analysis</h3><p>Finding patterns in a dataset and interpreting relationships responsibly.</p><button type="button" aria-expanded="false">Explore analysis idea <span>›</span></button><div class="project-detail">Potential output: data cleaning, summary statistics, visual exploration, a regression model, interpretation of coefficients, and a discussion of limitations. Use a documented dataset and report real results only.</div></article>
       <article class="card project-card reveal"><div class="card-icon">◷</div><div class="project-type">Forecasting</div><h3>Forecasting for Finance</h3><p>Exploring how time-series techniques can support planning and estimates.</p><button type="button" aria-expanded="false">Explore analysis idea <span>›</span></button><div class="project-detail">Potential output: a comparison of moving averages and exponential smoothing, forecast-error measures, and a short explanation of where each method may be useful. Clearly label any illustrative or simulated data.</div></article>
     </div>
-    <p style="margin:18px 0 0;color:var(--muted);font-size:.81rem">Integrity note: the cards above describe project ideas, not claims of published research or verified project results. Replace them with your completed assignments, datasets, charts, and findings as your portfolio develops.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="personal-strip reveal"><div><h3>Building a professional identity, one project at a time.</h3><p>My goal is to combine financial knowledge, analytical tools, and business context to contribute thoughtfully and keep growing.</p></div><a class="btn btn-gold" href="#contact">Connect with me ↗</a></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">05 / Contact</div><h2>Let's start a conversation.</h2><p>Open to learning opportunities, finance projects, and professional conversations about business analytics.</p></div>
-    <div class="contact-panel reveal"><div><strong>Pravinder Singh</strong><p>For a professional introduction, collaboration, or opportunity.</p></div><div class="contact-actions"><a class="btn btn-gold" id="emailLink" href="mailto:your.email@example.com?subject=Professional%20enquiry">Email me ↗</a><button class="btn btn-outline" type="button" id="copyEmail">Copy email</button></div></div>
-    <p class="contact-note">Before publishing, replace <code>your.email@example.com</code> in this file with your professional email. You can also add your LinkedIn profile URL to the navigation or contact section.</p>
+    <div class="section-head reveal">
+      <div class="kicker">05 / Connect</div>
+      <h2>Connect With Me</h2>
+      <p>Fill in your details below to get in touch.</p>
+    </div>
+    
+    <div class="contact-panel reveal" style="flex-direction: column; align-items: stretch; background: rgba(255,255,255,0.08); padding: 30px; border-radius: 18px;">
+      <form id="studentForm" style="display: flex; flex-direction: column; gap: 15px; color: white;">
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Full Name *</label>
+          <input type="text" id="name" name="name" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Address *</label>
+          <input type="text" id="address" name="address" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Mobile Number *</label>
+          <input type="tel" id="mobile" name="mobile" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Highest Qualification *</label>
+          <input type="text" id="qualification" name="qualification" placeholder="e.g. BBA, MBA, 12th" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <div>
+          <label style="display:block; margin-bottom:5px; font-weight:600;">Course Pursued / Interest *</label>
+          <input type="text" id="course" name="course" placeholder="e.g. Finance, Marketing, Computer Science" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #3d506e; background:#0b1830; color:white;">
+        </div>
+
+        <button type="submit" class="btn btn-gold" id="submitBtn" style="margin-top:10px; cursor:pointer;">Submit Details ↗</button>
+      </form>
+      <div id="formResponse" style="margin-top:15px; font-weight:bold; color:var(--gold2);"></div>
+    </div>
   </div>
 </section>
 </main>
@@ -174,17 +206,40 @@ function updateScroll() {
 window.addEventListener('scroll', updateScroll, {passive:true}); updateScroll();
 backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-const emailLink = $('#emailLink'), copyEmail = $('#copyEmail');
-copyEmail.addEventListener('click', async () => {
-  const email = 'your.email@example.com';
-  if (email === 'your.email@example.com') {
-    copyEmail.textContent = 'Add your email first';
-    setTimeout(() => copyEmail.textContent = 'Copy email', 2200);
-    return;
-  }
-  try { await navigator.clipboard.writeText(email); copyEmail.textContent='Copied!'; }
-  catch { copyEmail.textContent='Copy unavailable'; }
-  setTimeout(() => copyEmail.textContent='Copy email', 1800);
+const scriptURL = 'https://script.google.com/macros/s/AKfycby5qyf3g6OwiQTbpmK-l3WZ05iwGOu9bnU4sLZMKDPvHCRnSmE9os4Rh6T5WeWsVoE/exec';
+const form = document.getElementById('studentForm');
+const responseDiv = document.getElementById('formResponse');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    address: form.address.value,
+    mobile: form.mobile.value,
+    qualification: form.qualification.value,
+    course: form.course.value
+  };
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(res => {
+    responseDiv.textContent = 'Thank you! Your details have been submitted successfully.';
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Details ↗';
+  })
+  .catch(err => {
+    responseDiv.textContent = 'Something went wrong. Please try again.';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Details ↗';
+  });
 });
 </script>
 </body>
