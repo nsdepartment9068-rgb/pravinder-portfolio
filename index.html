@@ -180,38 +180,13 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
     <div class="gallery-wrapper reveal">
       <button class="slide-btn prev" id="prevBtn" aria-label="Previous photos">❮</button>
       <div class="gallery-container">
-        <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-card">
-            <a href="campus1.jpeg" download="Campus_1.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus1.jpeg" alt="University Life" onerror="this.onerror=null; this.src='campus1.jpg';" onclick="openLightbox(0)">
-          </div>
-          <div class="gallery-card">
-            <a href="campus2.jpeg" download="Campus_2.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus2.jpeg" alt="Campus Friends" onerror="this.onerror=null; this.src='campus2.jpg';" onclick="openLightbox(1)">
-          </div>
-          <div class="gallery-card">
-            <a href="campus3.jpeg" download="Campus_3.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus3.jpeg" alt="MMU Moments" onerror="this.onerror=null; this.src='campus3.jpg';" onclick="openLightbox(2)">
-          </div>
-          <div class="gallery-card">
-            <a href="campus4.jpeg" download="Campus_4.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus4.jpeg" alt="Campus Event" onerror="this.onerror=null; this.src='campus4.jpg';" onclick="openLightbox(3)">
-          </div>
-          <div class="gallery-card">
-            <a href="campus5.jpeg" download="Campus_5.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus5.jpeg" alt="University Gathering" onerror="this.onerror=null; this.src='campus5.jpg';" onclick="openLightbox(4)">
-          </div>
-          <div class="gallery-card">
-            <a href="campus6.jpeg" download="Campus_6.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-            <img src="campus6.jpeg" alt="MMU Network" onerror="this.onerror=null; this.src='campus6.jpg';" onclick="openLightbox(5)">
-          </div>
-        </div>
+        <div class="gallery-track" id="galleryTrack"></div>
       </div>
       <button class="slide-btn next" id="nextBtn" aria-label="Next photos">❯</button>
     </div>
 
     <div class="gallery-footer reveal">
-      <button class="btn btn-gold" id="openModalBtn">See All Photos ↗</button>
+      <button class="btn btn-gold" id="openModalBtn">See All Photos (19) ↗</button>
     </div>
   </div>
 </section>
@@ -222,34 +197,9 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
     <button class="modal-close" id="closeModalBtn">&times;</button>
     <div class="section-head">
       <div class="kicker">Full Campus Gallery</div>
-      <h2>All Memories & Moments</h2>
+      <h2>All Memories & Moments (19 Photos)</h2>
     </div>
-    <div class="modal-grid">
-      <div class="modal-card">
-        <a href="campus1.jpeg" download="Campus_1.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus1.jpeg" alt="Campus Photo 1" onerror="this.onerror=null; this.src='campus1.jpg';" onclick="openLightbox(0)">
-      </div>
-      <div class="modal-card">
-        <a href="campus2.jpeg" download="Campus_2.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus2.jpeg" alt="Campus Photo 2" onerror="this.onerror=null; this.src='campus2.jpg';" onclick="openLightbox(1)">
-      </div>
-      <div class="modal-card">
-        <a href="campus3.jpeg" download="Campus_3.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus3.jpeg" alt="Campus Photo 3" onerror="this.onerror=null; this.src='campus3.jpg';" onclick="openLightbox(2)">
-      </div>
-      <div class="modal-card">
-        <a href="campus4.jpeg" download="Campus_4.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus4.jpeg" alt="Campus Photo 4" onerror="this.onerror=null; this.src='campus4.jpg';" onclick="openLightbox(3)">
-      </div>
-      <div class="modal-card">
-        <a href="campus5.jpeg" download="Campus_5.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus5.jpeg" alt="Campus Photo 5" onerror="this.onerror=null; this.src='campus5.jpg';" onclick="openLightbox(4)">
-      </div>
-      <div class="modal-card">
-        <a href="campus6.jpeg" download="Campus_6.jpeg" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-        <img src="campus6.jpeg" alt="Campus Photo 6" onerror="this.onerror=null; this.src='campus6.jpg';" onclick="openLightbox(5)">
-      </div>
-    </div>
+    <div class="modal-grid" id="modalGrid"></div>
   </div>
 </div>
 
@@ -348,8 +298,39 @@ function updateScroll() {
 window.addEventListener('scroll', updateScroll, {passive:true}); updateScroll();
 backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-// Slider Logic
+// All 19 Images with precise extensions matching GitHub repo
+const imagesList = [
+  'campus1.jpeg', 'campus2.jpeg', 'campus3.jpeg', 'campus4.jpeg', 'campus5.jpeg', 'campus6.jpeg',
+  'campus7.jpeg', 'campus8.jpeg', 'campus9.jpeg', 'campus10.jpeg',
+  'campus11.jpg', 'campus12.jpg', 'campus13.jpg', 'campus14.jpg', 'campus15.jpg',
+  'campus16.jpg', 'campus17.jpg', 'campus18.jpg', 'campus19.jpg'
+];
+
+// Dynamically Render Gallery Cards & Modal
 const track = $('#galleryTrack');
+const modalGrid = $('#modalGrid');
+
+imagesList.forEach((src, idx) => {
+  // Slider Card
+  const card = document.createElement('div');
+  card.className = 'gallery-card';
+  card.innerHTML = `
+    <a href="${src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
+    <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+  `;
+  track.appendChild(card);
+
+  // Modal Card
+  const mCard = document.createElement('div');
+  mCard.className = 'modal-card';
+  mCard.innerHTML = `
+    <a href="${src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
+    <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+  `;
+  modalGrid.appendChild(mCard);
+});
+
+// Slider Navigation Logic
 const prevBtn = $('#prevBtn');
 const nextBtn = $('#nextBtn');
 let currentIndex = 0;
@@ -401,7 +382,6 @@ window.addEventListener('click', (e) => {
 });
 
 // Fullscreen Lightbox Logic
-const imagesList = ['campus1.jpeg', 'campus2.jpeg', 'campus3.jpeg', 'campus4.jpeg', 'campus5.jpeg', 'campus6.jpeg'];
 let currentImgIndex = 0;
 
 function openLightbox(index) {
