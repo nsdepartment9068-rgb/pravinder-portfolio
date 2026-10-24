@@ -68,8 +68,13 @@ section{padding:85px 0;position:relative}.section-head{max-width:720px;margin-bo
 .lightbox-btn{pointer-events:auto;width:50px;height:50px;border-radius:50%;background:var(--navy);color:var(--gold);border:2px solid var(--gold);font-size:1.4rem;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 15px rgba(0,0,0,.5);transition:transform .2s}
 .lightbox-btn:hover{transform:scale(1.1);background:var(--navy3)}
 
-/* Contact Section */
-.contact{background:linear-gradient(180deg,var(--paper),#060c18);color:white}.contact .section-head h2{color:white}.contact .section-head p{color:var(--muted)}.contact-panel{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:32px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+/* Contact Toggle Switch Styling */
+.contact{background:linear-gradient(180deg,var(--paper),#060c18);color:white}.contact .section-head h2{color:white}.contact .section-head p{color:var(--muted)}
+.contact-panel{display:flex;flex-direction:column;align-items:stretch;padding:35px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+.toggle-box{display:flex;gap:12px;margin-bottom:25px;background:rgba(11,24,48,0.8);padding:6px;border-radius:12px;border:1px solid rgba(215,179,106,0.25);width:fit-content}
+.toggle-btn{padding:10px 20px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-weight:700;font-size:0.95rem;cursor:pointer;transition:all 0.25s ease}
+.toggle-btn.active{background:var(--gold);color:var(--navy)}
+
 footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-top:1px solid rgba(255,255,255,.05)}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.back-top{position:fixed;right:18px;bottom:18px;z-index:30;width:42px;height:42px;border:1px solid #d9c18e;border-radius:12px;background:var(--gold);color:var(--navy);font-size:1.1rem;box-shadow:0 8px 25px rgba(0,0,0,.3);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s}.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}.reveal{opacity:0;transform:translateY(15px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:36px}.profile-panel{max-width:320px;margin:0 auto}.about-grid,.experience-layout{grid-template-columns:1fr;gap:28px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:70px 0}.gallery-card{min-width:calc(50% - 10px)}.slide-btn.prev{left:-10px}.slide-btn.next{right:-10px}}
 @media(max-width:650px){.cards{grid-template-columns:1fr}.gallery-card{min-width:100%}}
@@ -215,19 +220,28 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
   </div>
 </div>
 
+<!-- Contact Section with Dynamic Dual Category Form -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head reveal">
       <div class="kicker">05 / Connect</div>
       <h2>Connect With Me</h2>
-      <p>Fill in your details below to get in touch or explore opportunities.</p>
+      <p>Select your background and fill in your details below to get in touch.</p>
     </div>
     
-    <div class="contact-panel reveal" style="flex-direction: column; align-items: stretch; background: rgba(255,255,255,0.04); padding: 32px; border-radius: 20px;">
+    <div class="contact-panel reveal">
+      <!-- Category Switch Buttons -->
+      <div class="toggle-box">
+        <button type="button" class="toggle-btn active" id="btnStudent" onclick="switchCategory('student')">🎓 Student</button>
+        <button type="button" class="toggle-btn" id="btnPro" onclick="switchCategory('professional')">💼 Working Professional</button>
+      </div>
+
       <form id="studentForm" style="display: flex; flex-direction: column; gap: 15px; color: white;">
+        
+        <!-- Common Inputs -->
         <div>
           <label style="display:block; margin-bottom:5px; font-weight:600;">Full Name *</label>
-          <input type="text" id="name" name="name" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
         </div>
 
         <div>
@@ -235,24 +249,55 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
           <input type="email" id="email" name="email" placeholder="example@mail.com" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
         </div>
 
-        <div>
-          <label style="display:block; margin-bottom:5px; font-weight:600;">Address *</label>
-          <input type="text" id="address" name="address" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+        <!-- Student Dynamic Fields -->
+        <div id="studentFields" style="display: flex; flex-direction: column; gap: 15px;">
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="+91 9876543210" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Current Institute / College / University Name *</label>
+            <input type="text" id="address" name="address" placeholder="e.g. MMU Mullana / Delhi University" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Current Level / Education Standard *</label>
+            <input type="text" id="qualification" name="qualification" placeholder="e.g. School, Graduation, Post-Graduation" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Course / Stream / Specialization *</label>
+            <input type="text" id="course" name="course" placeholder="e.g. BBA, MBA Finance, Class 12th Commerce" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Passing Year *</label>
+            <input type="text" id="passingYear" name="passingYear" placeholder="e.g. 2025, 2026, 2027" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
         </div>
 
-        <div>
-          <label style="display:block; margin-bottom:5px; font-weight:600;">Mobile Number *</label>
-          <input type="tel" id="mobile" name="mobile" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
-        </div>
+        <!-- Working Professional Dynamic Fields -->
+        <div id="professionalFields" style="display: none; flex-direction: column; gap: 15px;">
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Current Company / Organization *</label>
+            <input type="text" id="company" name="company" placeholder="e.g. Deloitte / HDFC Bank" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
 
-        <div>
-          <label style="display:block; margin-bottom:5px; font-weight:600;">Highest Qualification *</label>
-          <input type="text" id="qualification" name="qualification" placeholder="e.g. BBA, MBA, 12th" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
-        </div>
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Current Designation / Role *</label>
+            <input type="text" id="role" name="role" placeholder="e.g. Financial Analyst, Manager" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
 
-        <div>
-          <label style="display:block; margin-bottom:5px; font-weight:600;">Course Pursued / Interest *</label>
-          <input type="text" id="course" name="course" placeholder="e.g. Finance, Business Analytics" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Job Start Year *</label>
+            <input type="text" id="startYear" name="startYear" placeholder="e.g. 2022, 2024" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Office / Company Address *</label>
+            <input type="text" id="officeAddress" name="officeAddress" placeholder="e.g. Cyber City, Gurugram" style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
+          </div>
         </div>
 
         <button type="submit" class="btn btn-gold" id="submitBtn" style="margin-top:10px; cursor:pointer;">Submit Details ↗</button>
@@ -409,7 +454,30 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') navLightbox(-1);
 });
 
-// Contact Form Script
+// Toggle Category Script
+let currentCategory = 'student';
+
+function switchCategory(type) {
+  currentCategory = type;
+  const btnStudent = $('#btnStudent');
+  const btnPro = $('#btnPro');
+  const studentFields = $('#studentFields');
+  const proFields = $('#professionalFields');
+
+  if(type === 'student') {
+    btnStudent.classList.add('active');
+    btnPro.classList.remove('active');
+    studentFields.style.display = 'flex';
+    proFields.style.display = 'none';
+  } else {
+    btnPro.classList.add('active');
+    btnStudent.classList.remove('active');
+    studentFields.style.display = 'none';
+    proFields.style.display = 'flex';
+  }
+}
+
+// Contact Form Submission (Data Mapped)
 const scriptURL = 'https://script.google.com/macros/s/AKfycby5qyf3g6OwiQTbpmK-l3WZ05iwGOu9bnU4sLZMKDPvHCRnSmE9os4Rh6T5WeWsVoE/exec';
 const form = document.getElementById('studentForm');
 const responseDiv = document.getElementById('formResponse');
@@ -420,14 +488,30 @@ form.addEventListener('submit', e => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
 
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    address: form.address.value,
-    mobile: form.mobile.value,
-    qualification: form.qualification.value,
-    course: form.course.value
-  };
+  let data = {};
+
+  if(currentCategory === 'student') {
+    data = {
+      userType: 'Student',
+      name: form.name.value,
+      email: form.email.value,
+      mobile: form.mobile.value,
+      institute: form.address.value,
+      level: form.qualification.value,
+      course: form.course.value,
+      passingYear: form.passingYear.value
+    };
+  } else {
+    data = {
+      userType: 'Working Professional',
+      name: form.name.value,
+      email: form.email.value,
+      company: form.company.value,
+      role: form.role.value,
+      startYear: form.startYear.value,
+      officeAddress: form.officeAddress.value
+    };
+  }
 
   fetch(scriptURL, {
     method: 'POST',
