@@ -62,7 +62,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,251,247,0.92);backdr
 .social-icons{display:flex;align-items:center;gap:10px;margin-left:8px}
 .social-icon{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;font-size:.9rem;color:var(--text-dark);background:white;transition:all .2s}
 .social-icon:hover{background:var(--gold-gradient);color:white;border-color:transparent}
-.menu{display:none;background:transparent;color:var(--text-navy);border:1px solid var(--gold-border);border-radius:9px;padding:8px 11px;cursor:pointer}
+.menu{display:none;background:transparent;color:var(--text-navy);border:1px solid var(--gold-border);border-radius:99px;padding:8px 11px;cursor:pointer}
 
 /* HERO SECTION WITH HERO-BG3.PNG BACKGROUND */
 .hero{
@@ -124,13 +124,19 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px}.about-copy p{color:var(--text-dark);margin:0 0 18px;font-size:1.12rem;background:rgba(255,255,255,0.4);backdrop-filter:blur(4px);padding:6px 10px;border-radius:8px}.statement{margin-top:28px;border-left:3px solid var(--gold-primary);padding:12px 0 12px 20px;color:var(--gold-primary);font-size:1.15rem;font-weight:680;background:rgba(254,249,231,0.85);backdrop-filter:blur(6px);border-radius:0 12px 12px 0}
 .education{padding:28px;border:1px solid var(--gold-border);background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-radius:20px;box-shadow:var(--shadow-premium)}.education h3{margin:0 0 22px;font-size:1.18rem;color:var(--gold-primary)}.edu-item{padding:0 0 22px 22px;margin-left:5px;border-left:1px solid var(--gold-border);position:relative}.edu-item:last-child{padding-bottom:0}.edu-item:before{content:"";position:absolute;width:9px;height:9px;left:-5px;top:6px;background:var(--gold-primary);border-radius:50%}.edu-date{font-size:.78rem;letter-spacing:.12em;color:var(--gold-primary);font-weight:850}.edu-item h4{margin:5px 0;font-size:1.08rem;color:var(--text-navy)}.edu-item p{margin:0;color:var(--text-muted);font-size:.95rem}
 
-/* Publications Section */
-#publications{background:var(--bg-warm);border-bottom:1px solid var(--gold-border)}
+/* PUBLICATIONS SECTION WITH HERO-BG5.PNG BACKGROUND */
+#publications{
+  background-image: url('hero-bg5.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--gold-border);
+}
 .pub-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
-.pub-tab-btn{padding:8px 18px;border-radius:20px;border:1px solid var(--gold-border);background:white;color:var(--text-muted);font-weight:650;cursor:pointer;transition:all .2s ease}
+.pub-tab-btn{padding:8px 18px;border-radius:20px;border:1px solid var(--gold-border);background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);color:var(--text-muted);font-weight:650;cursor:pointer;transition:all .2s ease}
 .pub-tab-btn.active,.pub-tab-btn:hover{background:var(--gold-gradient);color:white;border-color:transparent}
 .pub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:24px}
-.pub-card{border:1px solid var(--gold-border);border-radius:20px;padding:26px;background:white;box-shadow:var(--shadow-premium);display:flex;flex-direction:column;justify-content:space-between;transition:transform .22s,border-color .22s}
+.pub-card{border:1px solid var(--gold-border);border-radius:20px;padding:26px;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);box-shadow:var(--shadow-premium);display:flex;flex-direction:column;justify-content:space-between;transition:transform .22s,border-color .22s}
 .pub-card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}
 .pub-badge{display:inline-block;padding:4px 12px;border-radius:99px;background:var(--gold-light);color:var(--gold-primary);font-size:.8rem;font-weight:750;margin-bottom:12px;border:1px solid var(--gold-border);width:fit-content}
 .pub-card h3{font-size:1.25rem;color:var(--text-navy);margin:0 0 10px;line-height:1.35}
