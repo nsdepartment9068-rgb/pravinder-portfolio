@@ -11,30 +11,48 @@
 :root{--navy:#0b1830;--navy2:#0e1e38;--navy3:#142848;--navy4:#1b3258;--gold:#d7b36a;--gold2:#f0d49a;--paper:#091326;--ink:#f8fafc;--muted:#cbd5e1;--line:rgba(215,179,106,0.22);--white:#fff;--radius:22px;--shadow:0 18px 50px rgba(0,0,0,0.4)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}
 
-/* Container Width Increased to reduce Side Spaces */
+/* Wide Container Width to minimize side blank spaces */
 .container{width:min(1320px,95%);margin-inline:auto}.progress{position:fixed;z-index:100;top:0;left:0;height:3px;width:0;background:var(--gold);transition:width .08s linear}
 
-header{position:sticky;top:0;z-index:50;background:rgba(11,24,48,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(215,179,106,.15);color:white}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.logo{font-weight:850;letter-spacing:.07em;font-size:1rem}.logo b{color:var(--gold);font-weight:900}.navlinks{display:flex;align-items:center;gap:27px;font-size:.95rem;color:#e2e8f0}.navlinks a{transition:color .2s}.navlinks a:hover,.navlinks a.active{color:var(--gold2)}.nav-cta{padding:9px 14px;border:1px solid rgba(215,179,106,.7);border-radius:9px;color:var(--gold2)!important}.menu{display:none;background:transparent;color:white;border:1px solid #516079;border-radius:9px;padding:8px 11px;cursor:pointer}
+header{position:sticky;top:0;z-index:50;background:rgba(11,24,48,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(215,179,106,.15);color:white}.nav{min-height:76px;display:flex;align-items:center;justify-space-between;gap:18px}.logo{font-weight:850;letter-spacing:.07em;font-size:1rem}.logo b{color:var(--gold);font-weight:900}.navlinks{display:flex;align-items:center;gap:20px;font-size:.95rem;color:#e2e8f0}.navlinks a{transition:color .2s}.navlinks a:hover,.navlinks a.active{color:var(--gold2)}
 
-/* Hero Section Layout Adjusted for Wider Look */
+/* Custom Golden Filled Pill Button for Publications & Research */
+.nav-pub-cta{background:var(--gold)!important;color:#0b1830!important;padding:9px 16px;border-radius:12px;font-weight:800!important;border:1px solid var(--gold2);transition:all .2s ease;display:inline-flex;align-items:center;gap:6px}.nav-pub-cta:hover{background:var(--gold2)!important;transform:translateY(-1px);box-shadow:0 4px 15px rgba(215,179,106,0.3)}
+
+.nav-cta{padding:9px 14px;border:1px solid rgba(215,179,106,.7);border-radius:9px;color:var(--gold2)!important}.menu{display:none;background:transparent;color:white;border:1px solid #516079;border-radius:9px;padding:8px 11px;cursor:pointer}
+
+/* Hero Section */
 .hero{position:relative;isolation:isolate;overflow:hidden;color:white;background:linear-gradient(120deg,rgba(11,24,48,0.92),rgba(16,36,67,0.85)),url('campus19.jpg') center/cover no-repeat;padding:92px 0 85px;border-bottom:1px solid var(--line)}.hero:after{content:"";position:absolute;z-index:-1;width:390px;height:390px;border:1px solid rgba(215,179,106,.13);border-radius:50%;right:-120px;bottom:-240px;box-shadow:0 0 0 36px rgba(215,179,106,.025),0 0 0 74px rgba(215,179,106,.02)}.hero-grid{display:grid;grid-template-columns:1fr 320px;align-items:center;justify-content:space-between;gap:40px}.hero-content{max-width:680px;text-align:left}.eyebrow{display:flex;align-items:center;gap:11px;color:var(--gold2);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:800}.eyebrow:before{content:"";height:1px;width:30px;background:var(--gold)}h1{font-size:clamp(3.1rem,6.2vw,5.5rem);line-height:1.01;letter-spacing:-.065em;margin:22px 0 23px;font-weight:780}h1 em{font-style:normal;color:var(--gold)}.hero-copy{color:#e2e8f0;font-size:1.15rem}.hero-copy strong{color:white;font-weight:650}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid transparent;border-radius:10px;font-weight:750;font-size:.95rem;transition:transform .2s,background .2s,border-color .2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-gold{background:var(--gold);color:#111d30}.btn-gold:hover{background:var(--gold2)}.btn-outline{border-color:rgba(255,255,255,.32);color:white}.btn-outline:hover{border-color:var(--gold);color:var(--gold2)}.hero-meta{display:flex;flex-wrap:wrap;gap:19px;margin-top:29px;color:#d1d5db;font-size:.9rem}.hero-meta span{display:flex;align-items:center;gap:8px}.dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .profile-panel{position:relative;padding:18px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(11,24,48,.88),rgba(14,30,56,.75));box-shadow:0 24px 70px rgba(0,0,0,.5);text-align:center;backdrop-filter:blur(8px);justify-self:end;width:100%}.profile-img{width:100%;height:310px;object-fit:cover;border-radius:18px;border:3px solid var(--gold);margin-bottom:12px;box-shadow:0 10px 30px rgba(0,0,0,.5)}.profile-top h2{margin:0;font-size:1.2rem;color:white}.profile-top p{margin:3px 0 0;color:#cbd5e1;font-size:.85rem}
 
 /* General Sections */
 section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bottom:38px}.kicker{color:var(--gold2);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:850}.section-head h2{font-size:clamp(2.05rem,4.3vw,3.25rem);letter-spacing:-.05em;line-height:1.12;margin:10px 0 13px;color:var(--white)}.section-head p{margin:0;color:var(--muted);font-size:1.15rem}
 
-/* About Section Dark */
+/* About Section */
 #about{background:linear-gradient(180deg,var(--paper),var(--navy2));border-bottom:1px solid var(--line)}
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px}.about-copy p{color:#e2e8f0;margin:0 0 18px;font-size:1.12rem}.statement{margin-top:28px;border-left:3px solid var(--gold);padding:12px 0 12px 20px;color:var(--gold2);font-size:1.15rem;font-weight:680;background:rgba(215,179,106,.05);border-radius:0 12px 12px 0}
 .education{padding:28px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}.education h3{margin:0 0 22px;font-size:1.18rem;color:var(--gold2)}.edu-item{padding:0 0 22px 22px;margin-left:5px;border-left:1px solid rgba(215,179,106,.3);position:relative}.edu-item:last-child{padding-bottom:0}.edu-item:before{content:"";position:absolute;width:9px;height:9px;left:-5px;top:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 4px rgba(215,179,106,.2)}.edu-date{font-size:.78rem;letter-spacing:.12em;color:var(--gold2);font-weight:850}.edu-item h4{margin:5px 0;font-size:1.08rem;color:white}.edu-item p{margin:0;color:var(--muted);font-size:.95rem}
 
-/* Skills & Certifications Section Dark */
-.soft-section{background:linear-gradient(180deg,var(--navy2),var(--navy3));border-bottom:1px solid var(--line)}
+/* Publications & Research Section */
+#publications{background:linear-gradient(180deg,var(--navy2),var(--navy3));border-bottom:1px solid var(--line)}
+.pub-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.pub-tab-btn{padding:8px 18px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,0.03);color:var(--muted);font-weight:650;cursor:pointer;transition:all .2s ease}
+.pub-tab-btn.active,.pub-tab-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.pub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:24px}
+.pub-card{border:1px solid var(--line);border-radius:20px;padding:26px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;flex-direction:column;justify-space-between;transition:transform .22s,border-color .22s}
+.pub-card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.pub-badge{display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(215,179,106,.15);color:var(--gold2);font-size:.8rem;font-weight:750;margin-bottom:12px;border:1px solid rgba(215,179,106,.3);width:fit-content}
+.pub-card h3{font-size:1.25rem;color:white;margin:0 0 10px;line-height:1.35}
+.pub-card p{color:var(--muted);font-size:.96rem;margin:0 0 20px;line-height:1.6}
+.pub-actions{display:flex;gap:10px;align-items:center}
+
+/* Expertise & Certifications */
+.soft-section{background:linear-gradient(180deg,var(--navy3),var(--paper));border-bottom:1px solid var(--line)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{border:1px solid var(--line);border-radius:18px;padding:26px;background:rgba(255,255,255,.03);box-shadow:0 8px 30px rgba(0,0,0,.25);transition:transform .22s,background .22s;backdrop-filter:blur(10px)}.card:hover{transform:translateY(-5px);background:rgba(255,255,255,.06);border-color:var(--gold)}.card-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:rgba(215,179,106,.15);color:var(--gold2);font-size:1.25rem;margin-bottom:18px;border:1px solid rgba(215,179,106,.3)}.card h3{font-size:1.12rem;margin:0 0 10px;color:white}.card p{font-size:.98rem;color:var(--muted);margin:0}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{font-size:.82rem;font-weight:650;color:var(--gold2);background:rgba(215,179,106,.1);border:1px solid rgba(215,179,106,.25);padding:6px 12px;border-radius:99px}
 .cert-box{margin-top:42px;background:rgba(255,255,255,.025);padding:32px;border-radius:20px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.2)}
 
-/* Experience Section Dark */
-#experience{background:linear-gradient(180deg,var(--navy3),var(--paper));border-bottom:1px solid var(--line)}
+/* Experience Section */
+#experience{background:linear-gradient(180deg,var(--paper),var(--navy2));border-bottom:1px solid var(--line)}
 .experience-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px}.experience-aside{padding:28px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:white;align-self:start}.experience-aside .big-number{font-size:2.5rem;line-height:1;color:var(--gold);font-weight:800;letter-spacing:-.05em}.experience-aside h3{font-size:1.12rem;margin:15px 0 8px;color:var(--gold2)}.experience-aside p{margin:0;color:#e2e8f0;font-size:.98rem}.timeline{border-left:1px solid rgba(215,179,106,.3);margin-left:8px;padding-left:28px;display:grid;gap:32px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(215,179,106,.2)}.timeline-item .meta{color:var(--gold2);font-size:.78rem;letter-spacing:.12em;font-weight:850}.timeline-item h3{margin:6px 0 8px;font-size:1.15rem;color:white}.timeline-item p{margin:0;color:var(--muted);font-size:.98rem}.timeline-item ul{margin:8px 0 0;padding-left:18px;color:#e2e8f0;font-size:.98rem}.timeline-item li{margin-bottom:6px}
 
 /* Slider & Gallery Styling */
@@ -62,6 +80,14 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
 .modal-card{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);box-shadow:0 4px 15px rgba(0,0,0,.3);cursor:pointer}
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
+
+/* PDF Document Viewer Modal */
+.pdf-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(4,8,16,0.96);z-index:3000;backdrop-filter:blur(12px);padding:20px}
+.pdf-modal-container{max-width:1200px;height:90vh;margin:0 auto;background:var(--navy2);border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.8)}
+.pdf-modal-header{padding:16px 24px;background:var(--navy);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.pdf-modal-title{font-weight:750;color:white;font-size:1.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60%}
+.pdf-modal-actions{display:flex;align-items:center;gap:12px}
+.pdf-modal-iframe{width:100%;height:100%;border:none;background:#525659}
 
 /* Lightbox Fullscreen Preview */
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(4,8,16,0.95);z-index:2000;backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
@@ -91,7 +117,12 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
     <a class="logo" href="#home" aria-label="Pravinder Singh home">PRAVINDER<b>.</b></a>
     <button class="menu" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">Menu ☰</button>
     <nav class="navlinks" id="navlinks" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#skills">Expertise</a><a href="#experience">Experience</a><a href="#gallery">Gallery</a><a class="nav-cta" href="#contact">Let's connect ↗</a>
+      <a href="#about">About</a>
+      <a href="#publications" class="nav-pub-cta">Publications & Research ↗</a>
+      <a href="#skills">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a class="nav-cta" href="#contact">Let's connect ↗</a>
     </nav>
   </div>
 </header>
@@ -102,7 +133,7 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
       <div class="eyebrow">MBA Finance & Business Analytics · Aspiring Financial Analyst</div>
       <h1>Business-minded.<br><em>Numbers-driven.</em></h1>
       <p class="hero-copy">I'm <strong>Pravinder Singh</strong> — an MBA candidate specializing in Finance and Business Analytics with experience in financial research, peer comparison, MIS reporting, and key client account management.</p>
-      <div class="hero-actions"><a class="btn btn-gold" href="#gallery">View Campus Life ↘</a><a class="btn btn-outline" href="#about">Get to know me</a></div>
+      <div class="hero-actions"><a class="btn btn-gold" href="#publications">View Publications ↘</a><a class="btn btn-outline" href="#about">Get to know me</a></div>
       <div class="hero-meta"><span><i class="dot"></i> MMU Mullana (2025–Present)</span><span><i class="dot"></i> Financial Modeling & Analytics</span></div>
     </div>
     <aside class="profile-panel reveal" aria-label="Professional summary">
@@ -132,16 +163,52 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
   </div>
 </section>
 
+<!-- Publications & Research Section -->
+<section id="publications">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">02 / Publications & Research</div>
+      <h2>Research Papers & Reports</h2>
+      <p>In-depth financial analysis, industry benchmarking, valuation, and academic research papers.</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="pub-tabs reveal">
+      <button class="pub-tab-btn active" onclick="filterPublications('all', this)">All (1)</button>
+      <button class="pub-tab-btn" onclick="filterPublications('sip', this)">SIP Reports</button>
+      <button class="pub-tab-btn" onclick="filterPublications('research', this)">Research Reports</button>
+      <button class="pub-tab-btn" onclick="filterPublications('valuation', this)">Valuation Reports</button>
+      <button class="pub-tab-btn" onclick="filterPublications('equity', this)">Equity Research Reports</button>
+    </div>
+
+    <!-- Publications Grid -->
+    <div class="pub-grid" id="pubGrid"></div>
+  </div>
+</section>
+
+<!-- Fullscreen PDF Reader Modal -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-modal-container">
+    <div class="pdf-modal-header">
+      <div class="pdf-modal-title" id="pdfModalTitle">Document Viewer</div>
+      <div class="pdf-modal-actions">
+        <a id="pdfDownloadBtn" href="" download class="btn btn-gold" style="padding:6px 14px; font-size:.85rem;">Download PDF ⇩</a>
+        <button onclick="closePdfModal()" style="background:none; border:none; color:var(--gold2); font-size:1.8rem; cursor:pointer;">&times;</button>
+      </div>
+    </div>
+    <iframe class="pdf-modal-iframe" id="pdfFrame" src=""></iframe>
+  </div>
+</div>
+
 <section class="soft-section" id="skills">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">02 / Expertise & Certifications</div><h2>Skills for turning data into actionable insights.</h2><p>Financial fundamentals, technical tools, and professional certifications from recognized institutions.</p></div>
+    <div class="section-head reveal"><div class="kicker">03 / Expertise & Certifications</div><h2>Skills for turning data into actionable insights.</h2><p>Financial fundamentals, technical tools, and professional certifications from recognized institutions.</p></div>
     <div class="cards">
       <article class="card reveal"><div class="card-icon">₹</div><h3>Financial Statement Analysis</h3><p>Proficient in evaluating liquidity, profitability, ratio analysis, and corporate peer comparisons.</p><div class="tag-row"><span class="tag">Ratio Analysis</span><span class="tag">Peer Comparison</span><span class="tag">Valuation</span></div></article>
       <article class="card reveal"><div class="card-icon">📊</div><h3>Power BI & Analytics</h3><p>Certified in Power BI by MMU. Skilled in data visualization, MIS reporting, and data interpretation.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Data Interpretation</span><span class="tag">MIS</span></div></article>
       <article class="card reveal"><div class="card-icon">▦</div><h3>Advanced MS Excel</h3><p>Certified by CETC New Delhi. Expertise in spreadsheet modeling, business statistics, and reporting.</p><div class="tag-row"><span class="tag">Advanced Excel</span><span class="tag">Business Research</span></div></article>
     </div>
 
-    <!-- Certifications List -->
     <div class="cert-box reveal">
       <h3 style="margin-top:0; color:var(--gold2);">Recognized Certifications</h3>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:15px; font-size:1.02rem; color:#e2e8f0;">
@@ -158,7 +225,7 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
 
 <section id="experience">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">03 / Experience</div><h2>Industry exposure & financial research.</h2><p>Combining corporate client management in logistics with structured financial analysis in corporate research.</p></div>
+    <div class="section-head reveal"><div class="kicker">04 / Experience</div><h2>Industry exposure & financial research.</h2><p>Combining corporate client management in logistics with structured financial analysis in corporate research.</p></div>
     <div class="experience-layout">
       <aside class="experience-aside reveal"><div class="big-number">2024—26</div><h3>Work & Internship History</h3><p>Demonstrated capabilities in financial statement research, peer analysis, operational planning, and key account management.</p></aside>
       <div class="timeline reveal">
@@ -184,7 +251,7 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
 <!-- Gallery Slider Section -->
 <section class="soft-section" id="gallery">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">04 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
+    <div class="section-head reveal"><div class="kicker">05 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
     
     <div class="gallery-wrapper reveal">
       <button class="slide-btn prev" id="prevBtn" aria-label="Previous photos">❮</button>
@@ -228,21 +295,18 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <div class="kicker">05 / Connect</div>
+      <div class="kicker">06 / Connect</div>
       <h2>Connect With Me</h2>
       <p>Select your background and fill in your details below to get in touch.</p>
     </div>
     
     <div class="contact-panel reveal">
-      <!-- Category Switch Buttons -->
       <div class="toggle-box">
         <button type="button" class="toggle-btn active" id="btnStudent" onclick="switchCategory('student')">🎓 Student</button>
         <button type="button" class="toggle-btn" id="btnPro" onclick="switchCategory('professional')">💼 Working Professional</button>
       </div>
 
       <form id="studentForm" style="display: flex; flex-direction: column; gap: 15px; color: white;">
-        
-        <!-- Common Inputs -->
         <div>
           <label style="display:block; margin-bottom:5px; font-weight:600;">Full Name *</label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
@@ -253,7 +317,6 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
           <input type="email" id="email" name="email" placeholder="example@mail.com" required style="width:100%; padding:11px; border-radius:8px; border:1px solid rgba(215,179,106,0.3); background:#0b1830; color:white;">
         </div>
 
-        <!-- Student Dynamic Fields -->
         <div id="studentFields" style="display: flex; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600;">Mobile Number *</label>
@@ -286,7 +349,6 @@ footer{background:#040810;color:#94a3b8;padding:24px 0;font-size:.88rem;border-t
           </div>
         </div>
 
-        <!-- Working Professional Dynamic Fields -->
         <div id="professionalFields" style="display: none; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600;">Current Company / Organization *</label>
@@ -352,6 +414,76 @@ function updateScroll() {
 window.addEventListener('scroll', updateScroll, {passive:true}); updateScroll();
 backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
+// Publications Dynamic Data Array
+const publicationsList = [
+  {
+    id: 1,
+    type: 'sip',
+    badge: 'SIP Report',
+    title: 'Financial Statement Analysis of MakeMyTrip, EaseMyTrip and Yatra',
+    description: 'Comparative financial performance analysis covering balance sheets, ratio analysis (liquidity, profitability, efficiency), and trend evaluations of leading Indian OTAs (FY2023–FY2025).',
+    fileUrl: 'SIP_Report_2026.pdf'
+  }
+];
+
+// Render Publications Grid
+function renderPublications(category = 'all') {
+  const grid = $('#pubGrid');
+  grid.innerHTML = '';
+  
+  const filtered = category === 'all' 
+    ? publicationsList 
+    : publicationsList.filter(item => item.type === category);
+
+  if(filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1; color:var(--muted); text-align:center; padding:30px; border:1px dashed var(--line); border-radius:16px;">No reports available under this category yet. New publications coming soon!</div>`;
+    return;
+  }
+
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'pub-card reveal visible';
+    card.innerHTML = `
+      <div>
+        <span class="pub-badge">${item.badge}</span>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      </div>
+      <div class="pub-actions">
+        <button onclick="openPdfModal('${item.fileUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Read Report 👁️</button>
+        <a href="${item.fileUrl}" download="${item.fileUrl}" class="btn btn-outline" style="padding:9px 15px; font-size:.88rem;">Download ⇩</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Filter Function
+function filterPublications(cat, btn) {
+  $$('.pub-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPublications(cat);
+}
+
+// PDF Reader Modal Functions
+function openPdfModal(url, title) {
+  $('#pdfModalTitle').textContent = title;
+  $('#pdfDownloadBtn').href = url;
+  $('#pdfDownloadBtn').setAttribute('download', url);
+  $('#pdfFrame').src = url;
+  $('#pdfModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closePdfModal() {
+  $('#pdfModal').style.display = 'none';
+  $('#pdfFrame').src = '';
+  document.body.style.overflow = 'auto';
+}
+
+// Initialize Publications
+renderPublications('all');
+
 // All 19 Images with precise extensions matching GitHub repo
 const imagesList = [
   'campus1.jpeg', 'campus2.jpeg', 'campus3.jpeg', 'campus4.jpeg', 'campus5.jpeg', 'campus6.jpeg',
@@ -365,7 +497,6 @@ const track = $('#galleryTrack');
 const modalGrid = $('#modalGrid');
 
 imagesList.forEach((src, idx) => {
-  // Slider Card
   const card = document.createElement('div');
   card.className = 'gallery-card';
   card.innerHTML = `
@@ -374,7 +505,6 @@ imagesList.forEach((src, idx) => {
   `;
   track.appendChild(card);
 
-  // Modal Card
   const mCard = document.createElement('div');
   mCard.className = 'modal-card';
   mCard.innerHTML = `
@@ -458,7 +588,7 @@ function navLightbox(direction) {
 }
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'Escape') { closeLightbox(); closePdfModal(); }
   if (e.key === 'ArrowRight') navLightbox(1);
   if (e.key === 'ArrowLeft') navLightbox(-1);
 });
@@ -486,7 +616,7 @@ function switchCategory(type) {
   }
 }
 
-// Contact Form Submission (Data Mapped)
+// Contact Form Submission
 const scriptURL = 'https://script.google.com/macros/s/AKfycby5qyf3g6OwiQTbpmK-l3WZ05iwGOu9bnU4sLZMKDPvHCRnSmE9os4Rh6T5WeWsVoE/exec';
 const form = document.getElementById('studentForm');
 const responseDiv = document.getElementById('formResponse');
