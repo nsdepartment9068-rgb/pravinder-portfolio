@@ -113,10 +113,16 @@ h1 em{font-style:normal;color:var(--gold-primary);background:var(--gold-gradient
 /* Section Headings */
 section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bottom:38px}.kicker{color:var(--gold-primary);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:850}.section-head h2{font-size:clamp(2.05rem,4.3vw,3.25rem);letter-spacing:-.05em;line-height:1.12;margin:10px 0 13px;color:var(--text-navy)}.section-head p{margin:0;color:var(--text-muted);font-size:1.15rem}
 
-/* About Section */
-#about{background:white;border-bottom:1px solid var(--gold-border)}
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px}.about-copy p{color:var(--text-dark);margin:0 0 18px;font-size:1.12rem}.statement{margin-top:28px;border-left:3px solid var(--gold-primary);padding:12px 0 12px 20px;color:var(--gold-primary);font-size:1.15rem;font-weight:680;background:var(--gold-light);border-radius:0 12px 12px 0}
-.education{padding:28px;border:1px solid var(--gold-border);background:var(--bg-warm);border-radius:20px;box-shadow:var(--shadow-premium)}.education h3{margin:0 0 22px;font-size:1.18rem;color:var(--gold-primary)}.edu-item{padding:0 0 22px 22px;margin-left:5px;border-left:1px solid var(--gold-border);position:relative}.edu-item:last-child{padding-bottom:0}.edu-item:before{content:"";position:absolute;width:9px;height:9px;left:-5px;top:6px;background:var(--gold-primary);border-radius:50%}.edu-date{font-size:.78rem;letter-spacing:.12em;color:var(--gold-primary);font-weight:850}.edu-item h4{margin:5px 0;font-size:1.08rem;color:var(--text-navy)}.edu-item p{margin:0;color:var(--text-muted);font-size:.95rem}
+/* ABOUT SECTION WITH HERO-BG4.PNG BACKGROUND */
+#about{
+  background-image: url('hero-bg4.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--gold-border);
+}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px}.about-copy p{color:var(--text-dark);margin:0 0 18px;font-size:1.12rem;background:rgba(255,255,255,0.4);backdrop-filter:blur(4px);padding:6px 10px;border-radius:8px}.statement{margin-top:28px;border-left:3px solid var(--gold-primary);padding:12px 0 12px 20px;color:var(--gold-primary);font-size:1.15rem;font-weight:680;background:rgba(254,249,231,0.85);backdrop-filter:blur(6px);border-radius:0 12px 12px 0}
+.education{padding:28px;border:1px solid var(--gold-border);background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-radius:20px;box-shadow:var(--shadow-premium)}.education h3{margin:0 0 22px;font-size:1.18rem;color:var(--gold-primary)}.edu-item{padding:0 0 22px 22px;margin-left:5px;border-left:1px solid var(--gold-border);position:relative}.edu-item:last-child{padding-bottom:0}.edu-item:before{content:"";position:absolute;width:9px;height:9px;left:-5px;top:6px;background:var(--gold-primary);border-radius:50%}.edu-date{font-size:.78rem;letter-spacing:.12em;color:var(--gold-primary);font-weight:850}.edu-item h4{margin:5px 0;font-size:1.08rem;color:var(--text-navy)}.edu-item p{margin:0;color:var(--text-muted);font-size:.95rem}
 
 /* Publications Section */
 #publications{background:var(--bg-warm);border-bottom:1px solid var(--gold-border)}
