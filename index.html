@@ -154,9 +154,27 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{border:1px solid var(--gold-border);border-radius:18px;padding:26px;background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);box-shadow:var(--shadow-premium);transition:transform .22s,background .22s}.card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}.card-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:var(--gold-light);color:var(--gold-primary);font-size:1.25rem;margin-bottom:18px;border:1px solid var(--gold-border)}.card h3{font-size:1.12rem;margin:0 0 10px;color:var(--text-navy)}.card p{font-size:.98rem;color:var(--text-muted);margin:0}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{font-size:.82rem;font-weight:650;color:var(--gold-primary);background:var(--gold-light);border:1px solid var(--gold-border);padding:6px 12px;border-radius:99px}
 .cert-box{margin-top:42px;background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);padding:32px;border-radius:20px;border:1px solid var(--gold-border);box-shadow:var(--shadow-premium)}
 
-/* Experience Section */
-#experience{background:var(--bg-warm);border-bottom:1px solid var(--gold-border)}
-.experience-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px}.experience-aside{padding:28px;border-radius:20px;background:white;border:1px solid var(--gold-border);color:var(--text-navy);box-shadow:var(--shadow-premium);align-self:start}.experience-aside .big-number{font-size:2.5rem;line-height:1;color:var(--gold-primary);font-weight:800;letter-spacing:-.05em}.experience-aside h3{font-size:1.12rem;margin:15px 0 8px;color:var(--gold-primary)}.experience-aside p{margin:0;color:var(--text-muted);font-size:.98rem}.timeline{border-left:1px solid var(--gold-border);margin-left:8px;padding-left:28px;display:grid;gap:32px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--gold-primary)}.timeline-item .meta{color:var(--gold-primary);font-size:.78rem;letter-spacing:.12em;font-weight:850}.timeline-item h3{margin:6px 0 8px;font-size:1.15rem;color:var(--text-navy)}.timeline-item p{margin:0;color:var(--text-muted);font-size:.98rem}.timeline-item ul{margin:8px 0 0;padding-left:18px;color:var(--text-dark);font-size:.98rem}.timeline-item li{margin-bottom:6px}
+/* EXPERIENCE SECTION WITH HERO-BG7.PNG BACKGROUND */
+#experience{
+  background-image: url('hero-bg7.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--gold-border);
+}
+.experience-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px}
+.experience-aside{padding:28px;border-radius:20px;background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);border:1px solid var(--gold-border);color:var(--text-navy);box-shadow:var(--shadow-premium);align-self:start}
+.experience-aside .big-number{font-size:2.5rem;line-height:1;color:var(--gold-primary);font-weight:800;letter-spacing:-.05em}
+.experience-aside h3{font-size:1.12rem;margin:15px 0 8px;color:var(--gold-primary)}
+.experience-aside p{margin:0;color:var(--text-muted);font-size:.98rem}
+.timeline{border-left:1px solid var(--gold-border);margin-left:8px;padding-left:28px;display:grid;gap:32px}
+.timeline-item{position:relative;background:rgba(255,255,255,0.82);backdrop-filter:blur(8px);padding:18px 22px;border-radius:16px;border:1px solid var(--gold-border);box-shadow:var(--shadow-premium)}
+.timeline-item:before{content:"";position:absolute;left:-35px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--gold-primary);border:2px solid white}
+.timeline-item .meta{color:var(--gold-primary);font-size:.78rem;letter-spacing:.12em;font-weight:850}
+.timeline-item h3{margin:6px 0 8px;font-size:1.15rem;color:var(--text-navy)}
+.timeline-item p{margin:0;color:var(--text-muted);font-size:.98rem}
+.timeline-item ul{margin:8px 0 0;padding-left:18px;color:var(--text-dark);font-size:.98rem}
+.timeline-item li{margin-bottom:6px}
 
 /* Gallery Slider Styling */
 .gallery-wrapper{position:relative;display:flex;align-items:center;gap:12px}
