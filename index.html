@@ -143,10 +143,16 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pub-card p{color:var(--text-muted);font-size:.96rem;margin:0 0 20px;line-height:1.6}
 .pub-actions{display:flex;gap:10px;align-items:center}
 
-/* Expertise & Certifications */
-.soft-section{background:white;border-bottom:1px solid var(--gold-border)}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{border:1px solid var(--gold-border);border-radius:18px;padding:26px;background:var(--bg-warm);box-shadow:var(--shadow-premium);transition:transform .22s,background .22s}.card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}.card-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:var(--gold-light);color:var(--gold-primary);font-size:1.25rem;margin-bottom:18px;border:1px solid var(--gold-border)}.card h3{font-size:1.12rem;margin:0 0 10px;color:var(--text-navy)}.card p{font-size:.98rem;color:var(--text-muted);margin:0}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{font-size:.82rem;font-weight:650;color:var(--gold-primary);background:var(--gold-light);border:1px solid var(--gold-border);padding:6px 12px;border-radius:99px}
-.cert-box{margin-top:42px;background:var(--bg-warm);padding:32px;border-radius:20px;border:1px solid var(--gold-border);box-shadow:var(--shadow-premium)}
+/* EXPERTISE & CERTIFICATIONS SECTION WITH HERO-BG6.PNG BACKGROUND */
+.soft-section#skills{
+  background-image: url('hero-bg6.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--gold-border);
+}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{border:1px solid var(--gold-border);border-radius:18px;padding:26px;background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);box-shadow:var(--shadow-premium);transition:transform .22s,background .22s}.card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}.card-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:var(--gold-light);color:var(--gold-primary);font-size:1.25rem;margin-bottom:18px;border:1px solid var(--gold-border)}.card h3{font-size:1.12rem;margin:0 0 10px;color:var(--text-navy)}.card p{font-size:.98rem;color:var(--text-muted);margin:0}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{font-size:.82rem;font-weight:650;color:var(--gold-primary);background:var(--gold-light);border:1px solid var(--gold-border);padding:6px 12px;border-radius:99px}
+.cert-box{margin-top:42px;background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);padding:32px;border-radius:20px;border:1px solid var(--gold-border);box-shadow:var(--shadow-premium)}
 
 /* Experience Section */
 #experience{background:var(--bg-warm);border-bottom:1px solid var(--gold-border)}
