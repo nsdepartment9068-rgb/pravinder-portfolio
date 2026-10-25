@@ -815,10 +815,9 @@ function closeThankYouModal() {
   $('#thankyouModal').style.display = 'none';
 }
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbznhww9djOjHrXC0n0uxMVbdPsz35FKCsZe9cV57CGxxA0tfvTLBu_qSHsqBgSgMgav/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwp72MudQBgmro8VJao1AIJGF8E7OjoRlJNsXc0GdJhZg0i_EhfzmBJRnU51YB4bGrz/exec';
 const form = document.getElementById('studentForm');
 const submitBtn = document.getElementById('submitBtn');
-
 form.addEventListener('submit', e => {
   e.preventDefault();
   submitBtn.disabled = true;
