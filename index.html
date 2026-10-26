@@ -75,6 +75,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,251,247,0.92);backdr
 .navlinks a:hover,.navlinks a.active{color:var(--gold-primary);font-weight:700}
 .nav-pub-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
 .nav-pub-cta:hover{background:var(--gold-gradient);color:white!important}
+.nav-proj-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
+.nav-proj-cta:hover{background:var(--gold-gradient);color:white!important}
 .nav-cta{padding:9px 18px;background:var(--gold-gradient);border-radius:20px;color:white!important;font-weight:700;box-shadow:0 4px 15px rgba(197,155,39,0.3);transition:all .2s}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(197,155,39,0.4)}
 .social-icons{display:flex;align-items:center;gap:10px;margin-left:8px}
@@ -161,9 +163,9 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pub-card p{color:var(--text-muted);font-size:.96rem;margin:0 0 20px;line-height:1.6}
 .pub-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
-/* ACADEMIC & ANALYTICS PROJECTS SECTION */
+/* ACADEMIC & ANALYTICS PROJECTS SECTION WITH HERO-BG10.PNG BACKGROUND */
 #projects{
-  background-image: url('hero-bg5.png');
+  background-image: url('hero-bg10.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -290,7 +292,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#publications" class="nav-pub-cta">Publications ↗</a>
-      <a href="#projects" style="font-weight:700; color:var(--gold-primary);">Projects 📊</a>
+      <a href="#projects" class="nav-proj-cta">Projects 📊</a>
       <a href="#skills">Expertise</a>
       <a href="#experience">Experience</a>
       <a href="#gallery">Gallery</a>
@@ -440,7 +442,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 
-<!-- NEW SECTION: Academic & Analytics Projects Section -->
+<!-- Academic & Analytics Projects Section -->
 <section id="projects">
   <div class="container">
     <div class="section-head reveal">
