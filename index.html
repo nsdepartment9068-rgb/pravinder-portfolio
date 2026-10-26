@@ -874,8 +874,9 @@ function openPdfModal(url, title) {
   $('#pdfDownloadBtn').href = url;
   $('#pdfDownloadBtn').setAttribute('download', url);
   
-  // Direct Full Public URL construction for pravindersingh.com domain
-  let fullUrl = window.location.origin + '/' + url.replace(/^\//, '');
+  // Direct Absolute GitHub Raw / Public domain fallback URL
+  let repoBase = "https://raw.githubusercontent.com/nsdepartment9068-rgb/pravinder-portfolio/main/";
+  let fullUrl = repoBase + url;
   
   // Office Online Viewer fallback for DOCX/DOC/PPTX/PPT files
   if (url.endsWith('.docx') || url.endsWith('.doc') || url.endsWith('.pptx') || url.endsWith('.ppt')) {
