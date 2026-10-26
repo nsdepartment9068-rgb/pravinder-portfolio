@@ -874,8 +874,8 @@ function openPdfModal(url, title) {
   $('#pdfDownloadBtn').href = url;
   $('#pdfDownloadBtn').setAttribute('download', url);
   
-  // Clean Full Absolute URL for Viewer
-  let fullUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1) + url;
+  // Direct Full Public URL construction for pravindersingh.com domain
+  let fullUrl = window.location.origin + '/' + url.replace(/^\//, '');
   
   // Office Online Viewer fallback for DOCX/DOC/PPTX/PPT files
   if (url.endsWith('.docx') || url.endsWith('.doc') || url.endsWith('.pptx') || url.endsWith('.ppt')) {
