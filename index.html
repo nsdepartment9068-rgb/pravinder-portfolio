@@ -452,7 +452,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     </div>
 
     <div class="pub-tabs reveal">
-      <button class="pub-tab-btn active" onclick="filterProjects('all', this)">All Projects (2)</button>
+      <button class="pub-tab-btn active" onclick="filterProjects('all', this)">All Projects (3)</button>
       <button class="pub-tab-btn" onclick="filterProjects('excel', this)">Excel Models & Data</button>
       <button class="pub-tab-btn" onclick="filterProjects('ppt', this)">PPT Presentations</button>
       <button class="pub-tab-btn" onclick="filterProjects('econometrics', this)">Econometrics & Forecasting</button>
@@ -798,12 +798,11 @@ const projectsList = [
     desc: "Comprehensive MBA practical file featuring MS Excel financial modeling, dynamic VLOOKUP lookup systems, PivotTable dashboards with Slicers, startup pitch deck design, and business SOP automation.",
     tags: ["Excel Dashboards", "VLOOKUP & PivotTables", "Business Automation", "Pitch Deck"],
     docUrl: "MBA_106_PRACTICAL_FILE_PARVINDER.docx",
-    btnText: "View Practical File",
-    secondaryBtnText: "Download File ⇩"
+    btnText: "View Practical File 👁️"
   },
   {
     title: "Emerging Trends in Financial Services: Digital Banking & Financial Inclusion",
-    category: "all",
+    category: "ppt",
     badge: "Financial Services Presentation",
     desc: "Executive presentation covering digital banking evolution, UPI expansion, financial inclusion initiatives (PMJDY, AePS, DBT), and tech transformation in financial markets via AI and Fintech.",
     tags: ["Fintech & Digital Banking", "Financial Inclusion", "AI & Financial Markets", "PPT Presentation"],
@@ -828,7 +827,7 @@ function renderProjects(category = 'all') {
 
   const filtered = category === 'all'
     ? projectsList
-    : projectsList.filter(item => item.category === category || (category === 'excel' && item.excelUrl) || (category === 'ppt' && item.pptUrl));
+    : projectsList.filter(item => item.category === category || (category === 'excel' && item.category === 'excel') || (category === 'ppt' && (item.category === 'ppt' || item.docUrl.endsWith('.pptx'))));
 
   if(filtered.length === 0) {
     grid.innerHTML = `<div style="grid-column:1/-1; color:var(--text-muted); text-align:center; padding:30px; border:1px dashed var(--gold-border); border-radius:16px;">No projects uploaded under this filter yet. New projects being added soon!</div>`;
@@ -841,16 +840,21 @@ function renderProjects(category = 'all') {
     
     let tagsHtml = item.tags ? `<div class="tag-row" style="margin-bottom:18px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : '';
     
+    let actionsHtml = `<button onclick="openPdfModal('${item.docUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">${item.btnText || 'View Document 👁️'}</button>`;
+    
+    if (item.excelUrl) {
+      actionsHtml += `<a href="${item.excelUrl}" download="${item.excelUrl}" class="btn btn-outline" style="padding:9px 15px; font-size:.88rem;">Download Excel 📊</a>`;
+    }
+
     card.innerHTML = `
       <div>
         <span class="pub-badge">${item.badge}</span>
         <h3>${item.title}</h3>
-        <p>${item.description}</p>
+        <p>${item.desc}</p>
         ${tagsHtml}
       </div>
       <div class="pub-actions">
-        ${item.pptUrl ? `<button onclick="openPdfModal('${item.pptUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">View Presentation 👁️</button>` : ''}
-        ${item.excelUrl ? `<a href="${item.excelUrl}" download="${item.excelUrl}" class="btn btn-outline" style="padding:9px 15px; font-size:.88rem;">Download Excel 📊</a>` : ''}
+        ${actionsHtml}
       </div>
     `;
     grid.appendChild(card);
