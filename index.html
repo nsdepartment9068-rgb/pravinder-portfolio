@@ -159,7 +159,16 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pub-badge{display:inline-block;padding:4px 12px;border-radius:99px;background:var(--gold-light);color:var(--gold-primary);font-size:.8rem;font-weight:750;margin-bottom:12px;border:1px solid var(--gold-border);width:fit-content}
 .pub-card h3{font-size:1.25rem;color:var(--text-navy);margin:0 0 10px;line-height:1.35}
 .pub-card p{color:var(--text-muted);font-size:.96rem;margin:0 0 20px;line-height:1.6}
-.pub-actions{display:flex;gap:10px;align-items:center}
+.pub-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+/* ACADEMIC & ANALYTICS PROJECTS SECTION */
+#projects{
+  background-image: url('hero-bg5.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--gold-border);
+}
 
 /* EXPERTISE & CERTIFICATIONS SECTION WITH HERO-BG6.PNG BACKGROUND */
 .soft-section#skills{
@@ -280,7 +289,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     <nav class="navlinks" id="navlinks" aria-label="Main navigation">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
-      <a href="#publications" class="nav-pub-cta">Publications & Research ↗</a>
+      <a href="#publications" class="nav-pub-cta">Publications ↗</a>
+      <a href="#projects" style="font-weight:700; color:var(--gold-primary);">Projects 📊</a>
       <a href="#skills">Expertise</a>
       <a href="#experience">Experience</a>
       <a href="#gallery">Gallery</a>
@@ -304,7 +314,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         <h1>Business-minded.<br><em>Numbers-driven.</em></h1>
         <p class="hero-copy">I'm <strong>Pravinder Singh</strong> — an MBA Finance student building expertise in financial analysis, business analytics, and data-led decision-making. I bring a client-focused business perspective shaped by experience in logistics.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#gallery">View Campus Life ➔</a>
+          <a class="btn btn-gold" href="#projects">View Projects 📊</a>
           <a class="btn btn-outline" href="#about">👤 Get to know me</a>
         </div>
         <div class="hero-meta">
@@ -430,6 +440,26 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 
+<!-- NEW SECTION: Academic & Analytics Projects Section -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">03 / Hands-On Work</div>
+      <h2>Academic & Analytics Projects</h2>
+      <p>Practical statistical modeling, Excel dashboards, econometric analysis, and executive presentations.</p>
+    </div>
+
+    <div class="pub-tabs reveal">
+      <button class="pub-tab-btn active" onclick="filterProjects('all', this)">All Projects (1)</button>
+      <button class="pub-tab-btn" onclick="filterProjects('excel', this)">Excel Models & Data</button>
+      <button class="pub-tab-btn" onclick="filterProjects('ppt', this)">PPT Presentations</button>
+      <button class="pub-tab-btn" onclick="filterProjects('econometrics', this)">Econometrics & Forecasting</button>
+    </div>
+
+    <div class="pub-grid" id="projectGrid"></div>
+  </div>
+</section>
+
 <!-- Document Reader Modal -->
 <div class="pdf-modal" id="pdfModal">
   <div class="pdf-modal-container">
@@ -446,7 +476,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
 <section class="soft-section" id="skills">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">03 / Expertise & Certifications</div><h2>Skills for turning data into actionable insights.</h2><p>Financial fundamentals, technical tools, and professional certifications from recognized institutions.</p></div>
+    <div class="section-head reveal"><div class="kicker">04 / Expertise & Certifications</div><h2>Skills for turning data into actionable insights.</h2><p>Financial fundamentals, technical tools, and professional certifications from recognized institutions.</p></div>
     <div class="cards">
       <article class="card reveal"><div class="card-icon">₹</div><h3>Financial Statement Analysis</h3><p>Proficient in evaluating liquidity, profitability, ratio analysis, and corporate peer comparisons.</p><div class="tag-row"><span class="tag">Ratio Analysis</span><span class="tag">Peer Comparison</span><span class="tag">Valuation</span></div></article>
       <article class="card reveal"><div class="card-icon">📊</div><h3>Power BI & Analytics</h3><p>Certified in Power BI by MMU. Skilled in data visualization, MIS reporting, and data interpretation.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Data Interpretation</span><span class="tag">MIS</span></div></article>
@@ -488,7 +518,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
 <section id="experience">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">04 / Experience</div><h2>Industry exposure & financial research.</h2><p>Combining corporate client management in logistics with structured financial analysis in corporate research.</p></div>
+    <div class="section-head reveal"><div class="kicker">05 / Experience</div><h2>Industry exposure & financial research.</h2><p>Combining corporate client management in logistics with structured financial analysis in corporate research.</p></div>
     <div class="experience-layout">
       <aside class="experience-aside reveal"><div class="big-number">2024—26</div><h3>Work & Internship History</h3><p>Demonstrated capabilities in financial statement research, peer analysis, operational planning, and key account management.</p></aside>
       <div class="timeline reveal">
@@ -514,7 +544,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 <!-- Gallery Slider Section -->
 <section class="soft-section" id="gallery">
   <div class="container">
-    <div class="section-head reveal"><div class="kicker">05 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
+    <div class="section-head reveal"><div class="kicker">06 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
     
     <div class="gallery-wrapper reveal">
       <button class="slide-btn prev" id="prevBtn" aria-label="Previous photos">❮</button>
@@ -568,7 +598,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <div class="kicker">06 / Connect & Feedback</div>
+      <div class="kicker">07 / Connect & Feedback</div>
       <h2>Connect With Me or Share Feedback</h2>
       <p>Select your category below to share your details or give valuable feedback on this website.</p>
     </div>
@@ -708,6 +738,7 @@ function updateScroll() {
 window.addEventListener('scroll', updateScroll, {passive:true}); updateScroll();
 backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
+/* Publications Data */
 const publicationsList = [
   {
     id: 1,
@@ -751,9 +782,64 @@ function renderPublications(category = 'all') {
 }
 
 function filterPublications(cat, btn) {
-  $$('.pub-tab-btn').forEach(b => b.classList.remove('active'));
+  $$('#publications .pub-tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderPublications(cat);
+}
+
+/* Projects Data */
+const projectsList = [
+  {
+    id: 1,
+    category: 'econometrics',
+    badge: 'Econometrics & Business Forecasting',
+    title: 'Exploratory Data Analysis (EDA): Theory and Practical Case Study',
+    description: 'Comprehensive EDA performed on retail sales data (Apr–Mar). Includes statistical summaries, correlation analysis (Advertising vs Sales r=0.899), data cleaning, and outlier detection.',
+    pptUrl: 'EDA_Final_Theory_and_Practical.pptx',
+    excelUrl: 'EDA_Practical_Workbook.xlsx',
+    tags: ['Excel Model', 'Data Cleaning', 'Correlation Analysis', 'PPT Presentation']
+  }
+];
+
+function renderProjects(category = 'all') {
+  const grid = $('#projectGrid');
+  grid.innerHTML = '';
+
+  const filtered = category === 'all'
+    ? projectsList
+    : projectsList.filter(item => item.category === category || (category === 'excel' && item.excelUrl) || (category === 'ppt' && item.pptUrl));
+
+  if(filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1; color:var(--text-muted); text-align:center; padding:30px; border:1px dashed var(--gold-border); border-radius:16px;">No projects uploaded under this filter yet. New projects being added soon!</div>`;
+    return;
+  }
+
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'pub-card reveal visible';
+    
+    let tagsHtml = item.tags ? `<div class="tag-row" style="margin-bottom:18px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : '';
+    
+    card.innerHTML = `
+      <div>
+        <span class="pub-badge">${item.badge}</span>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        ${tagsHtml}
+      </div>
+      <div class="pub-actions">
+        ${item.pptUrl ? `<button onclick="openPdfModal('${item.pptUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">View Presentation 👁️</button>` : ''}
+        ${item.excelUrl ? `<a href="${item.excelUrl}" download="${item.excelUrl}" class="btn btn-outline" style="padding:9px 15px; font-size:.88rem;">Download Excel 📊</a>` : ''}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function filterProjects(cat, btn) {
+  $$('#projects .pub-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProjects(cat);
 }
 
 function openPdfModal(url, title) {
@@ -763,7 +849,7 @@ function openPdfModal(url, title) {
   
   const fullUrl = window.location.origin + window.location.pathname.replace('index.html', '') + url;
   
-  if (url.endsWith('.docx') || url.endsWith('.doc')) {
+  if (url.endsWith('.docx') || url.endsWith('.doc') || url.endsWith('.pptx') || url.endsWith('.ppt')) {
     $('#pdfFrame').src = `https://docs.google.com/gview?url=${encodeURIComponent(fullUrl)}&embedded=true`;
   } else {
     $('#pdfFrame').src = url;
@@ -780,6 +866,7 @@ function closePdfModal() {
 }
 
 renderPublications('all');
+renderProjects('all');
 
 const imagesList = [
   'campus1.jpeg', 'campus2.jpeg', 'campus3.jpeg', 'campus4.jpeg', 'campus5.jpeg', 'campus6.jpeg',
