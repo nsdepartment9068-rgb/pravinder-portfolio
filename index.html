@@ -452,7 +452,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     </div>
 
     <div class="pub-tabs reveal">
-      <button class="pub-tab-btn active" onclick="filterProjects('all', this)">All Projects (1)</button>
+      <button class="pub-tab-btn active" onclick="filterProjects('all', this)">All Projects (2)</button>
       <button class="pub-tab-btn" onclick="filterProjects('excel', this)">Excel Models & Data</button>
       <button class="pub-tab-btn" onclick="filterProjects('ppt', this)">PPT Presentations</button>
       <button class="pub-tab-btn" onclick="filterProjects('econometrics', this)">Econometrics & Forecasting</button>
@@ -793,6 +793,15 @@ function filterPublications(cat, btn) {
 const projectsList = [
   {
     id: 1,
+    category: 'ppt',
+    badge: 'Financial Services Presentation',
+    title: 'Emerging Trends in Financial Services: Digital Banking & Financial Inclusion',
+    description: 'Executive presentation covering digital banking evolution, UPI expansion, financial inclusion initiatives (PMJDY, AePS, DBT), and tech transformation in financial markets via AI and Fintech.',
+    pptUrl: 'Emerging_Trends_in_Financial_Services02.pptx',
+    tags: ['Fintech & Digital Banking', 'Financial Inclusion', 'AI & Financial Markets', 'PPT Presentation']
+  },
+  {
+    id: 2,
     category: 'econometrics',
     badge: 'Econometrics & Business Forecasting',
     title: 'Exploratory Data Analysis (EDA): Theory and Practical Case Study',
