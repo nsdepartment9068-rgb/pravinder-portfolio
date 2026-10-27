@@ -19,7 +19,7 @@
 <meta property="og:image:width" content="1254">
 <meta property="og:image:height" content="1254">
 
-<!-- Schema.org Structured Data for Google SEO Indexing -->
+<!-- Schema.org Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -249,7 +249,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
 /* =========================================================
-   FUTURISTIC & ATTRACTIVE DIARY WORLD (CARD-BASED INTERFACE)
+   NEW FUTURISTIC DASHBOARD GRID DIARY (SINGLE VIEWPORT DESIGN)
    ========================================================= */
 .diary-world-modal {
   display: none;
@@ -258,63 +258,61 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at 30% 20%, #0f172a, #090d16 85%);
+  background: radial-gradient(circle at 50% 10%, #0f172a, #030712 90%);
   z-index: 5000;
   overflow-y: auto;
-  color: #1e293b;
+  color: #f8fafc;
   font-family: Inter, sans-serif;
-  animation: fadeInWorld 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeInWorld 0.35s ease;
 }
-@keyframes fadeInWorld { 0%{opacity:0; transform:scale(0.98);} 100%{opacity:1; transform:scale(1);} }
 
 .diary-container-world {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 30px 20px 50px;
 }
 .diary-world-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(197, 155, 39, 0.25);
-  padding-bottom: 22px;
-  margin-bottom: 40px;
+  padding-bottom: 16px;
+  margin-bottom: 25px;
 }
 .diary-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 .diary-logo-glow {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  border: 1.5px solid var(--gold-primary);
+  border: 1px solid var(--gold-primary);
   display: grid;
   place-items: center;
-  font-size: 1.5rem;
-  box-shadow: 0 0 20px rgba(197, 155, 39, 0.35);
+  font-size: 1.3rem;
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.4);
 }
 .diary-title-glow h2 {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #ffffff;
-  letter-spacing: -0.02em;
 }
 .diary-title-glow p {
-  margin: 3px 0 0;
-  font-size: 0.82rem;
+  margin: 2px 0 0;
+  font-size: 0.78rem;
   color: #94a3b8;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .diary-close-btn {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(197, 155, 39, 0.4);
   color: #ffd700;
-  padding: 9px 22px;
+  padding: 8px 18px;
   border-radius: 20px;
   font-weight: 700;
   cursor: pointer;
@@ -323,118 +321,114 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .diary-close-btn:hover {
   background: var(--gold-gradient);
   color: white;
-  box-shadow: 0 0 18px rgba(197, 155, 39, 0.5);
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.5);
 }
 
-/* CARDS STYLING BASED ON REFERENCE FRAME */
-.chapter-cards-stack {
+/* 5 FUTURISTIC GRID CARDS CONTAINER */
+.futuristic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media(max-width:1024px){ .futuristic-cards-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:680px){ .futuristic-cards-grid{ grid-template-columns: 1fr; } }
+
+.futuristic-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
-  gap: 32px;
-}
-
-.chapter-card {
-  background: #fdfbf7;
-  border: 1px solid rgba(197, 155, 39, 0.35);
-  border-radius: 24px;
-  padding: 34px 38px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+  justify-content: space-between;
+  transition: all 0.3s ease;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
-.chapter-card:hover {
+.futuristic-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 55px rgba(197, 155, 39, 0.2);
+  border-color: #ffd700;
+  box-shadow: 0 12px 35px rgba(197, 155, 39, 0.25);
 }
 
-.chapter-badge {
+.card-top-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.76rem;
-  font-weight: 850;
-  letter-spacing: 0.16em;
-  color: #b8860b;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.chapter-icon {
-  font-size: 1.4rem;
-}
-
-.chapter-card h3 {
-  margin: 0 0 6px;
-  font-size: 2.1rem;
-  color: #0f172a;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.chapter-institution {
-  font-size: 0.98rem;
-  color: var(--gold-primary);
-  font-weight: 700;
-  margin: 0 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.chapter-desc {
-  color: #475569;
-  font-size: 1.05rem;
-  line-height: 1.68;
-  margin: 0 0 28px;
-  max-width: 960px;
-}
-
-.chapter-sub-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 24px;
-}
-@media(max-width:768px){ .chapter-sub-grid{ grid-template-columns: 1fr; } }
-
-.sub-card-box {
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 16px;
-  padding: 18px 20px;
-  cursor: pointer;
-  transition: all 0.22s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-.sub-card-box:hover {
-  border-color: var(--gold-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(197, 155, 39, 0.15);
-}
-
-.sub-card-icon {
-  font-size: 1.35rem;
-  color: var(--gold-primary);
   margin-bottom: 8px;
 }
-.sub-card-box h4 {
-  margin: 0 0 4px;
-  font-size: 1.05rem;
-  color: #0f172a;
-  font-weight: 750;
+.card-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
 }
-.sub-card-box p {
-  margin: 0;
-  font-size: 0.84rem;
-  color: #64748b;
+.card-badge-icon {
+  font-size: 1.25rem;
 }
 
-.chapter-quote {
-  border-top: 1px solid rgba(226, 232, 240, 0.9);
-  padding-top: 18px;
-  text-align: center;
-  font-style: italic;
-  color: #b8860b;
-  font-size: 1.02rem;
+.futuristic-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+.card-inst-tag {
+  font-size: 0.82rem;
+  color: #cbd5e1;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-body-text {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.card-action-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.action-pill-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 4px;
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.action-pill-btn:hover {
+  background: var(--gold-gradient);
+  color: #ffffff;
+  border-color: transparent;
+}
+.action-pill-btn span {
+  font-size: 0.95rem;
+}
+
+/* Inline Dynamic Expansion Drawer */
+.inline-expand-drawer {
+  display: none;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(197, 155, 39, 0.3);
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  animation: fadeInTab 0.25s ease;
 }
 
 /* Document Reader Modal */
@@ -921,173 +915,181 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 </main>
 
 <!-- =========================================================
-     FUTURISTIC MY DIARY WORLD MODAL (5-CARD LAYOUT STRUCTURE)
+     5-CARD FUTURISTIC DIARY DASHBOARD (COMPACT FIT)
      ========================================================= -->
 <div class="diary-world-modal" id="diaryWorldModal">
   <div class="diary-container-world">
-    <!-- Header -->
+    <!-- Dashboard Header -->
     <div class="diary-world-header">
       <div class="diary-brand">
         <div class="diary-logo-glow">📖</div>
         <div class="diary-title-glow">
           <h2>Pravinder's Personal Diary</h2>
-          <p>A Collection of Chapters, Memories, Reflections & Friendship</p>
+          <p>Chapters • Reflections • MBA Gallery • Community Wall</p>
         </div>
       </div>
       <button type="button" class="diary-close-btn" onclick="closeDiaryWorld()">Close Diary ✕</button>
     </div>
 
-    <!-- 5 CARDS CONTAINER STACK -->
-    <div class="chapter-cards-stack">
+    <!-- 5 COMPACT FUTURISTIC CARDS GRID -->
+    <div class="futuristic-cards-grid">
 
       <!-- CARD 1: SCHOOL LIFE -->
-      <div class="chapter-card">
-        <div class="chapter-badge">
-          <span>A Chapter of My Life</span>
-          <span class="chapter-icon">🏫</span>
+      <div class="futuristic-card">
+        <div>
+          <div class="card-top-head">
+            <span class="card-kicker">01 / Chapter</span>
+            <span class="card-badge-icon">🏫</span>
+          </div>
+          <h3>Back to School</h3>
+          <div class="card-inst-tag">📍 Divya Public School (DPS), Thanabhawan, Shamli (UP)</div>
+          <p class="card-body-text">The early lessons, class friendships, and school memories that laid the foundation for my journey.</p>
         </div>
-        <h3>Back to School</h3>
-        <div class="chapter-institution">📍 Divya Public School (DPS), Thanabhawan, Shamli (UP)</div>
-        <p class="chapter-desc">The classrooms, the friendships, the laughter, and the early lessons — my school days in Thanabhawan will always be a special part of my story. A collection of memories that shaped who I am today.</p>
-        
-        <div class="chapter-sub-grid">
-          <div class="sub-card-box" onclick="openLightbox(6)">
-            <div class="sub-card-icon">🖼️</div>
-            <h4>Photo Gallery</h4>
-            <p>Moments frozen in time</p>
+
+        <div>
+          <div class="card-action-bar">
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-sch-photo')">
+              <span>🖼️</span> Gallery
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-sch-video')">
+              <span>🎥</span> Videos
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-sch-thought')">
+              <span>📝</span> Thoughts
+            </button>
           </div>
-          <div class="sub-card-box" onclick="alert('School videos coming soon!')">
-            <div class="sub-card-icon">🎥</div>
-            <h4>Videos</h4>
-            <p>Relive the good old days</p>
-          </div>
-          <div class="sub-card-box" onclick="alert('School memories & notes')">
-            <div class="sub-card-icon">📝</div>
-            <h4>My Thoughts</h4>
-            <p>Lessons, feelings & memories</p>
-          </div>
+          
+          <div class="inline-expand-drawer" id="drawer-sch-photo">📁 School photos being archived soon.</div>
+          <div class="inline-expand-drawer" id="drawer-sch-video">🎬 School clips coming soon.</div>
+          <div class="inline-expand-drawer" id="drawer-sch-thought">💬 "Some chapters never really end, they stay as strong roots."</div>
         </div>
-        <div class="chapter-quote">“Some chapters never really end.”</div>
       </div>
 
       <!-- CARD 2: GRADUATION (BBA) -->
-      <div class="chapter-card">
-        <div class="chapter-badge">
-          <span>A Chapter of My Life</span>
-          <span class="chapter-icon">🏛️</span>
+      <div class="futuristic-card">
+        <div>
+          <div class="card-top-head">
+            <span class="card-kicker">02 / Chapter</span>
+            <span class="card-badge-icon">🏛️</span>
+          </div>
+          <h3>The Graduation Years</h3>
+          <div class="card-inst-tag">📍 Graphic Era Deemed to be University, Dehradun</div>
+          <p class="card-body-text">Building core business fundamentals, campus fests, and lifelong friendships in Dehradun during BBA.</p>
         </div>
-        <h3>The Graduation Years</h3>
-        <div class="chapter-institution">📍 Graphic Era Deemed to be University, Dehradun</div>
-        <p class="chapter-desc">Building strong business foundations, dynamic campus fests, group projects, and lifelong friendships in Dehradun. The pivotal BBA years where passion met professional learning.</p>
-        
-        <div class="chapter-sub-grid">
-          <div class="sub-card-box" onclick="openLightbox(3)">
-            <div class="sub-card-icon">🖼️</div>
-            <h4>Photo Gallery</h4>
-            <p>BBA Campus & Gang Photos</p>
+
+        <div>
+          <div class="card-action-bar">
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-bba-photo')">
+              <span>🖼️</span> Gallery
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-bba-video')">
+              <span>🎥</span> Videos
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-bba-thought')">
+              <span>📝</span> Thoughts
+            </button>
           </div>
-          <div class="sub-card-box" onclick="alert('BBA Fest clips coming soon!')">
-            <div class="sub-card-icon">🎥</div>
-            <h4>Videos</h4>
-            <p>Fests, Trips & Outings Clips</p>
-          </div>
-          <div class="sub-card-box" onclick="alert('BBA Reflection notes')">
-            <div class="sub-card-icon">📝</div>
-            <h4>My Thoughts</h4>
-            <p>Growth & Academic journey</p>
-          </div>
+
+          <div class="inline-expand-drawer" id="drawer-bba-photo">📁 BBA photo archive coming soon.</div>
+          <div class="inline-expand-drawer" id="drawer-bba-video">🎬 Graphic Era fest clips uploading soon.</div>
+          <div class="inline-expand-drawer" id="drawer-bba-thought">💬 "Dehradun days: Where my business perspective first took shape."</div>
         </div>
-        <div class="chapter-quote">“Dehradun days: Where business acumen began to shape.”</div>
       </div>
 
-      <!-- CARD 3: POST GRADUATION (MBA) -->
-      <div class="chapter-card">
-        <div class="chapter-badge">
-          <span>A Chapter of My Life</span>
-          <span class="chapter-icon">🎓</span>
+      <!-- CARD 3: POST GRADUATION (MBA) — ONLY CARD WITH FULL PHOTO GALLERY PREVIEW -->
+      <div class="futuristic-card" style="border-color: var(--gold-primary); background: rgba(15, 23, 42, 0.9);">
+        <div>
+          <div class="card-top-head">
+            <span class="card-kicker" style="color:#ffd700;">03 / Active Chapter</span>
+            <span class="card-badge-icon">🎓</span>
+          </div>
+          <h3 style="color:#ffd700;">The MBA Chapter</h3>
+          <div class="card-inst-tag">📍 Maharishi Markandeshwar (Deemed to be University), Mullana Ambala</div>
+          <p class="card-body-text">Deep-diving into Financial Statement Analysis, Power BI, Valuation, and Corporate Finance strategies.</p>
         </div>
-        <h3>The MBA Chapter</h3>
-        <div class="chapter-institution">📍 Maharishi Markandeshwar Deemed to be University, Mullana Ambala</div>
-        <p class="chapter-desc">Deep diving into Financial Analysis, Power BI, Valuation, and Corporate Strategy. Late-night presentations, corporate mentorship drives, and high ambitions for the financial domain.</p>
-        
-        <div class="chapter-sub-grid">
-          <div class="sub-card-box" onclick="openLightbox(0)">
-            <div class="sub-card-icon">🖼️</div>
-            <h4>Photo Gallery</h4>
-            <p>MMDU Events & Seminar Photos</p>
+
+        <div>
+          <div class="card-action-bar">
+            <!-- Full Photo Gallery Action ONLY for MBA -->
+            <button type="button" class="action-pill-btn" style="background:var(--gold-gradient); color:white;" onclick="openLightbox(0)">
+              <span>🖼️</span> View Photos
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-mba-video')">
+              <span>🎥</span> Videos
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-mba-thought')">
+              <span>📝</span> Thoughts
+            </button>
           </div>
-          <div class="sub-card-box" onclick="alert('MBA Seminar Video Highlights!')">
-            <div class="sub-card-icon">🎥</div>
-            <h4>Videos</h4>
-            <p>Presentations & Campus Vlogs</p>
-          </div>
-          <div class="sub-card-box" onclick="alert('MBA Financial Insights')">
-            <div class="sub-card-icon">📝</div>
-            <h4>My Thoughts</h4>
-            <p>Corporate vision & Finance goals</p>
-          </div>
+
+          <div class="inline-expand-drawer" id="drawer-mba-video">🎬 MMDU campus events video clips loading...</div>
+          <div class="inline-expand-drawer" id="drawer-mba-thought">💬 "Mastering valuation models to turn complex data into strategic impact."</div>
         </div>
-        <div class="chapter-quote">“Turning numbers into financial strategy & career ambition.”</div>
       </div>
 
       <!-- CARD 4: FRIENDS & VISITORS' WALL -->
-      <div class="chapter-card">
-        <div class="chapter-badge">
-          <span>Community & Network</span>
-          <span class="chapter-icon">👥</span>
+      <div class="futuristic-card">
+        <div>
+          <div class="card-top-head">
+            <span class="card-kicker">04 / Network</span>
+            <span class="card-badge-icon">👥</span>
+          </div>
+          <h3>Friends & Visitor's Wall</h3>
+          <div class="card-inst-tag">🤝 Testimonials & Shared Thoughts</div>
+          <p class="card-body-text">A dedicated space displaying thoughts and messages left by friends, batchmates, and visitors.</p>
         </div>
-        <h3>Friends & Visitor's Wall</h3>
-        <div class="chapter-institution">🤝 A Shared Space for Testimonials, Wishes & Messages</div>
-        <p class="chapter-desc">A dedicated wall showcasing thoughts, wishes, and recommendations shared by batchmates, friends, and visitors who stop by my portfolio universe.</p>
-        
-        <div class="chapter-sub-grid">
-          <div class="sub-card-box" onclick="closeDiaryWorld(); switchCategory('thought'); location.href='#contact';">
-            <div class="sub-card-icon">✍️</div>
-            <h4>Leave a Message</h4>
-            <p>Submit your thought for the wall</p>
+
+        <div>
+          <div class="card-action-bar">
+            <button type="button" class="action-pill-btn" onclick="closeDiaryWorld(); switchCategory('thought'); location.href='#contact';">
+              <span>✍️</span> Leave Note
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-wall-view')">
+              <span>💬</span> View Quotes
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-wall-info')">
+              <span>🌟</span> Wishes
+            </button>
           </div>
-          <div class="sub-card-box" onclick="alert('Loading batchmate quotes...')">
-            <div class="sub-card-icon">💬</div>
-            <h4>Batchmate Quotes</h4>
-            <p>Messages from friends & alumni</p>
+
+          <div class="inline-expand-drawer" id="drawer-wall-view">
+            <strong style="color:var(--gold-primary);">Rahul Sharma (BBA Alumnus):</strong> "Pravinder always brings great analytical clarity."
           </div>
-          <div class="sub-card-box" onclick="alert('Loading visitor wall...')">
-            <div class="sub-card-icon">🌟</div>
-            <h4>Visitor Wishes</h4>
-            <p>Encouraging feedback & notes</p>
+          <div class="inline-expand-drawer" id="drawer-wall-info">
+            <strong style="color:var(--gold-primary);">MMDU Batchmate:</strong> "Dedicated towards corporate goals!"
           </div>
         </div>
-        <div class="chapter-quote">“Connections that make the journey worthwhile.”</div>
       </div>
 
       <!-- CARD 5: THOUGHTS & REFLECTIONS -->
-      <div class="chapter-card">
-        <div class="chapter-badge">
-          <span>Personal Mindset</span>
-          <span class="chapter-icon">💡</span>
+      <div class="futuristic-card">
+        <div>
+          <div class="card-top-head">
+            <span class="card-kicker">05 / Mindset</span>
+            <span class="card-badge-icon">💡</span>
+          </div>
+          <h3>Whispers & Reflections</h3>
+          <div class="card-inst-tag">📖 Weekly & Monthly Personal Journal</div>
+          <p class="card-body-text">Insights on financial growth, self-discipline, continuous learning, and life philosophies.</p>
         </div>
-        <h3>Whispers & Reflections</h3>
-        <div class="chapter-institution">📖 Pravinder's Weekly & Monthly Journal Thoughts</div>
-        <p class="chapter-desc">Personal reflections on financial markets, career growth, self-discipline, and life philosophy beyond code and spreadsheets.</p>
-        
-        <div class="chapter-sub-grid">
-          <div class="sub-card-box" onclick="alert('Thought 1: Financial compounding and patience.')">
-            <div class="sub-card-icon">📈</div>
-            <h4>Market Mindset</h4>
-            <p>Weekly reflections on discipline</p>
+
+        <div>
+          <div class="card-action-bar">
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-market')">
+              <span>📈</span> Market
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-growth')">
+              <span>🎯</span> Growth
+            </button>
+            <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-wisdom')">
+              <span>✨</span> Wisdom
+            </button>
           </div>
-          <div class="sub-card-box" onclick="alert('Thought 2: Continuous skill development.')">
-            <div class="sub-card-icon">🎯</div>
-            <h4>Career & Learning</h4>
-            <p>Monthly goal updates</p>
-          </div>
-          <div class="sub-card-box" onclick="alert('Thought 3: Life principles.')">
-            <div class="sub-card-icon">✨</div>
-            <h4>Life Wisdom</h4>
-            <p>Staying grounded through success</p>
-          </div>
+
+          <div class="inline-expand-drawer" id="drawer-th-market">💡 <em>"Consistency yields long-term compounding benefits in both finance and life."</em></div>
+          <div class="inline-expand-drawer" id="drawer-th-growth">💡 <em>"Small daily habits dictate big professional outcomes."</em></div>
+          <div class="inline-expand-drawer" id="drawer-th-wisdom">💡 <em>"Stay grounded, stay curious, and let execution talk."</em></div>
         </div>
-        <div class="chapter-quote">“Consistency in thought leads to excellence in action.”</div>
       </div>
 
     </div>
@@ -1293,16 +1295,14 @@ function closePdfModal() {
 renderPublications('all');
 renderProjects('all');
 
+// Photos ONLY for MBA Chapter
 const structuredGallery = [
-  { src: 'campus1.jpeg', title: 'MMDU Mullana Campus', desc: 'Post-Graduation (MBA) Days' },
+  { src: 'campus1.jpeg', title: 'MMDU Mullana Campus', desc: 'MBA Finance' },
   { src: 'campus2.jpeg', title: 'Corporate Mentorship Event', desc: 'MMDU Mullana' },
   { src: 'campus3.jpeg', title: 'MBA Finance Group Project', desc: 'MMDU Mullana' },
-  { src: 'campus4.jpeg', title: 'Graphic Era University Fest', desc: 'Graduation (BBA) Dehradun' },
-  { src: 'campus5.jpeg', title: 'BBA Farewell & Gang', desc: 'Graphic Era University' },
-  { src: 'campus6.jpeg', title: 'Dehradun Campus Memories', desc: 'Graphic Era University' },
-  { src: 'campus7.jpeg', title: 'School Farewell Ceremony', desc: 'Divya Public School (DPS)' },
-  { src: 'campus8.jpeg', title: 'Class XII Classroom Memories', desc: 'Divya Public School (DPS)' },
-  { src: 'campus9.jpeg', title: 'Finance Seminar Session', desc: 'MMDU Mullana' }
+  { src: 'campus9.jpeg', title: 'Finance Seminar Session', desc: 'MMDU Mullana' },
+  { src: 'campus10.jpeg', title: 'Presentation & Discussion', desc: 'MMDU Mullana' },
+  { src: 'campus12.jpg', title: 'Campus Evening Vibes', desc: 'MMDU Mullana' }
 ];
 
 const track = $('#galleryTrack');
@@ -1404,6 +1404,19 @@ function openDiaryWorld() {
 function closeDiaryWorld() {
   $('#diaryWorldModal').style.display = 'none';
   document.body.style.overflow = 'auto';
+}
+
+/* Toggle Inline Drawers Inside Diary Cards (No Boring Alerts) */
+function toggleInlineDrawer(drawerId) {
+  const targetDrawer = $('#' + drawerId);
+  const isDisplayed = targetDrawer.style.display === 'block';
+
+  // Close all other drawers first
+  $$('.inline-expand-drawer').forEach(d => d.style.display = 'none');
+
+  if(!isDisplayed) {
+    targetDrawer.style.display = 'block';
+  }
 }
 
 document.addEventListener('keydown', (e) => {
