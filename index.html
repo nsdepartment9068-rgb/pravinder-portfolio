@@ -249,7 +249,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
 /* =========================================================
-   FUTURISTIC DIARY DASHBOARD WITH HERO-BG11.PNG BACKGROUND
+   FUTURISTIC DIARY DASHBOARD WITH HERO-BG11.PNG & NEON CARDS
    ========================================================= */
 .diary-world-modal {
   display: none;
@@ -273,18 +273,13 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .diary-container-world {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 30px 20px 50px;
-  background: rgba(5, 10, 20, 0.45);
-  backdrop-filter: blur(8px);
-  border-radius: 24px;
-  border: 1px solid rgba(197, 155, 39, 0.2);
-  margin-top: 20px;
+  padding: 25px 20px 40px;
 }
 .diary-world-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(197, 155, 39, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 16px;
   margin-bottom: 25px;
 }
@@ -298,40 +293,44 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   height: 44px;
   border-radius: 12px;
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  border: 1px solid var(--gold-primary);
+  border: 1px solid #38bdf8;
   display: grid;
   place-items: center;
   font-size: 1.3rem;
-  box-shadow: 0 0 15px rgba(197, 155, 39, 0.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
 .diary-title-glow h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   color: #ffffff;
+  font-weight: 800;
+}
+.diary-title-glow h2 span {
+  color: #38bdf8;
 }
 .diary-title-glow p {
   margin: 2px 0 0;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #94a3b8;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .diary-close-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(197, 155, 39, 0.4);
-  color: #ffd700;
-  padding: 8px 18px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  padding: 8px 20px;
   border-radius: 20px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
 .diary-close-btn:hover {
-  background: var(--gold-gradient);
+  background: #0284c7;
   color: white;
-  box-shadow: 0 0 15px rgba(197, 155, 39, 0.5);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
 }
 
 /* 5 FUTURISTIC GRID CARDS CONTAINER */
@@ -344,60 +343,114 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 @media(max-width:680px){ .futuristic-cards-grid{ grid-template-columns: 1fr; } }
 
 .futuristic-card {
-  background: rgba(15, 23, 42, 0.82);
-  border: 1px solid rgba(197, 155, 39, 0.35);
-  border-radius: 18px;
-  padding: 20px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+  background: rgba(10, 15, 29, 0.85);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 1.5px solid transparent;
 }
 .futuristic-card:hover {
   transform: translateY(-4px);
-  border-color: #ffd700;
-  box-shadow: 0 14px 40px rgba(197, 155, 39, 0.3);
+}
+
+/* NEON GRADIENT BORDER STYLES FROM DESIGN */
+.card-school {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+.card-school:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+}
+
+.card-bba {
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.15);
+}
+.card-bba:hover {
+  border-color: #34d399;
+  box-shadow: 0 0 25px rgba(52, 211, 153, 0.35);
+}
+
+.card-mba {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+  background: rgba(13, 18, 34, 0.92);
+}
+.card-mba:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+}
+
+.card-wall {
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.15);
+}
+.card-wall:hover {
+  border-color: #c084fc;
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.35);
+}
+
+.card-thoughts {
+  border-color: rgba(251, 146, 60, 0.6);
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.15);
+}
+.card-thoughts:hover {
+  border-color: #fb923c;
+  box-shadow: 0 0 25px rgba(251, 146, 60, 0.35);
 }
 
 .card-top-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .card-kicker {
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-size: 0.72rem;
+  font-weight: 850;
   letter-spacing: 0.14em;
-  color: var(--gold-primary);
   text-transform: uppercase;
 }
-.card-badge-icon {
-  font-size: 1.25rem;
+.card-icon-preview {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
 }
 
 .futuristic-card h3 {
-  margin: 0 0 4px;
-  font-size: 1.35rem;
+  margin: 0 0 6px;
+  font-size: 1.38rem;
   color: #ffffff;
   font-weight: 800;
 }
 .card-inst-tag {
-  font-size: 0.82rem;
-  color: #cbd5e1;
+  font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .card-body-text {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: #94a3b8;
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.55;
+  margin-bottom: 18px;
 }
 
 .card-action-bar {
@@ -406,10 +459,10 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   gap: 8px;
 }
 .action-pill-btn {
-  background: rgba(30, 41, 59, 0.85);
+  background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 8px 4px;
+  border-radius: 12px;
+  padding: 9px 4px;
   text-align: center;
   color: #e2e8f0;
   font-size: 0.75rem;
@@ -419,15 +472,28 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 .action-pill-btn:hover {
-  background: var(--gold-gradient);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  border-color: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .action-pill-btn span {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+}
+
+/* Special Gold Pill Button for MBA */
+.action-pill-gold {
+  background: linear-gradient(135deg, #fbbf24, #d97706) !important;
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+.action-pill-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.6);
 }
 
 /* Inline Dynamic Expansion Drawer */
@@ -435,7 +501,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   display: none;
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px dashed rgba(197, 155, 39, 0.3);
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
   font-size: 0.85rem;
   color: #cbd5e1;
   animation: fadeInTab 0.25s ease;
@@ -925,7 +991,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 </main>
 
 <!-- =========================================================
-     5-CARD FUTURISTIC DIARY DASHBOARD (WITH HERO-BG11.PNG)
+     5-CARD FUTURISTIC DIARY DASHBOARD (EXACT NEW LOOKING)
      ========================================================= -->
 <div class="diary-world-modal" id="diaryWorldModal">
   <div class="diary-container-world">
@@ -934,25 +1000,25 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <div class="diary-brand">
         <div class="diary-logo-glow">📖</div>
         <div class="diary-title-glow">
-          <h2>Pravinder's Personal Diary</h2>
-          <p>Chapters • Reflections • MBA Gallery • Community Wall</p>
+          <h2>Pravinder's <span>Personal Diary</span></h2>
+          <p>CHAPTERS • REFLECTIONS • MBA GALLERY • COMMUNITY WALL</p>
         </div>
       </div>
       <button type="button" class="diary-close-btn" onclick="closeDiaryWorld()">Close Diary ✕</button>
     </div>
 
-    <!-- 5 COMPACT FUTURISTIC CARDS GRID -->
+    <!-- 5 FUTURISTIC GRID CARDS (EXACT VISUAL DESIGN) -->
     <div class="futuristic-cards-grid">
 
       <!-- CARD 1: SCHOOL LIFE -->
-      <div class="futuristic-card">
+      <div class="futuristic-card card-school">
         <div>
           <div class="card-top-head">
-            <span class="card-kicker">01 / Chapter</span>
-            <span class="card-badge-icon">🏫</span>
+            <span class="card-kicker" style="color:#38bdf8;">01 / CHAPTER</span>
+            <div class="card-icon-preview">🏫</div>
           </div>
           <h3>Back to School</h3>
-          <div class="card-inst-tag">📍 Divya Public School (DPS), Thanabhawan, Shamli (UP)</div>
+          <div class="card-inst-tag" style="color:#38bdf8;">📍 Divya Public School (DPS), Thanabhawan, Shamli (UP)</div>
           <p class="card-body-text">The early lessons, class friendships, and school memories that laid the foundation for my journey.</p>
         </div>
 
@@ -976,14 +1042,14 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       </div>
 
       <!-- CARD 2: GRADUATION (BBA) -->
-      <div class="futuristic-card">
+      <div class="futuristic-card card-bba">
         <div>
           <div class="card-top-head">
-            <span class="card-kicker">02 / Chapter</span>
-            <span class="card-badge-icon">🏛️</span>
+            <span class="card-kicker" style="color:#34d399;">02 / CHAPTER</span>
+            <div class="card-icon-preview">🎓</div>
           </div>
           <h3>The Graduation Years</h3>
-          <div class="card-inst-tag">📍 Graphic Era Deemed to be University, Dehradun</div>
+          <div class="card-inst-tag" style="color:#34d399;">📍 Graphic Era Deemed to be University, Dehradun</div>
           <p class="card-body-text">Building core business fundamentals, campus fests, and lifelong friendships in Dehradun during BBA.</p>
         </div>
 
@@ -1006,22 +1072,21 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- CARD 3: POST GRADUATION (MBA) — ONLY CARD WITH FULL PHOTO GALLERY PREVIEW -->
-      <div class="futuristic-card" style="border-color: var(--gold-primary); background: rgba(15, 23, 42, 0.88);">
+      <!-- CARD 3: POST GRADUATION (MBA) -->
+      <div class="futuristic-card card-mba">
         <div>
           <div class="card-top-head">
-            <span class="card-kicker" style="color:#ffd700;">03 / Active Chapter</span>
-            <span class="card-badge-icon">🎓</span>
+            <span class="card-kicker" style="color:#fbbf24;">03 / ACTIVE CHAPTER</span>
+            <div class="card-icon-preview" style="border-color:#fbbf24;">💻</div>
           </div>
-          <h3 style="color:#ffd700;">The MBA Chapter</h3>
-          <div class="card-inst-tag">📍 Maharishi Markandeshwar (Deemed to be University), Mullana Ambala</div>
+          <h3 style="color:#ffffff;">The MBA Chapter</h3>
+          <div class="card-inst-tag" style="color:#fbbf24;">📍 Maharishi Markandeshwar (Deemed to be University), Mullana Ambala</div>
           <p class="card-body-text">Deep-diving into Financial Statement Analysis, Power BI, Valuation, and Corporate Finance strategies.</p>
         </div>
 
         <div>
           <div class="card-action-bar">
-            <!-- Full Photo Gallery Action ONLY for MBA -->
-            <button type="button" class="action-pill-btn" style="background:var(--gold-gradient); color:white;" onclick="openLightbox(0)">
+            <button type="button" class="action-pill-btn action-pill-gold" onclick="openLightbox(0)">
               <span>🖼️</span> View Photos
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-mba-video')">
@@ -1038,61 +1103,61 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       </div>
 
       <!-- CARD 4: FRIENDS & VISITORS' WALL -->
-      <div class="futuristic-card">
+      <div class="futuristic-card card-wall">
         <div>
           <div class="card-top-head">
-            <span class="card-kicker">04 / Network</span>
-            <span class="card-badge-icon">👥</span>
+            <span class="card-kicker" style="color:#c084fc;">04 / NETWORK</span>
+            <div class="card-icon-preview">👥</div>
           </div>
           <h3>Friends & Visitor's Wall</h3>
-          <div class="card-inst-tag">🤝 Testimonials & Shared Thoughts</div>
+          <div class="card-inst-tag" style="color:#c084fc;">👥 Testimonials & Shared Thoughts</div>
           <p class="card-body-text">A dedicated space displaying thoughts and messages left by friends, batchmates, and visitors.</p>
         </div>
 
         <div>
           <div class="card-action-bar">
             <button type="button" class="action-pill-btn" onclick="closeDiaryWorld(); switchCategory('thought'); location.href='#contact';">
-              <span>✍️</span> Leave Note
+              <span>✏️</span> Leave Note
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-wall-view')">
-              <span>💬</span> View Quotes
+              <span>⚡</span> View Quotes
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-wall-info')">
-              <span>🌟</span> Wishes
+              <span>⭐</span> Wishes
             </button>
           </div>
 
           <div class="inline-expand-drawer" id="drawer-wall-view">
-            <strong style="color:var(--gold-primary);">Rahul Sharma (BBA Alumnus):</strong> "Pravinder always brings great analytical clarity."
+            <strong style="color:#c084fc;">Rahul Sharma (BBA Alumnus):</strong> "Pravinder always brings great analytical clarity."
           </div>
           <div class="inline-expand-drawer" id="drawer-wall-info">
-            <strong style="color:var(--gold-primary);">MMDU Batchmate:</strong> "Dedicated towards corporate goals!"
+            <strong style="color:#c084fc;">MMDU Batchmate:</strong> "Dedicated towards corporate goals!"
           </div>
         </div>
       </div>
 
       <!-- CARD 5: THOUGHTS & REFLECTIONS -->
-      <div class="futuristic-card">
+      <div class="futuristic-card card-thoughts">
         <div>
           <div class="card-top-head">
-            <span class="card-kicker">05 / Mindset</span>
-            <span class="card-badge-icon">💡</span>
+            <span class="card-kicker" style="color:#fb923c;">05 / MINDSET</span>
+            <div class="card-icon-preview">💡</div>
           </div>
           <h3>Whispers & Reflections</h3>
-          <div class="card-inst-tag">📖 Weekly & Monthly Personal Journal</div>
+          <div class="card-inst-tag" style="color:#fb923c;">📖 Weekly & Monthly Personal Journal</div>
           <p class="card-body-text">Insights on financial growth, self-discipline, continuous learning, and life philosophies.</p>
         </div>
 
         <div>
           <div class="card-action-bar">
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-market')">
-              <span>📈</span> Market
+              <span>📊</span> Market
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-growth')">
               <span>🎯</span> Growth
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-th-wisdom')">
-              <span>✨</span> Wisdom
+              <span>☀️</span> Wisdom
             </button>
           </div>
 
