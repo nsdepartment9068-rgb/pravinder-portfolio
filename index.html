@@ -70,17 +70,41 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,251,247,0.92);backdr
 .logo-container{display:flex;align-items:center;gap:12px}
 .logo-icon{width:38px;height:38px;background:var(--gold-gradient);color:white;font-weight:900;font-size:1.2rem;display:grid;place-items:center;border-radius:99px;box-shadow:0 4px 12px rgba(197,155,39,0.3)}
 .logo-text{font-weight:800;letter-spacing:.12em;font-size:1.05rem;color:var(--text-navy)}
-.navlinks{display:flex;align-items:center;gap:22px;font-size:.92rem;color:var(--text-muted);font-weight:500}
+.navlinks{display:flex;align-items:center;gap:18px;font-size:.92rem;color:var(--text-muted);font-weight:500}
 .navlinks a{transition:color .2s}
 .navlinks a:hover,.navlinks a.active{color:var(--gold-primary);font-weight:700}
 .nav-pub-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
 .nav-pub-cta:hover{background:var(--gold-gradient);color:white!important}
 .nav-proj-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
 .nav-proj-cta:hover{background:var(--gold-gradient);color:white!important}
+
+/* My Diary Dark Blue Shiny Button */
+.nav-diary-btn {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 700 !important;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 0 12px rgba(197, 155, 39, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-diary-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px rgba(197, 155, 39, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.4);
+  border-color: #ffd700;
+}
+
 .nav-cta{padding:9px 18px;background:var(--gold-gradient);border-radius:20px;color:white!important;font-weight:700;box-shadow:0 4px 15px rgba(197,155,39,0.3);transition:all .2s}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(197,155,39,0.4)}
-.social-icons{display:flex;align-items:center;gap:10px;margin-left:8px}
-.social-icon{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;font-size:.9rem;color:var(--text-dark);background:white;transition:all .2s}
+.social-icons{display:flex;align-items:center;gap:8px;margin-left:4px}
+.social-icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;font-size:.88rem;color:var(--text-dark);background:white;transition:all .2s}
 .social-icon:hover{background:var(--gold-gradient);color:white;border-color:transparent}
 .menu{display:none;background:transparent;color:var(--text-navy);border:1px solid var(--gold-border);border-radius:99px;padding:8px 11px;cursor:pointer}
 
@@ -235,6 +259,201 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-card{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--gold-border);cursor:pointer}
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
+/* FUTURISTIC MY DIARY WORLD STYLING */
+.diary-world-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #0b132b, #090a10 80%);
+  z-index: 5000;
+  overflow-y: auto;
+  color: #e2e8f0;
+  font-family: Inter, sans-serif;
+  animation: fadeInWorld 0.4s ease-out;
+}
+@keyframes fadeInWorld { 0%{opacity:0; transform:scale(0.97);} 100%{opacity:1; transform:scale(1);} }
+
+.diary-container-world {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+.diary-world-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.3);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.diary-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.diary-logo-glow {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid var(--gold-primary);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.4);
+}
+.diary-title-glow h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+.diary-title-glow p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.diary-close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 155, 39, 0.4);
+  color: #ffd700;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.diary-close-btn:hover {
+  background: var(--gold-gradient);
+  color: white;
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.5);
+}
+
+.diary-world-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+.diary-nav-btn {
+  padding: 10px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.6);
+  color: #94a3b8;
+  font-weight: 650;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+.diary-nav-btn.active, .diary-nav-btn:hover {
+  background: linear-gradient(135deg, rgba(197, 155, 39, 0.2), rgba(184, 134, 11, 0.3));
+  color: #ffffff;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.25);
+}
+
+.diary-tab-content { display: none; }
+.diary-tab-content.active { display: block; animation: fadeInTab 0.3s ease; }
+@keyframes fadeInTab { 0%{opacity:0; transform:translateY(10px);} 100%{opacity:1; transform:translateY(0);} }
+
+/* Thoughts Section Card Styling */
+.thought-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(197, 155, 39, 0.25);
+  border-radius: 20px;
+  padding: 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.thought-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-primary);
+}
+.thought-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--gold-primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.thought-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  color: #f8fafc;
+}
+.thought-card p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Media Grid inside Diary */
+.diary-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.diary-photo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.diary-photo-card:hover {
+  transform: scale(1.02);
+  border-color: var(--gold-primary);
+}
+.diary-photo-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+.diary-photo-overlay {
+  padding: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+}
+.diary-photo-overlay h4 { margin:0; font-size:0.95rem; color:#f8fafc; }
+.diary-photo-overlay p { margin:4px 0 0; font-size:0.8rem; color:#94a3b8; }
+
+/* Video Player Card */
+.diary-video-card {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.diary-video-card video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: black;
+  display: block;
+}
+.diary-video-info {
+  padding: 16px;
+}
+.diary-video-info h4 { margin:0 0 6px; font-size:1.05rem; color:#ffffff; }
+.diary-video-info p { margin:0; font-size:0.85rem; color:#94a3b8; }
+
 /* Document Viewer Modal */
 .pdf-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.85);z-index:3000;backdrop-filter:blur(10px);padding:20px}
 .pdf-modal-container{max-width:1200px;height:90vh;margin:0 auto;background:white;border:1px solid var(--gold-border);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3)}
@@ -243,7 +462,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pdf-modal-actions{display:flex;align-items:center;gap:12px}
 .pdf-modal-iframe{width:100%;height:100%;border:none;background:#525659}
 
-.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.9);z-index:2000;backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.9);z-index:6000;backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
 .lightbox-content{position:relative;max-width:90%;max-height:85vh;display:flex;flex-direction:column;align-items:center}
 .lightbox-content img{max-width:100%;max-height:80vh;border-radius:16px;border:2px solid var(--gold-primary);box-shadow:0 20px 50px rgba(0,0,0,.5);object-fit:contain}
 .lightbox-close{position:absolute;top:-45px;right:0;font-size:2rem;color:white;background:none;border:none;cursor:pointer;font-weight:bold}
@@ -297,6 +516,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <a href="#experience">Experience</a>
       <a href="#gallery">Gallery</a>
       <a class="nav-cta" href="#contact">Let's Connect ↗</a>
+      <!-- Dark Blue Shiny My Diary Button -->
+      <button type="button" class="nav-diary-btn" onclick="openDiaryWorld()">My Diary 📖</button>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/pravindersingh" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">in</a>
         <a href="https://www.instagram.com/pravinder.pvt.ltd" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram Profile">📷</a>
@@ -703,6 +924,81 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 </main>
+
+<!-- FUTURISTIC MY DIARY WORLD MODAL -->
+<div class="diary-world-modal" id="diaryWorldModal">
+  <div class="diary-container-world">
+    <!-- Header inside Diary -->
+    <div class="diary-world-header">
+      <div class="diary-brand">
+        <div class="diary-logo-glow">📖</div>
+        <div class="diary-title-glow">
+          <h2>Pravinder's Personal Diary</h2>
+          <p>Memories • Thoughts • Vibes • Life Outside Numbers</p>
+        </div>
+      </div>
+      <button type="button" class="diary-close-btn" onclick="closeDiaryWorld()">Close Diary ✕</button>
+    </div>
+
+    <!-- Navigation Bar inside Diary Modal -->
+    <div class="diary-world-nav">
+      <button type="button" class="diary-nav-btn active" onclick="switchDiaryTab('thoughts', this)">📖 Daily Thoughts</button>
+      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('friends', this)">📸 Gang & Friendship Photos</button>
+      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('videos', this)">🎥 Video Moments</button>
+    </div>
+
+    <!-- TAB 1: DAILY THOUGHTS -->
+    <div class="diary-tab-content active" id="tabThoughts">
+      <div class="thought-card">
+        <div class="thought-meta"><span>OCTOBER 2026</span> • <span>LIFE & LEARNING</span></div>
+        <h3>The Power of Consistency & Staying Grounded</h3>
+        <p>Building something meaningful takes patience. Whether it's analyzing financial data, mastering valuation techniques, or just being there for friends, consistency is the key to creating real impact.</p>
+      </div>
+
+      <div class="thought-card">
+        <div class="thought-meta"><span>SEPTEMBER 2026</span> • <span>CAMPUS DAYS</span></div>
+        <h3>MBA Life at MMU: Late Nights & High Ambitions</h3>
+        <p>From back-to-back corporate presentations to casual tea breaks with friends, these university years are shaping not just my professional career, but also memories that will last a lifetime.</p>
+      </div>
+    </div>
+
+    <!-- TAB 2: GANG & FRIENDSHIP PHOTOS -->
+    <div class="diary-tab-content" id="tabFriends">
+      <div class="diary-media-grid" id="diaryPhotosGrid">
+        <!-- Campus & Friends Photos rendering dynamically -->
+      </div>
+    </div>
+
+    <!-- TAB 3: VIDEO MOMENTS -->
+    <div class="diary-tab-content" id="tabVideos">
+      <div class="diary-media-grid">
+        <div class="diary-video-card">
+          <video controls poster="campus1.jpeg">
+            <source src="college_fest_clip.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="diary-video-info">
+            <h4>College Fest & Event Memories 🎥</h4>
+            <p>Memorable moments from university events & celebrations.</p>
+          </div>
+        </div>
+
+        <div class="diary-video-card">
+          <video controls poster="campus2.jpeg">
+            <source src="friends_trip.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="diary-video-info">
+            <h4>Friends Trip & Outings 🚌</h4>
+            <p>Unforgettable trips and weekend gateways with the gang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <footer><div class="container footer-row"><span>© <span id="year"></span> Pravinder Singh</span><span>MBA Finance & Business Analytics · MMU Mullana</span></div></footer>
 <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
 
@@ -907,6 +1203,7 @@ const imagesList = [
 
 const track = $('#galleryTrack');
 const modalGrid = $('#modalGrid');
+const diaryPhotosGrid = $('#diaryPhotosGrid');
 
 imagesList.forEach((src, idx) => {
   const card = document.createElement('div');
@@ -924,6 +1221,20 @@ imagesList.forEach((src, idx) => {
     <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
   `;
   modalGrid.appendChild(mCard);
+
+  // Fill inside Diary Photo Grid
+  if(diaryPhotosGrid) {
+    const dCard = document.createElement('div');
+    dCard.className = 'diary-photo-card';
+    dCard.innerHTML = `
+      <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+      <div class="diary-photo-overlay">
+        <h4>Campus Memory #${idx+1}</h4>
+        <p>MMU Mullana Days • Friends Gang</p>
+      </div>
+    `;
+    diaryPhotosGrid.appendChild(dCard);
+  }
 });
 
 const prevBtn = $('#prevBtn');
@@ -996,8 +1307,29 @@ function navLightbox(direction) {
   $('#lightboxImg').src = imagesList[currentImgIndex];
 }
 
+/* MY DIARY WORLD FUNCTIONS */
+function openDiaryWorld() {
+  $('#diaryWorldModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDiaryWorld() {
+  $('#diaryWorldModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function switchDiaryTab(tabName, btn) {
+  $$('.diary-nav-btn').forEach(b => b.classList.remove('active'));
+  $$('.diary-tab-content').forEach(c => c.classList.remove('active'));
+
+  btn.classList.add('active');
+  if(tabName === 'thoughts') $('#tabThoughts').classList.add('active');
+  if(tabName === 'friends') $('#tabFriends').classList.add('active');
+  if(tabName === 'videos') $('#tabVideos').classList.add('active');
+}
+
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closeLightbox(); closePdfModal(); closeThankYouModal(); }
+  if (e.key === 'Escape') { closeLightbox(); closePdfModal(); closeThankYouModal(); closeDiaryWorld(); }
   if (e.key === 'ArrowRight') navLightbox(1);
   if (e.key === 'ArrowLeft') navLightbox(-1);
 });
