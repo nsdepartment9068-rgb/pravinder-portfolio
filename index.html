@@ -70,7 +70,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,251,247,0.92);backdr
 .logo-container{display:flex;align-items:center;gap:12px}
 .logo-icon{width:38px;height:38px;background:var(--gold-gradient);color:white;font-weight:900;font-size:1.2rem;display:grid;place-items:center;border-radius:99px;box-shadow:0 4px 12px rgba(197,155,39,0.3)}
 .logo-text{font-weight:800;letter-spacing:.12em;font-size:1.05rem;color:var(--text-navy)}
-.navlinks{display:flex;align-items:center;gap:18px;font-size:.92rem;color:var(--text-muted);font-weight:500}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:.92rem;color:var(--text-muted);font-weight:500}
 .navlinks a{transition:color .2s}
 .navlinks a:hover,.navlinks a.active{color:var(--gold-primary);font-weight:700}
 .nav-pub-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
@@ -78,33 +78,32 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,251,247,0.92);backdr
 .nav-proj-cta{background:var(--gold-light);color:var(--gold-primary)!important;padding:8px 16px;border-radius:10px;font-weight:700!important;border:1px solid var(--gold-border);transition:all .2s ease}
 .nav-proj-cta:hover{background:var(--gold-gradient);color:white!important}
 
-/* My Diary Dark Blue Shiny Button */
-.nav-diary-btn {
+/* My Diary Dark Blue Shiny Button Styling */
+.footer-diary-btn {
   background: #0f172a !important;
   color: #ffffff !important;
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 20px;
   font-weight: 700 !important;
   border: 1px solid var(--gold-primary);
   box-shadow: 0 0 12px rgba(197, 155, 39, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: 0.82rem;
 }
-.nav-diary-btn:hover {
-  transform: translateY(-2px) scale(1.03);
+.footer-diary-btn:hover {
+  transform: translateY(-2px) scale(1.04);
   box-shadow: 0 0 20px rgba(197, 155, 39, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.4);
   border-color: #ffd700;
 }
 
 .nav-cta{padding:9px 18px;background:var(--gold-gradient);border-radius:20px;color:white!important;font-weight:700;box-shadow:0 4px 15px rgba(197,155,39,0.3);transition:all .2s}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(197,155,39,0.4)}
-.social-icons{display:flex;align-items:center;gap:8px;margin-left:4px}
-.social-icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;font-size:.88rem;color:var(--text-dark);background:white;transition:all .2s}
+.social-icons{display:flex;align-items:center;gap:10px;margin-left:8px}
+.social-icon{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;font-size:.9rem;color:var(--text-dark);background:white;transition:all .2s}
 .social-icon:hover{background:var(--gold-gradient);color:white;border-color:transparent}
 .menu{display:none;background:transparent;color:var(--text-navy);border:1px solid var(--gold-border);border-radius:99px;padding:8px 11px;cursor:pointer}
 
@@ -516,8 +515,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <a href="#experience">Experience</a>
       <a href="#gallery">Gallery</a>
       <a class="nav-cta" href="#contact">Let's Connect ↗</a>
-      <!-- Dark Blue Shiny My Diary Button -->
-      <button type="button" class="nav-diary-btn" onclick="openDiaryWorld()">My Diary 📖</button>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/pravindersingh" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">in</a>
         <a href="https://www.instagram.com/pravinder.pvt.ltd" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram Profile">📷</a>
@@ -999,7 +996,17 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<footer><div class="container footer-row"><span>© <span id="year"></span> Pravinder Singh</span><span>MBA Finance & Business Analytics · MMU Mullana</span></div></footer>
+<!-- FOOTER WITH MY DIARY BUTTON PLACED IN BOTTOM ROW -->
+<footer>
+  <div class="container footer-row">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span>© <span id="year"></span> Pravinder Singh</span>
+      <!-- My Diary Button Placed in Footer -->
+      <button type="button" class="footer-diary-btn" onclick="openDiaryWorld()">My Diary 📖</button>
+    </div>
+    <span>MBA Finance & Business Analytics · MMU Mullana</span>
+  </div>
+</footer>
 <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
 
 <script>
