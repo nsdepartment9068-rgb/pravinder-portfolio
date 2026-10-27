@@ -358,11 +358,35 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   box-shadow: 0 0 15px rgba(197, 155, 39, 0.25);
 }
 
+/* Sub filter buttons for Campus Chapters */
+.sub-filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+.sub-filter-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(30, 41, 59, 0.5);
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sub-filter-btn.active, .sub-filter-btn:hover {
+  background: var(--gold-primary);
+  color: #0f172a;
+  border-color: #ffd700;
+}
+
 .diary-tab-content { display: none; }
 .diary-tab-content.active { display: block; animation: fadeInTab 0.3s ease; }
 @keyframes fadeInTab { 0%{opacity:0; transform:translateY(10px);} 100%{opacity:1; transform:translateY(0);} }
 
-/* Thoughts Section Card Styling */
+/* Thoughts & Visitor Cards Styling */
 .thought-card {
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(197, 155, 39, 0.25);
@@ -372,6 +396,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   backdrop-filter: blur(12px);
   transition: transform 0.2s, border-color 0.2s;
+  position: relative;
 }
 .thought-card:hover {
   transform: translateY(-3px);
@@ -398,6 +423,29 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   font-size: 1.05rem;
   line-height: 1.7;
 }
+
+/* Visitor Quote Card Special Styling */
+.visitor-author-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(197, 155, 39, 0.3);
+}
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.author-details h5 { margin:0; font-size:0.98rem; color:#f8fafc; font-weight:700; }
+.author-details p { margin:2px 0 0; font-size:0.8rem; color:var(--gold-primary); }
 
 /* Media Grid inside Diary */
 .diary-media-grid {
@@ -633,7 +681,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         <h3>Education & Qualifications</h3>
         <div class="edu-item"><div class="edu-date">2025 — PRESENT</div><h4>MBA — Finance & Business Analytics</h4><p>Maharishi Markandeshwar (Deemed to be University), Mullana</p></div>
         <div class="edu-item"><div class="edu-date">2020 — 2023</div><h4>Bachelor of Business Administration (BBA)</h4><p>Graphic Era (Deemed to be University), Dehradun</p></div>
-        <div class="edu-item"><div class="edu-date">2020</div><h4>Higher Secondary School (Class XII)</h4><p>Divya Public School (DPS), Shamli (UP)</p></div>
+        <div class="edu-item"><div class="edu-date">2020</div><h4>Higher Secondary School (Class XII)</h4><p>Divya Public School (DPS), Shamli / Thana Bhawan (UP)</p></div>
       </div>
     </div>
   </div>
@@ -819,8 +867,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   <div class="container">
     <div class="section-head reveal">
       <div class="kicker">07 / Connect & Feedback</div>
-      <h2>Connect With Me or Share Feedback</h2>
-      <p>Select your category below to share your details or give valuable feedback on this website.</p>
+      <h2>Connect With Me or Share Thoughts</h2>
+      <p>Select your category below to share your details, website feedback, or leave a message for my Diary Wall!</p>
     </div>
     
     <div class="contact-panel reveal">
@@ -828,6 +876,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         <button type="button" class="toggle-btn active" id="btnStudent" onclick="switchCategory('student')">🎓 Student</button>
         <button type="button" class="toggle-btn" id="btnPro" onclick="switchCategory('professional')">💼 Working Professional</button>
         <button type="button" class="toggle-btn" id="btnFeedback" onclick="switchCategory('feedback')">💬 Website Feedback</button>
+        <button type="button" class="toggle-btn" id="btnThought" onclick="switchCategory('thought')">💡 Share Diary Thought</button>
       </div>
 
       <form id="studentForm" style="display: flex; flex-direction: column; gap: 15px;">
@@ -850,7 +899,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Current Institute / College / University Name *</label>
-            <input type="text" id="address" name="address" placeholder="e.g. MMU Mullana / Delhi University" style="width:100%; padding:11px; border-radius:8px; border:1px solid var(--gold-border); background:var(--bg-warm); color:var(--text-navy);">
+            <input type="text" id="address" name="address" placeholder="e.g. MMU Mullana / Graphic Era / Delhi University" style="width:100%; padding:11px; border-radius:8px; border:1px solid var(--gold-border); background:var(--bg-warm); color:var(--text-navy);">
           </div>
 
           <div>
@@ -915,6 +964,19 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
           </div>
         </div>
 
+        <!-- Visitor Thought Submission Fields -->
+        <div id="thoughtFields" style="display: none; flex-direction: column; gap: 15px;">
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Your Relation / Connection *</label>
+            <input type="text" id="relation" name="relation" placeholder="e.g. Graphic Era Alumnus / MMDU Batchmate / Friend" style="width:100%; padding:11px; border-radius:8px; border:1px solid var(--gold-border); background:var(--bg-warm); color:var(--text-navy);">
+          </div>
+
+          <div>
+            <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Your Thought / Quote for Pravinder's Diary Wall *</label>
+            <textarea id="userThoughtText" name="userThoughtText" rows="4" placeholder="Write a nice thought, wish, or testimonial to display on my Diary Wall..." style="width:100%; padding:11px; border-radius:8px; border:1px solid var(--gold-border); background:var(--bg-warm); color:var(--text-navy); resize:vertical;"></textarea>
+          </div>
+        </div>
+
         <button type="submit" class="btn btn-gold" id="submitBtn" style="margin-top:10px; cursor:pointer;">Submit Details ↗</button>
       </form>
     </div>
@@ -931,63 +993,130 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         <div class="diary-logo-glow">📖</div>
         <div class="diary-title-glow">
           <h2>Pravinder's Personal Diary</h2>
-          <p>Memories • Thoughts • Vibes • Life Outside Numbers</p>
+          <p>Memories • Daily Reflections • Friends Wall • Campus Vlogs</p>
         </div>
       </div>
       <button type="button" class="diary-close-btn" onclick="closeDiaryWorld()">Close Diary ✕</button>
     </div>
 
-    <!-- Navigation Bar inside Diary Modal -->
+    <!-- Main Navigation Bar inside Diary Modal -->
     <div class="diary-world-nav">
-      <button type="button" class="diary-nav-btn active" onclick="switchDiaryTab('thoughts', this)">📖 Daily Thoughts</button>
-      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('friends', this)">📸 Gang & Friendship Photos</button>
-      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('videos', this)">🎥 Video Moments</button>
+      <button type="button" class="diary-nav-btn active" onclick="switchDiaryTab('thoughts', this)">📖 Daily & Weekly Thoughts</button>
+      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('visitorWall', this)">👥 Friends & Visitors' Wall</button>
+      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('chapters', this)">🎓 Campus & Life Chapters</button>
+      <button type="button" class="diary-nav-btn" onclick="switchDiaryTab('videos', this)">🎥 Video Clips & Vlogs Vault</button>
     </div>
 
-    <!-- TAB 1: DAILY THOUGHTS -->
+    <!-- TAB 1: DAILY & WEEKLY THOUGHTS -->
     <div class="diary-tab-content active" id="tabThoughts">
       <div class="thought-card">
-        <div class="thought-meta"><span>OCTOBER 2026</span> • <span>LIFE & LEARNING</span></div>
-        <h3>The Power of Consistency & Staying Grounded</h3>
-        <p>Building something meaningful takes patience. Whether it's analyzing financial data, mastering valuation techniques, or just being there for friends, consistency is the key to creating real impact.</p>
+        <div class="thought-meta"><span>OCTOBER 2026</span> • <span>STRATEGY & GROWTH</span></div>
+        <h3>The Power of Financial Discipline & Long-term Vision</h3>
+        <p>Valuation models and balance sheets teach us one underlying truth: intrinsic value compounds over time. Whether it's continuous skills development or managing capital, short-term consistency yields long-term compounding benefits.</p>
       </div>
 
       <div class="thought-card">
-        <div class="thought-meta"><span>SEPTEMBER 2026</span> • <span>CAMPUS DAYS</span></div>
-        <h3>MBA Life at MMU: Late Nights & High Ambitions</h3>
-        <p>From back-to-back corporate presentations to casual tea breaks with friends, these university years are shaping not just my professional career, but also memories that will last a lifetime.</p>
+        <div class="thought-meta"><span>SEPTEMBER 2026</span> • <span>CAMPUS DAYS @ MMDU</span></div>
+        <h3>MBA Life at MMU: Late Nights, Financial Analysis & Ambitions</h3>
+        <p>From back-to-back corporate presentations and financial modeling to casual tea breaks with friends, these university years are shaping not just my analytical capabilities, but memories that will last a lifetime.</p>
+      </div>
+
+      <div class="thought-card">
+        <div class="thought-meta"><span>AUGUST 2026</span> • <span>LOGISTICS & OPERATIONAL WISDOM</span></div>
+        <h3>Lessons from Key Account Management</h3>
+        <p>Managing logistics operations taught me agility. Real-world business isn't just about formulas; it's about solving real-time bottlenecks and building trusted relationships with clients.</p>
       </div>
     </div>
 
-    <!-- TAB 2: GANG & FRIENDSHIP PHOTOS -->
-    <div class="diary-tab-content" id="tabFriends">
+    <!-- TAB 2: FRIENDS & VISITORS' WALL -->
+    <div class="diary-tab-content" id="tabVisitorWall">
+      <div style="margin-bottom:25px; color:#94a3b8; font-size:0.95rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <span>Thoughts and messages shared by batchmates, friends, and website visitors.</span>
+        <button type="button" class="sub-filter-btn active" onclick="closeDiaryWorld(); switchCategory('thought'); location.href='#contact';">+ Leave Your Thought 💬</button>
+      </div>
+
+      <div id="visitorWallGrid">
+        <div class="thought-card">
+          <div class="thought-meta"><span>TESTIMONIAL</span> • <span>GRAPHIC ERA UNIVERSITY</span></div>
+          <p>“Pravinder has always had a sharp mind for business numbers and leadership. From our BBA days at Graphic Era to seeing him excel in MBA Finance, his dedication is inspiring!”</p>
+          <div class="visitor-author-badge">
+            <div class="author-avatar">R</div>
+            <div class="author-details">
+              <h5>Rahul Sharma</h5>
+              <p>BBA Batchmate • Graphic Era University</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="thought-card">
+          <div class="thought-meta"><span>BATCHMATE WISDOM</span> • <span>MMDU MULLANA</span></div>
+          <p>“One of the most focused financial minds in our MBA cohort. Always ready to discuss financial markets, corporate valuation, and Power BI dashboards!”</p>
+          <div class="visitor-author-badge">
+            <div class="author-avatar">A</div>
+            <div class="author-details">
+              <h5>Amit Verma</h5>
+              <p>MBA Finance Cohort • MMDU Mullana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: CAMPUS & LIFE CHAPTERS (SCHOOL, GRADUATION, POST-GRADUATION) -->
+    <div class="diary-tab-content" id="tabChapters">
+      <!-- Sub-Filter Bar -->
+      <div class="sub-filter-bar">
+        <button type="button" class="sub-filter-btn active" onclick="filterCampusPhotos('all', this)">All Memories</button>
+        <button type="button" class="sub-filter-btn" onclick="filterCampusPhotos('school', this)">🏫 Schooling (Divya Public School)</button>
+        <button type="button" class="sub-filter-btn" onclick="filterCampusPhotos('bba', this)">🏛️ Graduation / BBA (Graphic Era)</button>
+        <button type="button" class="sub-filter-btn" onclick="filterCampusPhotos('mba', this)">🎓 Post-Grad / MBA (MMDU Mullana)</button>
+      </div>
+
       <div class="diary-media-grid" id="diaryPhotosGrid">
-        <!-- Campus & Friends Photos rendering dynamically -->
+        <!-- Dynamic Photo Cards rendered via JavaScript -->
       </div>
     </div>
 
-    <!-- TAB 3: VIDEO MOMENTS -->
+    <!-- TAB 4: VIDEO CLIPS & VLOGS VAULT -->
     <div class="diary-tab-content" id="tabVideos">
-      <div class="diary-media-grid">
-        <div class="diary-video-card">
+      <div class="sub-filter-bar">
+        <button type="button" class="sub-filter-btn active" onclick="filterDiaryVideos('all', this)">All Video Clips</button>
+        <button type="button" class="sub-filter-btn" onclick="filterDiaryVideos('school', this)">🏫 School Days</button>
+        <button type="button" class="sub-filter-btn" onclick="filterDiaryVideos('bba', this)">🏛️ Graphic Era Fests</button>
+        <button type="button" class="sub-filter-btn" onclick="filterDiaryVideos('mba', this)">🎓 MMDU Vlogs & Events</button>
+      </div>
+
+      <div class="diary-media-grid" id="diaryVideoGrid">
+        <div class="diary-video-card" data-vcat="mba">
           <video controls poster="campus1.jpeg">
             <source src="college_fest_clip.mp4" type="video/mp4">
             Your browser does not support video playback.
           </video>
           <div class="diary-video-info">
-            <h4>College Fest & Event Memories 🎥</h4>
-            <p>Memorable moments from university events & celebrations.</p>
+            <h4>MMDU Campus Event & Fest Clips 🎥</h4>
+            <p>Post-Graduation • MMDU Mullana Campus Highlights</p>
           </div>
         </div>
 
-        <div class="diary-video-card">
+        <div class="diary-video-card" data-vcat="bba">
           <video controls poster="campus2.jpeg">
             <source src="friends_trip.mp4" type="video/mp4">
             Your browser does not support video playback.
           </video>
           <div class="diary-video-info">
-            <h4>Friends Trip & Outings 🚌</h4>
-            <p>Unforgettable trips and weekend gateways with the gang.</p>
+            <h4>Graphic Era University Days & Trips 🚌</h4>
+            <p>Graduation (BBA) • Outings & Farewell Memories</p>
+          </div>
+        </div>
+
+        <div class="diary-video-card" data-vcat="school">
+          <video controls poster="campus3.jpeg">
+            <source src="school_memories.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="diary-video-info">
+            <h4>Schooling Days & Annual Function 🏫</h4>
+            <p>Divya Public School (DPS) • Thana Bhawan Memories</p>
           </div>
         </div>
       </div>
@@ -1201,48 +1330,97 @@ function closePdfModal() {
 renderPublications('all');
 renderProjects('all');
 
-const imagesList = [
-  'campus1.jpeg', 'campus2.jpeg', 'campus3.jpeg', 'campus4.jpeg', 'campus5.jpeg', 'campus6.jpeg',
-  'campus7.jpeg', 'campus8.jpeg', 'campus9.jpeg', 'campus10.jpeg',
-  'campus11.jpg', 'campus12.jpg', 'campus13.jpg', 'campus14.jpg', 'campus15.jpg',
-  'campus16.jpg', 'campus17.jpg', 'campus18.jpg', 'campus19.jpg'
+/* Structured Campus Gallery Photos (Categorized by Phase) */
+const structuredGallery = [
+  { src: 'campus1.jpeg', phase: 'mba', title: 'MMDU Mullana Campus', desc: 'Post-Graduation (MBA) Days' },
+  { src: 'campus2.jpeg', phase: 'mba', title: 'Corporate Mentorship Event', desc: 'MMDU Mullana' },
+  { src: 'campus3.jpeg', phase: 'mba', title: 'MBA Finance Group Project', desc: 'MMDU Mullana' },
+  { src: 'campus4.jpeg', phase: 'bba', title: 'Graphic Era University Fest', desc: 'Graduation (BBA) Dehradun' },
+  { src: 'campus5.jpeg', phase: 'bba', title: 'BBA Farewell & Gang', desc: 'Graphic Era University' },
+  { src: 'campus6.jpeg', phase: 'bba', title: 'Dehradun Campus Memories', desc: 'Graphic Era University' },
+  { src: 'campus7.jpeg', phase: 'school', title: 'School Farewell Ceremony', desc: 'Divya Public School (DPS)' },
+  { src: 'campus8.jpeg', phase: 'school', title: 'Class XII Classroom Memories', desc: 'Divya Public School (DPS)' },
+  { src: 'campus9.jpeg', phase: 'mba', title: 'Finance Seminar Session', desc: 'MMDU Mullana' },
+  { src: 'campus10.jpeg', phase: 'mba', title: 'Presentation & Discussion', desc: 'MMDU Mullana' },
+  { src: 'campus11.jpg', phase: 'bba', title: 'University Sports Event', desc: 'Graphic Era University' },
+  { src: 'campus12.jpg', phase: 'mba', title: 'Campus Evening Vibes', desc: 'MMDU Mullana' },
+  { src: 'campus13.jpg', phase: 'bba', title: 'Friends Day Outing', desc: 'Dehradun BBA Days' },
+  { src: 'campus14.jpg', phase: 'school', title: 'School Sports Day', desc: 'Divya Public School' },
+  { src: 'campus15.jpg', phase: 'mba', title: 'Library Study Session', desc: 'MMDU Mullana' },
+  { src: 'campus16.jpg', phase: 'mba', title: 'Workshop & Certificate Event', desc: 'MMDU Mullana' },
+  { src: 'campus17.jpg', phase: 'bba', title: 'Campus Garden Chit-Chat', desc: 'Graphic Era University' },
+  { src: 'campus18.jpg', phase: 'school', title: 'Classmate Group Photo', desc: 'Divya Public School' },
+  { src: 'campus19.jpg', phase: 'mba', title: 'Placement Drive Gathering', desc: 'MMDU Mullana' }
 ];
 
 const track = $('#galleryTrack');
 const modalGrid = $('#modalGrid');
 const diaryPhotosGrid = $('#diaryPhotosGrid');
 
-imagesList.forEach((src, idx) => {
+// Populate Home Page Gallery & Modal Grid
+structuredGallery.forEach((item, idx) => {
   const card = document.createElement('div');
   card.className = 'gallery-card';
   card.innerHTML = `
-    <a href="${src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-    <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+    <a href="${item.src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
+    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
   `;
   track.appendChild(card);
 
   const mCard = document.createElement('div');
   mCard.className = 'modal-card';
   mCard.innerHTML = `
-    <a href="${src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
-    <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+    <a href="${item.src}" download="Campus_${idx+1}" class="img-download-btn" title="Download Photo" onclick="event.stopPropagation();">⇩</a>
+    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
   `;
   modalGrid.appendChild(mCard);
+});
 
-  // Fill inside Diary Photo Grid
-  if(diaryPhotosGrid) {
+// Render Diary Campus Photos according to active sub-filter
+function renderDiaryCampusPhotos(filterPhase = 'all') {
+  if(!diaryPhotosGrid) return;
+  diaryPhotosGrid.innerHTML = '';
+
+  const filtered = filterPhase === 'all' 
+    ? structuredGallery 
+    : structuredGallery.filter(item => item.phase === filterPhase);
+
+  filtered.forEach((item, idx) => {
     const dCard = document.createElement('div');
     dCard.className = 'diary-photo-card';
     dCard.innerHTML = `
-      <img src="${src}" alt="Campus Photo ${idx+1}" onerror="this.onerror=null; this.src='${src.endsWith('.jpeg')?src.replace('.jpeg','.jpg'):src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
+      <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx})">
       <div class="diary-photo-overlay">
-        <h4>Campus Memory #${idx+1}</h4>
-        <p>MMU Mullana Days • Friends Gang</p>
+        <h4>${item.title}</h4>
+        <p>${item.desc}</p>
       </div>
     `;
     diaryPhotosGrid.appendChild(dCard);
-  }
-});
+  });
+}
+
+function filterCampusPhotos(phase, btn) {
+  $$('#tabChapters .sub-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderDiaryCampusPhotos(phase);
+}
+
+function filterDiaryVideos(category, btn) {
+  $$('#tabVideos .sub-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const videoCards = $$('#diaryVideoGrid .diary-video-card');
+  videoCards.forEach(card => {
+    const vcat = card.getAttribute('data-vcat');
+    if(category === 'all' || vcat === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+renderDiaryCampusPhotos('all');
 
 const prevBtn = $('#prevBtn');
 const nextBtn = $('#nextBtn');
@@ -1299,7 +1477,7 @@ function openLightbox(index) {
   currentImgIndex = index;
   const lightbox = $('#lightboxModal');
   const img = $('#lightboxImg');
-  img.src = imagesList[currentImgIndex];
+  img.src = structuredGallery[currentImgIndex].src;
   lightbox.style.display = 'flex';
 }
 
@@ -1309,9 +1487,9 @@ function closeLightbox() {
 
 function navLightbox(direction) {
   currentImgIndex += direction;
-  if (currentImgIndex < 0) currentImgIndex = imagesList.length - 1;
-  if (currentImgIndex >= imagesList.length) currentImgIndex = 0;
-  $('#lightboxImg').src = imagesList[currentImgIndex];
+  if (currentImgIndex < 0) currentImgIndex = structuredGallery.length - 1;
+  if (currentImgIndex >= structuredGallery.length) currentImgIndex = 0;
+  $('#lightboxImg').src = structuredGallery[currentImgIndex].src;
 }
 
 /* MY DIARY WORLD FUNCTIONS */
@@ -1331,7 +1509,8 @@ function switchDiaryTab(tabName, btn) {
 
   btn.classList.add('active');
   if(tabName === 'thoughts') $('#tabThoughts').classList.add('active');
-  if(tabName === 'friends') $('#tabFriends').classList.add('active');
+  if(tabName === 'visitorWall') $('#tabVisitorWall').classList.add('active');
+  if(tabName === 'chapters') $('#tabChapters').classList.add('active');
   if(tabName === 'videos') $('#tabVideos').classList.add('active');
 }
 
@@ -1348,17 +1527,22 @@ function switchCategory(type) {
   const btnStudent = $('#btnStudent');
   const btnPro = $('#btnPro');
   const btnFeedback = $('#btnFeedback');
+  const btnThought = $('#btnThought');
+
   const studentFields = $('#studentFields');
   const proFields = $('#professionalFields');
   const feedbackFields = $('#feedbackFields');
+  const thoughtFields = $('#thoughtFields');
 
   btnStudent.classList.remove('active');
   btnPro.classList.remove('active');
   btnFeedback.classList.remove('active');
+  btnThought.classList.remove('active');
 
   studentFields.style.display = 'none';
   proFields.style.display = 'none';
   feedbackFields.style.display = 'none';
+  thoughtFields.style.display = 'none';
 
   if(type === 'student') {
     btnStudent.classList.add('active');
@@ -1369,6 +1553,9 @@ function switchCategory(type) {
   } else if(type === 'feedback') {
     btnFeedback.classList.add('active');
     feedbackFields.style.display = 'flex';
+  } else if(type === 'thought') {
+    btnThought.classList.add('active');
+    thoughtFields.style.display = 'flex';
   }
 }
 
@@ -1422,6 +1609,14 @@ form.addEventListener('submit', e => {
       rating: form.rating.value,
       feedback: form.feedbackText.value
     };
+  } else if(currentCategory === 'thought') {
+    data = {
+      userType: 'Diary Thought Submission',
+      name: form.name.value,
+      email: form.email.value,
+      relation: form.relation.value,
+      thoughtText: form.userThoughtText.value
+    };
   }
 
   fetch(scriptURL, {
@@ -1433,7 +1628,9 @@ form.addEventListener('submit', e => {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Submit Details ↗';
     
-    if(currentCategory === 'feedback') {
+    if(currentCategory === 'thought') {
+      showThankYouModal('Thank You For Sharing Your Thought! 💡', 'Your thought has been submitted! It will be reviewed and featured on my Diary Wall soon.');
+    } else if(currentCategory === 'feedback') {
       showThankYouModal('Thank You For Your Feedback! 🌟', 'Your insights and feedback mean a lot to me. Thank you for taking the time to share your review!');
     } else {
       showThankYouModal('Thank You So Much! ✨', 'Your details have been submitted successfully. I look forward to connecting and growing our professional network!');
