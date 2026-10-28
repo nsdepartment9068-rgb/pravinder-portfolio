@@ -1401,11 +1401,17 @@ const structuredGallery = [
   { src: 'campus12.jpg', title: 'Campus Evening Vibes', desc: 'MMDU Mullana' }
 ];
 
-// 2. GRAPHIC ERA UNIVERSITY (BBA) PHOTOS ARRAY (geu1.jpg to geu20.jpg) EXACT GITHUB ENTRIES
+// 2. GRAPHIC ERA UNIVERSITY (BBA) PHOTOS ARRAY (geu1 to geu30)
 const bbaGallery = [];
 for (let i = 1; i <= 30; i++) {
+  // Check exact capital extensions for 22 & 23
+  let ext = '.jpg';
+  if (i === 22 || i === 23) {
+    ext = '.JPG';
+  }
+
   bbaGallery.push({
-    src: `geu${i}.jpg`,
+    src: `geu${i}${ext}`,
     title: `Graphic Era BBA Memory ${i}`,
     desc: `Graphic Era Deemed to be University, Dehradun`
   });
@@ -1431,14 +1437,15 @@ structuredGallery.forEach((item, idx) => {
   modalGrid.appendChild(mCard);
 });
 
-// Render Dynamic BBA Gallery Grid (geu1.jpg to geu20.jpg)
+// Render Dynamic BBA Gallery Grid (geu1 to geu30)
 const bbaGrid = $('#bbaModalGrid');
+bbaGrid.innerHTML = '';
 bbaGallery.forEach((item, idx) => {
   const card = document.createElement('div');
   card.className = 'modal-card';
   card.style.borderColor = '#34d399';
   card.innerHTML = `
-    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='geu1.jpg';" onclick="openLightbox(${idx}, 'bba')">
+    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; if(this.src.endsWith('.jpg')){this.src=this.src.replace('.jpg','.JPG');}else if(this.src.endsWith('.JPG')){this.src=this.src.replace('.JPG','.jpg');}" onclick="openLightbox(${idx}, 'bba')">
   `;
   bbaGrid.appendChild(card);
 });
@@ -1513,7 +1520,18 @@ function openLightbox(index, setType = 'mba') {
   const img = $('#lightboxImg');
   
   const activeList = currentActiveSet === 'bba' ? bbaGallery : structuredGallery;
+  
   img.src = activeList[currentImgIndex].src;
+  
+  img.onerror = function() {
+    this.onerror = null;
+    if (this.src.endsWith('.jpg')) {
+      this.src = this.src.replace('.jpg', '.JPG');
+    } else if (this.src.endsWith('.JPG')) {
+      this.src = this.src.replace('.JPG', '.jpg');
+    }
+  };
+
   lightbox.style.display = 'flex';
 }
 
