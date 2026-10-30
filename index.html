@@ -233,6 +233,31 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .gallery-card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}
 .gallery-card img{width:100%;height:250px;object-fit:cover;display:block}
 
+/* Golden Download Button Overlay on Cards */
+.card-dl-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--gold-gradient);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+.card-dl-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.6);
+}
+
 .slide-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:white;color:var(--gold-primary);border:1px solid var(--gold-border);cursor:pointer;font-size:1.2rem;display:grid;place-items:center;box-shadow:var(--shadow-premium);transition:all .2s}
 .slide-btn:hover{background:var(--gold-gradient);color:white}
 .slide-btn.prev{left:-22px}
@@ -242,15 +267,13 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 /* Modals */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:1000;overflow-y:auto;padding:40px 20px;backdrop-filter:blur(8px)}
 .modal-content{max-width:1100px;margin:0 auto;background:white;padding:32px;border-radius:22px;position:relative;border:1px solid var(--gold-border);box-shadow:0 20px 60px rgba(0,0,0,0.2)}
-.modal-close{position:absolute;top:20px;right:25px;font-size:1.8rem;background:none;border:none;cursor:pointer;color:var(--gold-primary);font-weight:bold}
+.modal-close{position:absolute;top:20px;right:25px;width:38px;height:38px;border-radius:10px;background:var(--gold-gradient);color:white;border:none;cursor:pointer;font-size:1.2rem;font-weight:bold;display:grid;place-items:center;box-shadow:0 4px 12px rgba(197,155,39,0.4)}
 .modal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:20px}
 .modal-card{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--gold-border);cursor:pointer;transition:transform 0.2s}
-.modal-card:hover{transform:scale(1.03);border-color:#34d399;}
+.modal-card:hover{transform:scale(1.03);border-color:var(--gold-primary);}
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
-/* =========================================================
-   FUTURISTIC DIARY DASHBOARD WITH HERO-BG11.PNG & NEON CARDS
-   ========================================================= */
+/* FUTURISTIC DIARY DASHBOARD */
 .diary-world-modal {
   display: none;
   position: fixed;
@@ -318,7 +341,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 
 .diary-close-btn {
   background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  border: 1px solid var(--gold-primary);
   color: #ffffff;
   padding: 8px 20px;
   border-radius: 20px;
@@ -328,12 +351,11 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   backdrop-filter: blur(8px);
 }
 .diary-close-btn:hover {
-  background: #0284c7;
+  background: var(--gold-gradient);
   color: white;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.6);
 }
 
-/* 5 FUTURISTIC GRID CARDS CONTAINER */
 .futuristic-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -360,104 +382,21 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   transform: translateY(-4px);
 }
 
-/* NEON GRADIENT BORDER STYLES FROM DESIGN */
-.card-school {
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-}
-.card-school:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
-}
+.card-school { border-color: rgba(56, 189, 248, 0.6); box-shadow: 0 0 20px rgba(56, 189, 248, 0.15); }
+.card-bba { border-color: rgba(52, 211, 153, 0.6); box-shadow: 0 0 20px rgba(52, 211, 153, 0.15); }
+.card-mba { border-color: rgba(251, 191, 36, 0.8); box-shadow: 0 0 20px rgba(251, 191, 36, 0.2); background: rgba(13, 18, 34, 0.92); }
+.card-wall { border-color: rgba(192, 132, 252, 0.6); box-shadow: 0 0 20px rgba(192, 132, 252, 0.15); }
+.card-thoughts { border-color: rgba(251, 146, 60, 0.6); box-shadow: 0 0 20px rgba(251, 146, 60, 0.15); }
 
-.card-bba {
-  border-color: rgba(52, 211, 153, 0.6);
-  box-shadow: 0 0 20px rgba(52, 211, 153, 0.15);
-}
-.card-bba:hover {
-  border-color: #34d399;
-  box-shadow: 0 0 25px rgba(52, 211, 153, 0.35);
-}
+.card-top-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.card-kicker { font-size: 0.72rem; font-weight: 850; letter-spacing: 0.14em; text-transform: uppercase; }
+.card-icon-preview { width: 42px; height: 42px; border-radius: 12px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); display: grid; place-items: center; font-size: 1.3rem; box-shadow: inset 0 0 8px rgba(0,0,0,0.5); }
 
-.card-mba {
-  border-color: rgba(251, 191, 36, 0.8);
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
-  background: rgba(13, 18, 34, 0.92);
-}
-.card-mba:hover {
-  border-color: #fbbf24;
-  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
-}
+.futuristic-card h3 { margin: 0 0 6px; font-size: 1.38rem; color: #ffffff; font-weight: 800; }
+.card-inst-tag { font-size: 0.8rem; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+.card-body-text { font-size: 0.86rem; color: #94a3b8; line-height: 1.55; margin-bottom: 18px; }
 
-.card-wall {
-  border-color: rgba(192, 132, 252, 0.6);
-  box-shadow: 0 0 20px rgba(192, 132, 252, 0.15);
-}
-.card-wall:hover {
-  border-color: #c084fc;
-  box-shadow: 0 0 25px rgba(192, 132, 252, 0.35);
-}
-
-.card-thoughts {
-  border-color: rgba(251, 146, 60, 0.6);
-  box-shadow: 0 0 20px rgba(251, 146, 60, 0.15);
-}
-.card-thoughts:hover {
-  border-color: #fb923c;
-  box-shadow: 0 0 25px rgba(251, 146, 60, 0.35);
-}
-
-.card-top-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.card-kicker {
-  font-size: 0.72rem;
-  font-weight: 850;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.card-icon-preview {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: grid;
-  place-items: center;
-  font-size: 1.3rem;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
-}
-
-.futuristic-card h3 {
-  margin: 0 0 6px;
-  font-size: 1.38rem;
-  color: #ffffff;
-  font-weight: 800;
-}
-.card-inst-tag {
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.card-body-text {
-  font-size: 0.86rem;
-  color: #94a3b8;
-  line-height: 1.55;
-  margin-bottom: 18px;
-}
-
-.card-action-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
+.card-action-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .action-pill-btn {
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -474,50 +413,13 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   align-items: center;
   gap: 4px;
 }
-.action-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-.action-pill-btn span {
-  font-size: 1.05rem;
-}
+.action-pill-btn:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; border-color: rgba(255, 255, 255, 0.3); }
+.action-pill-btn span { font-size: 1.05rem; }
 
-/* Special Pill Buttons */
-.action-pill-bba {
-  background: linear-gradient(135deg, #10b981, #059669) !important;
-  color: #ffffff !important;
-  font-weight: 800 !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-}
-.action-pill-bba:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.6);
-}
+.action-pill-bba { background: linear-gradient(135deg, #10b981, #059669) !important; color: #ffffff !important; font-weight: 800 !important; border: none !important; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); }
+.action-pill-gold { background: linear-gradient(135deg, #fbbf24, #d97706) !important; color: #0f172a !important; font-weight: 800 !important; border: none !important; box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4); }
 
-.action-pill-gold {
-  background: linear-gradient(135deg, #fbbf24, #d97706) !important;
-  color: #0f172a !important;
-  font-weight: 800 !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
-}
-.action-pill-gold:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.6);
-}
-
-/* Inline Dynamic Expansion Drawer */
-.inline-expand-drawer {
-  display: none;
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.15);
-  font-size: 0.85rem;
-  color: #cbd5e1;
-  animation: fadeInTab 0.25s ease;
-}
+.inline-expand-drawer { display: none; margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.15); font-size: 0.85rem; color: #cbd5e1; animation: fadeInTab 0.25s ease; }
 
 /* Document Reader Modal */
 .pdf-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.85);z-index:3000;backdrop-filter:blur(10px);padding:20px}
@@ -527,18 +429,58 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pdf-modal-actions{display:flex;align-items:center;gap:12px}
 .pdf-modal-iframe{width:100%;height:100%;border:none;background:#525659}
 
+/* Lightbox Player with Golden Download & Close Buttons */
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.92);z-index:7000;backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
 .lightbox-content{position:relative;max-width:90%;max-height:85vh;display:flex;flex-direction:column;align-items:center}
-.lightbox-content img{max-width:100%;max-height:80vh;border-radius:16px;border:2px solid #34d399;box-shadow:0 20px 50px rgba(0,0,0,.8);object-fit:contain}
-.lightbox-close{position:absolute;top:-45px;right:0;font-size:2.2rem;color:white;background:none;border:none;cursor:pointer;font-weight:bold}
-.lightbox-nav{position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
-.lightbox-btn{pointer-events:auto;width:54px;height:54px;border-radius:50%;background:rgba(15,23,42,0.8);color:white;border:1px solid #34d399;font-size:1.6rem;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 15px rgba(0,0,0,.4);transition:transform .2s}
-.lightbox-btn:hover{transform:scale(1.1);background:#34d399;color:#0f172a;}
+.lightbox-content img{max-width:100%;max-height:75vh;border-radius:16px;border:2px solid var(--gold-primary);box-shadow:0 20px 50px rgba(0,0,0,.8);object-fit:contain}
+
+.lightbox-close{
+  position:absolute;
+  top:-50px;
+  right:0;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background:var(--gold-gradient);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:1.4rem;
+  font-weight:bold;
+  display:grid;
+  place-items:center;
+  box-shadow:0 4px 15px rgba(197,155,39,0.5);
+}
+
+.lightbox-dl-btn {
+  margin-top: 15px;
+  background: var(--gold-gradient);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.lightbox-dl-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 155, 39, 0.6);
+}
+
+.lightbox-nav{position:absolute;top:45%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+.lightbox-btn{pointer-events:auto;width:54px;height:54px;border-radius:50%;background:rgba(15,23,42,0.8);color:white;border:1px solid var(--gold-primary);font-size:1.6rem;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 15px rgba(0,0,0,.4);transition:transform .2s}
+.lightbox-btn:hover{transform:scale(1.1);background:var(--gold-gradient);color:white;}
 
 /* Dedicated BBA Gallery Modal */
 .bba-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.9);z-index:6000;overflow-y:auto;padding:40px 20px;backdrop-filter:blur(10px)}
-.bba-modal-content{max-width:1200px;margin:0 auto;background:#0f172a;padding:32px;border-radius:24px;position:relative;border:1px solid #34d399;box-shadow:0 20px 60px rgba(52, 211, 153, 0.2);color:white}
-.bba-modal-close{position:absolute;top:20px;right:25px;font-size:1.8rem;background:none;border:none;cursor:pointer;color:#34d399;font-weight:bold}
+.bba-modal-content{max-width:1200px;margin:0 auto;background:#0f172a;padding:32px;border-radius:24px;position:relative;border:1px solid var(--gold-primary);box-shadow:0 20px 60px rgba(197, 155, 39, 0.2);color:white}
+.bba-modal-close{position:absolute;top:20px;right:25px;width:38px;height:38px;border-radius:10px;background:var(--gold-gradient);color:white;border:none;cursor:pointer;font-size:1.2rem;font-weight:bold;display:grid;place-items:center;box-shadow:0 4px 12px rgba(197,155,39,0.4)}
 
 /* Thank You Popup Modal */
 .thankyou-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:4000;backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
@@ -599,7 +541,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-main-grid">
-      <!-- Left Content Column -->
       <div class="hero-content reveal">
         <div class="eyebrow">MBA FINANCE · ASPIRING FINANCIAL ANALYST</div>
         <h1>Business-minded.<br><em>Numbers-driven.</em></h1>
@@ -614,7 +555,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- Center Photo Frame -->
       <div class="photo-wrapper reveal">
         <img src="myphoto.jpeg" alt="Pravinder Singh" class="profile-img" onerror="this.onerror=null; this.src='myphoto.jpg';">
         <div class="profile-card-bottom">
@@ -623,7 +563,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- Right Side Info Stack -->
       <div class="side-info-stack reveal">
         <div class="info-card">
           <div class="info-card-icon">🎓</div>
@@ -656,7 +595,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       </div>
     </div>
 
-    <!-- Bottom Features Bar -->
     <div class="bottom-features-bar reveal">
       <div class="feature-item">
         <div class="feature-icon">📈</div>
@@ -757,6 +695,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     <div class="pdf-modal-header">
       <div class="pdf-modal-title" id="pdfModalTitle">Document Viewer</div>
       <div class="pdf-modal-actions">
+        <a id="pdfDownloadBtn" href="" download class="btn btn-gold" style="padding:6px 14px; font-size:0.8rem;">Download File ⬇</a>
         <button onclick="closePdfModal()" style="background:none; border:none; color:var(--text-navy); font-size:1.8rem; cursor:pointer;">&times;</button>
       </div>
     </div>
@@ -773,7 +712,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <article class="card reveal"><div class="card-icon">▦</div><h3>Advanced MS Excel</h3><p>Certified by CETC New Delhi. Expertise in spreadsheet modeling, business statistics, and reporting.</p><div class="tag-row"><span class="tag">Advanced Excel</span><span class="tag">Business Research</span></div></article>
     </div>
 
-    <!-- Certifications Box -->
     <div class="cert-box reveal">
       <h3 style="margin-top:0; color:var(--gold-primary);">Recognized Certifications</h3>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; font-size:1.02rem; color:var(--text-dark);">
@@ -831,7 +769,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 
-<!-- Gallery Slider Section -->
+<!-- MAIN PORTFOLIO CHAPTER 06: CAMPUS LIFE & MOMENTS (AUTOMATIC ALL MBA CAMPUS PHOTOS LINKED HERE) -->
 <section class="soft-section" id="gallery">
   <div class="container">
     <div class="section-head reveal"><div class="kicker">06 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
@@ -845,27 +783,27 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     </div>
 
     <div class="gallery-footer reveal">
-      <button class="btn btn-gold" id="openModalBtn">See All Photos (19) ↗</button>
+      <button class="btn btn-gold" id="openModalBtn">See All Photos (<span id="mbaBtnCount">19</span>) ↗</button>
     </div>
   </div>
 </section>
 
-<!-- Full Gallery Modal -->
+<!-- FULL CAMPUS GALLERY MODAL (CHAPTER 06 AUTOMATIC PHOTOS) -->
 <div class="modal" id="galleryModal">
   <div class="modal-content">
-    <button class="modal-close" id="closeModalBtn">&times;</button>
+    <button class="modal-close" id="closeModalBtn">✕</button>
     <div class="section-head">
       <div class="kicker">Full Campus Gallery</div>
-      <h2>All Memories & Moments (19 Photos)</h2>
+      <h2>All Memories & Moments (<span id="mbaModalCount">19</span> Photos)</h2>
     </div>
     <div class="modal-grid" id="modalGrid"></div>
   </div>
 </div>
 
-<!-- DEDICATED GRAPHIC ERA (BBA) GALLERY MODAL (DYNAMIC AUTOMATIC COUNT) -->
+<!-- DEDICATED GRAPHIC ERA (BBA) GALLERY MODAL -->
 <div class="bba-modal" id="bbaGalleryModal">
   <div class="bba-modal-content">
-    <button class="bba-modal-close" onclick="closeBbaModal()">&times;</button>
+    <button class="bba-modal-close" onclick="closeBbaModal()">✕</button>
     <div class="section-head">
       <div class="kicker" style="color:#34d399;">Graphic Era University (BBA)</div>
       <h2 style="color:white; margin:6px 0;">The Graduation Years (<span id="bbaPhotoCount">30</span> Photos)</h2>
@@ -875,11 +813,12 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<!-- Fullscreen Lightbox Modal (For Large Photo View with Navigation) -->
+<!-- Fullscreen Lightbox Modal with Golden Download and Boxed Close Button -->
 <div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
   <div class="lightbox-content" onclick="event.stopPropagation();">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <img id="lightboxImg" src="" alt="Full Screen Preview">
+    <a id="lightboxDlBtn" href="" download class="lightbox-dl-btn">Download Original Photo ⬇</a>
     <div class="lightbox-nav">
       <button class="lightbox-btn" onclick="navLightbox(-1)">❮</button>
       <button class="lightbox-btn" onclick="navLightbox(1)">❯</button>
@@ -925,7 +864,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
           <input type="email" id="email" name="email" placeholder="example@mail.com" required style="width:100%; padding:11px; border-radius:8px; border:1px solid var(--gold-border); background:var(--bg-warm); color:var(--text-navy);">
         </div>
 
-        <!-- Student Fields -->
         <div id="studentFields" style="display: flex; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Mobile Number *</label>
@@ -958,7 +896,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
           </div>
         </div>
 
-        <!-- Professional Fields -->
         <div id="professionalFields" style="display: none; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Current Company / Organization *</label>
@@ -981,7 +918,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
           </div>
         </div>
 
-        <!-- Website Feedback Fields -->
         <div id="feedbackFields" style="display: none; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">How would you rate this website? *</label>
@@ -999,7 +935,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
           </div>
         </div>
 
-        <!-- Visitor Thought Submission Fields -->
         <div id="thoughtFields" style="display: none; flex-direction: column; gap: 15px;">
           <div>
             <label style="display:block; margin-bottom:5px; font-weight:600; color:var(--text-navy);">Your Relation / Connection *</label>
@@ -1020,11 +955,10 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 </main>
 
 <!-- =========================================================
-     5-CARD FUTURISTIC DIARY DASHBOARD
+     5-CARD FUTURISTIC DIARY DASHBOARD (PURELY PERSONAL SPACE)
      ========================================================= -->
 <div class="diary-world-modal" id="diaryWorldModal">
   <div class="diary-container-world">
-    <!-- Dashboard Header -->
     <div class="diary-world-header">
       <div class="diary-brand">
         <div class="diary-logo-glow">📖</div>
@@ -1036,7 +970,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
       <button type="button" class="diary-close-btn" onclick="closeDiaryWorld()">Close Diary ✕</button>
     </div>
 
-    <!-- 5 FUTURISTIC GRID CARDS -->
     <div class="futuristic-cards-grid">
 
       <!-- CARD 1: SCHOOL LIFE -->
@@ -1070,7 +1003,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- CARD 2: GRADUATION (BBA) — DYNAMIC PHOTO COUNT LINKED -->
+      <!-- CARD 2: GRADUATION (BBA) -->
       <div class="futuristic-card card-bba">
         <div>
           <div class="card-top-head">
@@ -1084,7 +1017,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
         <div>
           <div class="card-action-bar">
-            <!-- OPEN GEU PHOTOS MODAL WITH DYNAMIC AUTOMATIC COUNT BUTTON -->
             <button type="button" class="action-pill-btn action-pill-bba" onclick="openBbaModal()">
               <span id="bbaBtnText">View Photos (30)</span>
             </button>
@@ -1115,8 +1047,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
         <div>
           <div class="card-action-bar">
-            <button type="button" class="action-pill-btn action-pill-gold" onclick="openLightbox(0, 'mba')">
-              <span>🖼️</span> View Photos
+            <button type="button" class="action-pill-btn action-pill-gold" onclick="toggleInlineDrawer('drawer-mba-info')">
+              <span>📖</span> Personal Journal
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-mba-video')">
               <span>🎥</span> Videos
@@ -1126,6 +1058,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
             </button>
           </div>
 
+          <div class="inline-expand-drawer" id="drawer-mba-info">✨ Personal MBA diary highlights & special moments uploading soon.</div>
           <div class="inline-expand-drawer" id="drawer-mba-video">🎬 MMDU campus events video clips loading...</div>
           <div class="inline-expand-drawer" id="drawer-mba-thought">💬 "Mastering valuation models to turn complex data into strategic impact."</div>
         </div>
@@ -1200,7 +1133,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<!-- FOOTER WITH MY DIARY BUTTON PLACED IN BOTTOM ROW -->
 <footer>
   <div class="container footer-row">
     <div style="display:flex; align-items:center; gap:12px;">
@@ -1282,6 +1214,7 @@ function renderPublications(category = 'all') {
       </div>
       <div class="pub-actions">
         <button onclick="openPdfModal('${item.fileUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Read Report 👁️</button>
+        <a href="${item.fileUrl}" download class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Download ⬇</a>
       </div>
     `;
     grid.appendChild(card);
@@ -1343,7 +1276,10 @@ function renderProjects(category = 'all') {
     card.className = 'pub-card reveal visible';
     
     let tagsHtml = item.tags ? `<div class="tag-row" style="margin-bottom:18px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : '';
-    let actionsHtml = `<button onclick="openPdfModal('${item.docUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">${item.btnText || 'View Document 👁️'}</button>`;
+    let actionsHtml = `
+      <button onclick="openPdfModal('${item.docUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">${item.btnText || 'View Document 👁️'}</button>
+      <a href="${item.docUrl}" download class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Download ⬇</a>
+    `;
 
     card.innerHTML = `
       <div>
@@ -1368,6 +1304,7 @@ function filterProjects(cat, btn) {
 
 function openPdfModal(url, title) {
   $('#pdfModalTitle').textContent = title;
+  $('#pdfDownloadBtn').href = url;
   
   let repoBase = "https://raw.githubusercontent.com/nsdepartment9068-rgb/pravinder-portfolio/main/";
   let fullUrl = repoBase + url;
@@ -1391,17 +1328,97 @@ function closePdfModal() {
 renderPublications('all');
 renderProjects('all');
 
-// 1. MBA CAMPUS PHOTOS (MMDU Mullana)
-const structuredGallery = [
-  { src: 'campus1.jpeg', title: 'MMDU Mullana Campus', desc: 'MBA Finance' },
-  { src: 'campus2.jpeg', title: 'Corporate Mentorship Event', desc: 'MMDU Mullana' },
-  { src: 'campus3.jpeg', title: 'MBA Finance Group Project', desc: 'MMDU Mullana' },
-  { src: 'campus9.jpeg', title: 'Finance Seminar Session', desc: 'MMDU Mullana' },
-  { src: 'campus10.jpeg', title: 'Presentation & Discussion', desc: 'MMDU Mullana' },
-  { src: 'campus12.jpg', title: 'Campus Evening Vibes', desc: 'MMDU Mullana' }
-];
+// =========================================================
+// 1. AUTOMATIC AUTO-DETECTING MBA CAMPUS GALLERY (CHAPTER 06)
+// =========================================================
+const structuredGallery = [];
+const MAX_MBA_PHOTOS = 50;
 
-// DYNAMIC AUTOMATIC AUTO-DETECTING BBA GALLERY SETUP
+function initializeMbaGallery() {
+  structuredGallery.length = 0;
+  let processed = 0;
+
+  for (let i = 1; i <= MAX_MBA_PHOTOS; i++) {
+    let extensions = ['.jpeg', '.jpg', '.PNG', '.png'];
+    
+    function tryLoadMbaImage(index) {
+      if (index >= extensions.length) {
+        processed++;
+        if (processed === MAX_MBA_PHOTOS) finalizeMbaGallery();
+        return;
+      }
+      
+      let testSrc = `campus${i}${extensions[index]}`;
+      let testImg = new Image();
+      
+      testImg.onload = function() {
+        structuredGallery.push({
+          num: i,
+          src: testSrc,
+          title: `MMDU Mullana Campus Moment ${i}`,
+          desc: `MBA Finance & Business Analytics`
+        });
+        processed++;
+        if (processed === MAX_MBA_PHOTOS) finalizeMbaGallery();
+      };
+      
+      testImg.onerror = function() {
+        tryLoadMbaImage(index + 1);
+      };
+      
+      testImg.src = testSrc;
+    }
+    
+    tryLoadMbaImage(0);
+  }
+}
+
+function finalizeMbaGallery() {
+  structuredGallery.sort((a, b) => a.num - b.num);
+  
+  const countSpan = document.getElementById('mbaBtnCount');
+  const modalSpan = document.getElementById('mbaModalCount');
+  if (countSpan) countSpan.textContent = structuredGallery.length;
+  if (modalSpan) modalSpan.textContent = structuredGallery.length;
+  
+  renderMbaSliderAndModal();
+}
+
+function renderMbaSliderAndModal() {
+  const track = $('#galleryTrack');
+  const modalGrid = $('#modalGrid');
+  if (!track || !modalGrid) return;
+  
+  track.innerHTML = '';
+  modalGrid.innerHTML = '';
+
+  structuredGallery.forEach((item, idx) => {
+    // Slider Card with Download Button
+    const card = document.createElement('div');
+    card.className = 'gallery-card';
+    card.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
+      <a href="${item.src}" download class="card-dl-btn" onclick="event.stopPropagation();">Download ⬇</a>
+    `;
+    track.appendChild(card);
+
+    // Modal Grid Card with Download Button
+    const mCard = document.createElement('div');
+    mCard.className = 'modal-card';
+    mCard.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
+      <a href="${item.src}" download class="card-dl-btn" onclick="event.stopPropagation();">Download ⬇</a>
+    `;
+    modalGrid.appendChild(mCard);
+  });
+}
+
+// Call MBA Auto-Detection
+initializeMbaGallery();
+
+// =========================================================
+// 2. DYNAMIC AUTOMATIC BBA GALLERY SETUP
+// =========================================================
 const bbaGallery = [];
 const MAX_POSSIBLE_PHOTOS = 50;
 
@@ -1415,7 +1432,7 @@ function initializeBbaGallery() {
     function tryLoadImage(index) {
       if (index >= extensions.length) {
         processed++;
-        if (processed === MAX_POSSIBLE_PHOTOS) finalizeGallery();
+        if (processed === MAX_POSSIBLE_PHOTOS) finalizeBbaGallery();
         return;
       }
       
@@ -1430,7 +1447,7 @@ function initializeBbaGallery() {
           desc: `Graphic Era Deemed to be University, Dehradun`
         });
         processed++;
-        if (processed === MAX_POSSIBLE_PHOTOS) finalizeGallery();
+        if (processed === MAX_POSSIBLE_PHOTOS) finalizeBbaGallery();
       };
       
       testImg.onerror = function() {
@@ -1444,8 +1461,7 @@ function initializeBbaGallery() {
   }
 }
 
-function finalizeGallery() {
-  // Sort numerically geu1, geu2...
+function finalizeBbaGallery() {
   bbaGallery.sort((a, b) => a.num - b.num);
   updateBbaPhotoCounts(bbaGallery.length);
   renderBbaGrid();
@@ -1473,28 +1489,7 @@ function renderBbaGrid() {
   });
 }
 
-// Call Auto-Detection
 initializeBbaGallery();
-
-// Render MBA Main Gallery Slider & Modal
-const track = $('#galleryTrack');
-const modalGrid = $('#modalGrid');
-
-structuredGallery.forEach((item, idx) => {
-  const card = document.createElement('div');
-  card.className = 'gallery-card';
-  card.innerHTML = `
-    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
-  `;
-  track.appendChild(card);
-
-  const mCard = document.createElement('div');
-  mCard.className = 'modal-card';
-  mCard.innerHTML = `
-    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
-  `;
-  modalGrid.appendChild(mCard);
-});
 
 const prevBtn = $('#prevBtn');
 const nextBtn = $('#nextBtn');
@@ -1507,18 +1502,19 @@ function getVisibleCards() {
 }
 
 function updateSlider() {
-  const cards = $$('.gallery-card', track);
+  const cards = $$('.gallery-card', $('#galleryTrack'));
+  if (!cards.length) return;
   const visibleCards = getVisibleCards();
   const maxIndex = cards.length - visibleCards;
   if (currentIndex > maxIndex) currentIndex = maxIndex;
   if (currentIndex < 0) currentIndex = 0;
   
   const cardWidth = cards[0].getBoundingClientRect().width + 20;
-  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  $('#galleryTrack').style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 }
 
 nextBtn.addEventListener('click', () => {
-  const cards = $$('.gallery-card', track);
+  const cards = $$('.gallery-card', $('#galleryTrack'));
   const maxIndex = cards.length - getVisibleCards();
   if (currentIndex < maxIndex) currentIndex++;
   else currentIndex = 0;
@@ -1526,7 +1522,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 prevBtn.addEventListener('click', () => {
-  const cards = $$('.gallery-card', track);
+  const cards = $$('.gallery-card', $('#galleryTrack'));
   const maxIndex = cards.length - getVisibleCards();
   if (currentIndex > 0) currentIndex--;
   else currentIndex = maxIndex;
@@ -1545,7 +1541,6 @@ window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
 
-/* Graphic Era BBA Modal Controls */
 function openBbaModal() {
   $('#bbaGalleryModal').style.display = 'block';
   document.body.style.overflow = 'hidden';
@@ -1555,7 +1550,7 @@ function closeBbaModal() {
   document.body.style.overflow = 'auto';
 }
 
-/* Unified Lightbox Player for Large Photo View with Navigation */
+/* UNIFIED LIGHTBOX PLAYER WITH GOLDEN DOWNLOAD & CONDITIONAL DIARY VISIBILITY */
 let currentImgIndex = 0;
 let currentActiveSet = 'mba';
 
@@ -1564,17 +1559,28 @@ function openLightbox(index, setType = 'mba') {
   currentActiveSet = setType;
   const lightbox = $('#lightboxModal');
   const img = $('#lightboxImg');
+  const dlBtn = $('#lightboxDlBtn');
   
   const activeList = currentActiveSet === 'bba' ? bbaGallery : structuredGallery;
   
   img.src = activeList[currentImgIndex].src;
   
+  // Show Download Button ONLY for Main Portfolio Chapter 06 Photos
+  if (currentActiveSet === 'mba') {
+    dlBtn.style.display = 'inline-flex';
+    dlBtn.href = activeList[currentImgIndex].src;
+  } else {
+    dlBtn.style.display = 'none';
+  }
+
   img.onerror = function() {
     this.onerror = null;
     if (this.src.endsWith('.jpg')) {
       this.src = this.src.replace('.jpg', '.JPG');
     } else if (this.src.endsWith('.JPG')) {
       this.src = this.src.replace('.JPG', '.jpg');
+    } else if (this.src.endsWith('.jpeg')) {
+      this.src = this.src.replace('.jpeg', '.jpg');
     }
   };
 
@@ -1590,7 +1596,13 @@ function navLightbox(direction) {
   currentImgIndex += direction;
   if (currentImgIndex < 0) currentImgIndex = activeList.length - 1;
   if (currentImgIndex >= activeList.length) currentImgIndex = 0;
-  $('#lightboxImg').src = activeList[currentImgIndex].src;
+  
+  const img = $('#lightboxImg');
+  const dlBtn = $('#lightboxDlBtn');
+  img.src = activeList[currentImgIndex].src;
+  if (currentActiveSet === 'mba') {
+    dlBtn.href = activeList[currentImgIndex].src;
+  }
 }
 
 function openDiaryWorld() {
@@ -1603,7 +1615,6 @@ function closeDiaryWorld() {
   document.body.style.overflow = 'auto';
 }
 
-/* Toggle Inline Drawers Inside Diary Cards */
 function toggleInlineDrawer(drawerId) {
   const targetDrawer = $('#' + drawerId);
   const isDisplayed = targetDrawer.style.display === 'block';
