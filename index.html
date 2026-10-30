@@ -180,6 +180,28 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pub-card p{color:var(--text-muted);font-size:.96rem;margin:0 0 20px;line-height:1.6}
 .pub-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
+/* GOLDEN ARROW ICON ONLY BUTTON */
+.icon-dl-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.4);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.icon-dl-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.7);
+}
+
 #projects{
   background-image: url('hero-bg10.png');
   background-size: cover;
@@ -233,29 +255,29 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .gallery-card:hover{transform:translateY(-5px);border-color:var(--gold-primary)}
 .gallery-card img{width:100%;height:250px;object-fit:cover;display:block}
 
-/* Golden Download Button Overlay on Cards */
-.card-dl-btn {
+/* Golden Arrow Icon Overlay for Photo Cards */
+.card-dl-icon-btn {
   position: absolute;
   bottom: 12px;
   right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   background: var(--gold-gradient);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   z-index: 10;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
-.card-dl-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.6);
+.card-dl-icon-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.7);
 }
 
 .slide-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:white;color:var(--gold-primary);border:1px solid var(--gold-border);cursor:pointer;font-size:1.2rem;display:grid;place-items:center;box-shadow:var(--shadow-premium);transition:all .2s}
@@ -273,7 +295,9 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-card:hover{transform:scale(1.03);border-color:var(--gold-primary);}
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
-/* FUTURISTIC DIARY DASHBOARD */
+/* =========================================================
+   FUTURISTIC DIARY DASHBOARD WITH NEON HOVER LIGHTNING GLOW
+   ========================================================= */
 .diary-world-modal {
   display: none;
   position: fixed;
@@ -364,6 +388,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 @media(max-width:1024px){ .futuristic-cards-grid{ grid-template-columns: repeat(2, 1fr); } }
 @media(max-width:680px){ .futuristic-cards-grid{ grid-template-columns: 1fr; } }
 
+/* RESTORED CARD SIZES WITH NEON BORDER LIGHTNING GLOW ON HOVER */
 .futuristic-card {
   background: rgba(10, 15, 29, 0.85);
   border-radius: 20px;
@@ -373,20 +398,47 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   border: 1.5px solid transparent;
 }
-.futuristic-card:hover {
-  transform: translateY(-4px);
+
+/* NEON LIGHTNING HOVER BORDER EFFECTS */
+.card-school { border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 15px rgba(56, 189, 248, 0.1); }
+.card-school:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.6), inset 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
-.card-school { border-color: rgba(56, 189, 248, 0.6); box-shadow: 0 0 20px rgba(56, 189, 248, 0.15); }
-.card-bba { border-color: rgba(52, 211, 153, 0.6); box-shadow: 0 0 20px rgba(52, 211, 153, 0.15); }
-.card-mba { border-color: rgba(251, 191, 36, 0.8); box-shadow: 0 0 20px rgba(251, 191, 36, 0.2); background: rgba(13, 18, 34, 0.92); }
-.card-wall { border-color: rgba(192, 132, 252, 0.6); box-shadow: 0 0 20px rgba(192, 132, 252, 0.15); }
-.card-thoughts { border-color: rgba(251, 146, 60, 0.6); box-shadow: 0 0 20px rgba(251, 146, 60, 0.15); }
+.card-bba { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 0 15px rgba(52, 211, 153, 0.1); }
+.card-bba:hover {
+  transform: translateY(-5px);
+  border-color: #34d399;
+  box-shadow: 0 0 30px rgba(52, 211, 153, 0.6), inset 0 0 15px rgba(52, 211, 153, 0.2);
+}
+
+.card-mba { border-color: rgba(251, 191, 36, 0.5); box-shadow: 0 0 15px rgba(251, 191, 36, 0.15); background: rgba(13, 18, 34, 0.92); }
+.card-mba:hover {
+  transform: translateY(-5px);
+  border-color: #fbbf24;
+  box-shadow: 0 0 35px rgba(251, 191, 36, 0.7), inset 0 0 18px rgba(251, 191, 36, 0.25);
+}
+
+.card-wall { border-color: rgba(192, 132, 252, 0.4); box-shadow: 0 0 15px rgba(192, 132, 252, 0.1); }
+.card-wall:hover {
+  transform: translateY(-5px);
+  border-color: #c084fc;
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.6), inset 0 0 15px rgba(192, 132, 252, 0.2);
+}
+
+.card-thoughts { border-color: rgba(251, 146, 60, 0.4); box-shadow: 0 0 15px rgba(251, 146, 60, 0.1); }
+.card-thoughts:hover {
+  transform: translateY(-5px);
+  border-color: #fb923c;
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.6), inset 0 0 15px rgba(251, 146, 60, 0.2);
+}
 
 .card-top-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
 .card-kicker { font-size: 0.72rem; font-weight: 850; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -429,7 +481,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pdf-modal-actions{display:flex;align-items:center;gap:12px}
 .pdf-modal-iframe{width:100%;height:100%;border:none;background:#525659}
 
-/* Lightbox Player with Golden Download & Close Buttons */
+/* Lightbox Player with Golden Download Arrow Icon Button */
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.92);z-index:7000;backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
 .lightbox-content{position:relative;max-width:90%;max-height:85vh;display:flex;flex-direction:column;align-items:center}
 .lightbox-content img{max-width:100%;max-height:75vh;border-radius:16px;border:2px solid var(--gold-primary);box-shadow:0 20px 50px rgba(0,0,0,.8);object-fit:contain}
@@ -452,25 +504,27 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   box-shadow:0 4px 15px rgba(197,155,39,0.5);
 }
 
-.lightbox-dl-btn {
+/* Golden Download Arrow Icon Button below Lightbox Image */
+.lightbox-dl-icon-btn {
   margin-top: 15px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background: var(--gold-gradient);
-  color: white;
-  padding: 10px 22px;
-  border-radius: 20px;
-  border: none;
-  font-weight: 700;
-  font-size: 0.9rem;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.9);
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  box-shadow: 0 4px 18px rgba(197, 155, 39, 0.5);
+  display: grid;
+  place-items: center;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
-.lightbox-dl-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(197, 155, 39, 0.6);
+.lightbox-dl-icon-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 22px rgba(197, 155, 39, 0.8);
 }
 
 .lightbox-nav{position:absolute;top:45%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
@@ -695,7 +749,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     <div class="pdf-modal-header">
       <div class="pdf-modal-title" id="pdfModalTitle">Document Viewer</div>
       <div class="pdf-modal-actions">
-        <a id="pdfDownloadBtn" href="" download class="btn btn-gold" style="padding:6px 14px; font-size:0.8rem;">Download File ⬇</a>
+        <!-- ONLY GOLDEN ARROW ICON FOR DOWNLOAD -->
+        <a id="pdfDownloadBtn" href="" download class="icon-dl-btn" title="Download File">⬇</a>
         <button onclick="closePdfModal()" style="background:none; border:none; color:var(--text-navy); font-size:1.8rem; cursor:pointer;">&times;</button>
       </div>
     </div>
@@ -769,7 +824,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 
-<!-- MAIN PORTFOLIO CHAPTER 06: CAMPUS LIFE & MOMENTS (AUTOMATIC ALL MBA CAMPUS PHOTOS LINKED HERE) -->
+<!-- MAIN PORTFOLIO CHAPTER 06: CAMPUS LIFE & MOMENTS -->
 <section class="soft-section" id="gallery">
   <div class="container">
     <div class="section-head reveal"><div class="kicker">06 / Campus Life & Moments</div><h2>University Memories & Network</h2><p>Glimpses of learning, group projects, and corporate mentorship events at MMU Mullana.</p></div>
@@ -788,7 +843,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </section>
 
-<!-- FULL CAMPUS GALLERY MODAL (CHAPTER 06 AUTOMATIC PHOTOS) -->
+<!-- FULL CAMPUS GALLERY MODAL -->
 <div class="modal" id="galleryModal">
   <div class="modal-content">
     <button class="modal-close" id="closeModalBtn">✕</button>
@@ -813,12 +868,13 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<!-- Fullscreen Lightbox Modal with Golden Download and Boxed Close Button -->
+<!-- Fullscreen Lightbox Modal with Golden Download Arrow Icon Button -->
 <div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
   <div class="lightbox-content" onclick="event.stopPropagation();">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <img id="lightboxImg" src="" alt="Full Screen Preview">
-    <a id="lightboxDlBtn" href="" download class="lightbox-dl-btn">Download Original Photo ⬇</a>
+    <!-- ONLY GOLDEN ARROW ICON BUTTON -->
+    <a id="lightboxDlBtn" href="" download class="lightbox-dl-icon-btn" title="Download Photo">⬇</a>
     <div class="lightbox-nav">
       <button class="lightbox-btn" onclick="navLightbox(-1)">❮</button>
       <button class="lightbox-btn" onclick="navLightbox(1)">❯</button>
@@ -955,7 +1011,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 </main>
 
 <!-- =========================================================
-     5-CARD FUTURISTIC DIARY DASHBOARD (PURELY PERSONAL SPACE)
+     5-CARD FUTURISTIC DIARY DASHBOARD (WITH NEON HOVER GLOW)
      ========================================================= -->
 <div class="diary-world-modal" id="diaryWorldModal">
   <div class="diary-container-world">
@@ -1033,7 +1089,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- CARD 3: POST GRADUATION (MBA) -->
+      <!-- CARD 3: POST GRADUATION (MBA) — RESTORED "VIEW PHOTOS" -->
       <div class="futuristic-card card-mba">
         <div>
           <div class="card-top-head">
@@ -1047,8 +1103,8 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
         <div>
           <div class="card-action-bar">
-            <button type="button" class="action-pill-btn action-pill-gold" onclick="toggleInlineDrawer('drawer-mba-info')">
-              <span>📖</span> Personal Journal
+            <button type="button" class="action-pill-btn action-pill-gold" onclick="openLightbox(0, 'mba')">
+              <span>🖼️</span> View Photos
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-mba-video')">
               <span>🎥</span> Videos
@@ -1058,7 +1114,6 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
             </button>
           </div>
 
-          <div class="inline-expand-drawer" id="drawer-mba-info">✨ Personal MBA diary highlights & special moments uploading soon.</div>
           <div class="inline-expand-drawer" id="drawer-mba-video">🎬 MMDU campus events video clips loading...</div>
           <div class="inline-expand-drawer" id="drawer-mba-thought">💬 "Mastering valuation models to turn complex data into strategic impact."</div>
         </div>
@@ -1214,7 +1269,8 @@ function renderPublications(category = 'all') {
       </div>
       <div class="pub-actions">
         <button onclick="openPdfModal('${item.fileUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Read Report 👁️</button>
-        <a href="${item.fileUrl}" download class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Download ⬇</a>
+        <!-- GOLDEN ARROW ICON DOWNLOAD BUTTON -->
+        <a href="${item.fileUrl}" download class="icon-dl-btn" title="Download Report">⬇</a>
       </div>
     `;
     grid.appendChild(card);
@@ -1278,7 +1334,8 @@ function renderProjects(category = 'all') {
     let tagsHtml = item.tags ? `<div class="tag-row" style="margin-bottom:18px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : '';
     let actionsHtml = `
       <button onclick="openPdfModal('${item.docUrl}', '${item.title.replace(/'/g, "\\'")}')" class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">${item.btnText || 'View Document 👁️'}</button>
-      <a href="${item.docUrl}" download class="btn btn-gold" style="padding:9px 15px; font-size:.88rem;">Download ⬇</a>
+      <!-- GOLDEN ARROW ICON DOWNLOAD BUTTON -->
+      <a href="${item.docUrl}" download class="icon-dl-btn" title="Download Document">⬇</a>
     `;
 
     card.innerHTML = `
@@ -1329,7 +1386,7 @@ renderPublications('all');
 renderProjects('all');
 
 // =========================================================
-// 1. AUTOMATIC AUTO-DETECTING MBA CAMPUS GALLERY (CHAPTER 06)
+// AUTOMATIC ALL MBA CAMPUS PHOTOS LINKED TO MAIN PORTFOLIO CHAPTER 06
 // =========================================================
 const structuredGallery = [];
 const MAX_MBA_PHOTOS = 50;
@@ -1393,31 +1450,30 @@ function renderMbaSliderAndModal() {
   modalGrid.innerHTML = '';
 
   structuredGallery.forEach((item, idx) => {
-    // Slider Card with Download Button
+    // Slider Card with Golden Arrow Icon Download Button
     const card = document.createElement('div');
     card.className = 'gallery-card';
     card.innerHTML = `
       <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
-      <a href="${item.src}" download class="card-dl-btn" onclick="event.stopPropagation();">Download ⬇</a>
+      <a href="${item.src}" download class="card-dl-icon-btn" onclick="event.stopPropagation();" title="Download Photo">⬇</a>
     `;
     track.appendChild(card);
 
-    // Modal Grid Card with Download Button
+    // Modal Grid Card with Golden Arrow Icon Download Button
     const mCard = document.createElement('div');
     mCard.className = 'modal-card';
     mCard.innerHTML = `
       <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
-      <a href="${item.src}" download class="card-dl-btn" onclick="event.stopPropagation();">Download ⬇</a>
+      <a href="${item.src}" download class="card-dl-icon-btn" onclick="event.stopPropagation();" title="Download Photo">⬇</a>
     `;
     modalGrid.appendChild(mCard);
   });
 }
 
-// Call MBA Auto-Detection
 initializeMbaGallery();
 
 // =========================================================
-// 2. DYNAMIC AUTOMATIC BBA GALLERY SETUP
+// AUTOMATIC BBA GALLERY SETUP
 // =========================================================
 const bbaGallery = [];
 const MAX_POSSIBLE_PHOTOS = 50;
@@ -1550,7 +1606,7 @@ function closeBbaModal() {
   document.body.style.overflow = 'auto';
 }
 
-/* UNIFIED LIGHTBOX PLAYER WITH GOLDEN DOWNLOAD & CONDITIONAL DIARY VISIBILITY */
+/* LIGHTBOX PLAYER WITH GOLDEN ARROW ICON DOWNLOAD BUTTON */
 let currentImgIndex = 0;
 let currentActiveSet = 'mba';
 
@@ -1565,9 +1621,9 @@ function openLightbox(index, setType = 'mba') {
   
   img.src = activeList[currentImgIndex].src;
   
-  // Show Download Button ONLY for Main Portfolio Chapter 06 Photos
+  // Show Download Arrow Button ONLY for Main Portfolio Chapter 06 Photos
   if (currentActiveSet === 'mba') {
-    dlBtn.style.display = 'inline-flex';
+    dlBtn.style.display = 'grid';
     dlBtn.href = activeList[currentImgIndex].src;
   } else {
     dlBtn.style.display = 'none';
