@@ -695,7 +695,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
     <div class="section-head reveal"><div class="kicker">01 / About Me</div><h2>Curious about the story behind the numbers.</h2><p>A practical, data-driven approach to financial analysis, business research, and corporate decision-making.</p></div>
     <div class="about-grid">
       <div class="about-copy reveal">
-        <p>I am pursuing my MBA specializing in Finance and Business Analytics at Maharishi Markandeshwar (Deemed to be University), Mullana. My core interests lie in financial statement analysis, corporate finance, Power BI dashboarding, and business statistics.</p>
+        <p>I am pursuing my MBA specializing in Finance and Business Analytics at Maharishi Markandeshwar (Deemed to be University), Mullana.</p>
         <p>During my Finance Internship at Deal Squard, I conducted comparative financial statement analysis of leading Indian online travel portals (MakeMyTrip, EaseMyTrip, Yatra), evaluating profitability, liquidity, and operational efficiency.</p>
         <p>Prior to my post-graduation, I worked as a Key Account Manager at SD Global Logistics, overseeing major accounts and ensuring 95%+ on-time deliveries. I aim to leverage this combination of operational understanding and financial analytical skills in dynamic business roles.</p>
         <div class="statement">“Deriving data-driven insights to support strategic business and investment decisions.”</div>
@@ -862,13 +862,13 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<!-- DEDICATED GRAPHIC ERA (BBA) GALLERY MODAL (geu1.jpg to geu20.jpg) -->
+<!-- DEDICATED GRAPHIC ERA (BBA) GALLERY MODAL (DYNAMIC AUTOMATIC COUNT) -->
 <div class="bba-modal" id="bbaGalleryModal">
   <div class="bba-modal-content">
     <button class="bba-modal-close" onclick="closeBbaModal()">&times;</button>
     <div class="section-head">
       <div class="kicker" style="color:#34d399;">Graphic Era University (BBA)</div>
-     <h2 style="color:white; margin:6px 0;">The Graduation Years (<span id="bbaPhotoCount">30</span> Photos)</h2>
+      <h2 style="color:white; margin:6px 0;">The Graduation Years (<span id="bbaPhotoCount">30</span> Photos)</h2>
       <p style="color:#94a3b8;">Click any photo to open in full screen mode.</p>
     </div>
     <div class="modal-grid" id="bbaModalGrid"></div>
@@ -1070,7 +1070,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         </div>
       </div>
 
-      <!-- CARD 2: GRADUATION (BBA) — GEU1 TO GEU20 PHOTOS LINKED HERE -->
+      <!-- CARD 2: GRADUATION (BBA) — DYNAMIC PHOTO COUNT LINKED -->
       <div class="futuristic-card card-bba">
         <div>
           <div class="card-top-head">
@@ -1084,9 +1084,9 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 
         <div>
           <div class="card-action-bar">
-            <!-- OPEN GEU 20 PHOTOS MODAL -->
+            <!-- OPEN GEU PHOTOS MODAL WITH DYNAMIC AUTOMATIC COUNT BUTTON -->
             <button type="button" class="action-pill-btn action-pill-bba" onclick="openBbaModal()">
-              <span>🖼️</span> View Photos (30)
+              <span id="bbaBtnText">View Photos (30)</span>
             </button>
             <button type="button" class="action-pill-btn" onclick="toggleInlineDrawer('drawer-bba-video')">
               <span>🎥</span> Videos
@@ -1401,21 +1401,80 @@ const structuredGallery = [
   { src: 'campus12.jpg', title: 'Campus Evening Vibes', desc: 'MMDU Mullana' }
 ];
 
-// 2. GRAPHIC ERA UNIVERSITY (BBA) PHOTOS ARRAY (geu1 to geu30)
+// DYNAMIC AUTOMATIC AUTO-DETECTING BBA GALLERY SETUP
 const bbaGallery = [];
-for (let i = 1; i <= 30; i++) {
-  // Check exact capital extensions for 22 & 23
-  let ext = '.jpg';
-  if (i === 22 || i === 23) {
-    ext = '.JPG';
-  }
+const MAX_POSSIBLE_PHOTOS = 50;
 
-  bbaGallery.push({
-    src: `geu${i}${ext}`,
-    title: `Graphic Era BBA Memory ${i}`,
-    desc: `Graphic Era Deemed to be University, Dehradun`
+function initializeBbaGallery() {
+  bbaGallery.length = 0;
+  let processed = 0;
+
+  for (let i = 1; i <= MAX_POSSIBLE_PHOTOS; i++) {
+    let extensions = ['.jpg', '.JPG', '.jpeg', '.JPEG'];
+    
+    function tryLoadImage(index) {
+      if (index >= extensions.length) {
+        processed++;
+        if (processed === MAX_POSSIBLE_PHOTOS) finalizeGallery();
+        return;
+      }
+      
+      let testSrc = `geu${i}${extensions[index]}`;
+      let testImg = new Image();
+      
+      testImg.onload = function() {
+        bbaGallery.push({
+          num: i,
+          src: testSrc,
+          title: `Graphic Era BBA Memory ${i}`,
+          desc: `Graphic Era Deemed to be University, Dehradun`
+        });
+        processed++;
+        if (processed === MAX_POSSIBLE_PHOTOS) finalizeGallery();
+      };
+      
+      testImg.onerror = function() {
+        tryLoadImage(index + 1);
+      };
+      
+      testImg.src = testSrc;
+    }
+    
+    tryLoadImage(0);
+  }
+}
+
+function finalizeGallery() {
+  // Sort numerically geu1, geu2...
+  bbaGallery.sort((a, b) => a.num - b.num);
+  updateBbaPhotoCounts(bbaGallery.length);
+  renderBbaGrid();
+}
+
+function updateBbaPhotoCounts(count) {
+  const countSpan = document.getElementById('bbaPhotoCount');
+  const btnSpan = document.getElementById('bbaBtnText');
+  if (countSpan) countSpan.textContent = count;
+  if (btnSpan) btnSpan.textContent = `View Photos (${count})`;
+}
+
+function renderBbaGrid() {
+  const bbaGrid = $('#bbaModalGrid');
+  if (!bbaGrid) return;
+  bbaGrid.innerHTML = '';
+  bbaGallery.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'modal-card';
+    card.style.borderColor = '#34d399';
+    card.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; if(this.src.endsWith('.jpg')){this.src=this.src.replace('.jpg','.JPG');}else if(this.src.endsWith('.JPG')){this.src=this.src.replace('.JPG','.jpg');}" onclick="openLightbox(${idx}, 'bba')">
+    `;
+    bbaGrid.appendChild(card);
   });
 }
+
+// Call Auto-Detection
+initializeBbaGallery();
 
 // Render MBA Main Gallery Slider & Modal
 const track = $('#galleryTrack');
@@ -1435,19 +1494,6 @@ structuredGallery.forEach((item, idx) => {
     <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpeg')?item.src.replace('.jpeg','.jpg'):item.src.replace('.jpg','.jpeg')}';" onclick="openLightbox(${idx}, 'mba')">
   `;
   modalGrid.appendChild(mCard);
-});
-
-// Render Dynamic BBA Gallery Grid (geu1 to geu30)
-const bbaGrid = $('#bbaModalGrid');
-bbaGrid.innerHTML = '';
-bbaGallery.forEach((item, idx) => {
-  const card = document.createElement('div');
-  card.className = 'modal-card';
-  card.style.borderColor = '#34d399';
-  card.innerHTML = `
-    <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; if(this.src.endsWith('.jpg')){this.src=this.src.replace('.jpg','.JPG');}else if(this.src.endsWith('.JPG')){this.src=this.src.replace('.JPG','.jpg');}" onclick="openLightbox(${idx}, 'bba')">
-  `;
-  bbaGrid.appendChild(card);
 });
 
 const prevBtn = $('#prevBtn');
@@ -1562,7 +1608,6 @@ function toggleInlineDrawer(drawerId) {
   const targetDrawer = $('#' + drawerId);
   const isDisplayed = targetDrawer.style.display === 'block';
 
-  // Close all other drawers first
   $$('.inline-expand-drawer').forEach(d => d.style.display = 'none');
 
   if(!isDisplayed) {
