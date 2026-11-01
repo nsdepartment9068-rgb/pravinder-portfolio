@@ -295,9 +295,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .modal-card:hover{transform:scale(1.03);border-color:var(--gold-primary);}
 .modal-grid img{width:100%;height:220px;object-fit:cover;display:block}
 
-/* =========================================================
-   FUTURISTIC DIARY DASHBOARD WITH NEON HOVER LIGHTNING GLOW
-   ========================================================= */
+/* FUTURISTIC DIARY DASHBOARD WITH NEON LIGHTNING GLOW */
 .diary-world-modal {
   display: none;
   position: fixed;
@@ -380,7 +378,6 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   box-shadow: 0 0 15px rgba(197, 155, 39, 0.6);
 }
 
-/* 6-CARD FUTURISTIC GRID */
 .futuristic-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -440,7 +437,6 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
   box-shadow: 0 0 30px rgba(251, 146, 60, 0.6), inset 0 0 15px rgba(251, 146, 60, 0.2);
 }
 
-/* NEW PASSWORD PROTECTED CHILDHOOD CARD STYLING */
 .card-childhood { border-color: rgba(244, 63, 94, 0.5); box-shadow: 0 0 15px rgba(244, 63, 94, 0.15); background: rgba(20, 10, 25, 0.9); }
 .card-childhood:hover {
   transform: translateY(-5px);
@@ -490,7 +486,7 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .pdf-modal-actions{display:flex;align-items:center;gap:12px}
 .pdf-modal-iframe{width:100%;height:100%;border:none;background:#525659}
 
-/* Lightbox Player with Golden Download Arrow Icon Button */
+/* Lightbox Player */
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.92);z-index:7000;backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
 .lightbox-content{position:relative;max-width:90%;max-height:85vh;display:flex;flex-direction:column;align-items:center}
 .lightbox-content img{max-width:100%;max-height:75vh;border-radius:16px;border:2px solid var(--gold-primary);box-shadow:0 20px 50px rgba(0,0,0,.8);object-fit:contain}
@@ -543,6 +539,11 @@ section{padding:85px 0;position:relative}.section-head{max-width:750px;margin-bo
 .bba-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.9);z-index:6000;overflow-y:auto;padding:40px 20px;backdrop-filter:blur(10px)}
 .bba-modal-content{max-width:1200px;margin:0 auto;background:#0f172a;padding:32px;border-radius:24px;position:relative;border:1px solid var(--gold-primary);box-shadow:0 20px 60px rgba(197, 155, 39, 0.2);color:white}
 .bba-modal-close{position:absolute;top:20px;right:25px;width:38px;height:38px;border-radius:10px;background:var(--gold-gradient);color:white;border:none;cursor:pointer;font-size:1.2rem;font-weight:bold;display:grid;place-items:center;box-shadow:0 4px 12px rgba(197,155,39,0.4)}
+
+/* Dedicated Childhood Vault Gallery Modal */
+.child-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.92);z-index:6500;overflow-y:auto;padding:40px 20px;backdrop-filter:blur(12px)}
+.child-modal-content{max-width:1200px;margin:0 auto;background:#140a19;padding:32px;border-radius:24px;position:relative;border:1px solid #f43f5e;box-shadow:0 20px 60px rgba(244, 63, 94, 0.3);color:white}
+.child-modal-close{position:absolute;top:20px;right:25px;width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg, #f43f5e, #e11d48);color:white;border:none;cursor:pointer;font-size:1.2rem;font-weight:bold;display:grid;place-items:center;box-shadow:0 4px 12px rgba(244,63,94,0.4)}
 
 /* Thank You Popup Modal */
 .thankyou-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:4000;backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
@@ -875,7 +876,20 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
   </div>
 </div>
 
-<!-- Fullscreen Lightbox Modal with Golden Download Arrow Icon Button -->
+<!-- DEDICATED MY CHILDHOOD GALLERY MODAL -->
+<div class="child-modal" id="childGalleryModal">
+  <div class="child-modal-content">
+    <button class="child-modal-close" onclick="closeChildModal()">✕</button>
+    <div class="section-head">
+      <div class="kicker" style="color:#f43f5e;">🔒 Private Childhood Vault</div>
+      <h2 style="color:white; margin:6px 0;">My Childhood Memories (<span id="childPhotoCount">8</span> Photos)</h2>
+      <p style="color:#94a3b8;">Click any photo to view in full screen mode.</p>
+    </div>
+    <div class="modal-grid" id="childModalGrid"></div>
+  </div>
+</div>
+
+<!-- Fullscreen Lightbox Modal -->
 <div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
   <div class="lightbox-content" onclick="event.stopPropagation();">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
@@ -1017,7 +1031,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
 </main>
 
 <!-- =========================================================
-     6-CARD FUTURISTIC DIARY DASHBOARD (WITH CHILDHOOD CARD)
+     6-CARD FUTURISTIC DIARY DASHBOARD
      ========================================================= -->
 <div class="diary-world-modal" id="diaryWorldModal">
   <div class="diary-container-world">
@@ -1205,7 +1219,7 @@ footer{background:white;color:var(--text-muted);padding:24px 0;font-size:.88rem;
         <div>
           <div class="card-action-bar">
             <button type="button" class="action-pill-btn action-pill-rose" onclick="accessProtectedChildhood('photos')">
-              <span>🖼️</span> View Photos
+              <span id="childBtnText">View Photos (8)</span>
             </button>
             <button type="button" class="action-pill-btn action-pill-rose" onclick="accessProtectedChildhood('videos')">
               <span>🎥</span> View Videos
@@ -1578,6 +1592,42 @@ function renderBbaGrid() {
 
 initializeBbaGallery();
 
+// =========================================================
+// AUTOMATIC CHILDHOOD GALLERY SETUP (ch1.jpg to ch8.jpg)
+// =========================================================
+const childGallery = [];
+const MAX_CHILD_PHOTOS = 8;
+
+function initializeChildGallery() {
+  childGallery.length = 0;
+  for (let i = 1; i <= MAX_CHILD_PHOTOS; i++) {
+    childGallery.push({
+      num: i,
+      src: `ch${i}.jpg`,
+      title: `Pravinder Childhood Memory ${i}`,
+      desc: `Personal Vault`
+    });
+  }
+  renderChildGrid();
+}
+
+function renderChildGrid() {
+  const childGrid = $('#childModalGrid');
+  if (!childGrid) return;
+  childGrid.innerHTML = '';
+  childGallery.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'modal-card';
+    card.style.borderColor = '#f43f5e';
+    card.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" onerror="this.onerror=null; this.src='${item.src.endsWith('.jpg')?item.src.replace('.jpg','.jpeg'):item.src.replace('.jpeg','.jpg')}';" onclick="openLightbox(${idx}, 'child')">
+    `;
+    childGrid.appendChild(card);
+  });
+}
+
+initializeChildGallery();
+
 const prevBtn = $('#prevBtn');
 const nextBtn = $('#nextBtn');
 let currentIndex = 0;
@@ -1637,7 +1687,16 @@ function closeBbaModal() {
   document.body.style.overflow = 'auto';
 }
 
-/* LIGHTBOX PLAYER WITH GOLDEN ARROW ICON DOWNLOAD BUTTON */
+function openChildModal() {
+  $('#childGalleryModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeChildModal() {
+  $('#childGalleryModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+/* LIGHTBOX PLAYER */
 let currentImgIndex = 0;
 let currentActiveSet = 'mba';
 
@@ -1648,7 +1707,9 @@ function openLightbox(index, setType = 'mba') {
   const img = $('#lightboxImg');
   const dlBtn = $('#lightboxDlBtn');
   
-  const activeList = currentActiveSet === 'bba' ? bbaGallery : structuredGallery;
+  let activeList = structuredGallery;
+  if (currentActiveSet === 'bba') activeList = bbaGallery;
+  if (currentActiveSet === 'child') activeList = childGallery;
   
   img.src = activeList[currentImgIndex].src;
   
@@ -1662,9 +1723,7 @@ function openLightbox(index, setType = 'mba') {
   img.onerror = function() {
     this.onerror = null;
     if (this.src.endsWith('.jpg')) {
-      this.src = this.src.replace('.jpg', '.JPG');
-    } else if (this.src.endsWith('.JPG')) {
-      this.src = this.src.replace('.JPG', '.jpg');
+      this.src = this.src.replace('.jpg', '.jpeg');
     } else if (this.src.endsWith('.jpeg')) {
       this.src = this.src.replace('.jpeg', '.jpg');
     }
@@ -1678,7 +1737,10 @@ function closeLightbox() {
 }
 
 function navLightbox(direction) {
-  const activeList = currentActiveSet === 'bba' ? bbaGallery : structuredGallery;
+  let activeList = structuredGallery;
+  if (currentActiveSet === 'bba') activeList = bbaGallery;
+  if (currentActiveSet === 'child') activeList = childGallery;
+
   currentImgIndex += direction;
   if (currentImgIndex < 0) currentImgIndex = activeList.length - 1;
   if (currentImgIndex >= activeList.length) currentImgIndex = 0;
@@ -1713,23 +1775,32 @@ function toggleInlineDrawer(drawerId) {
 }
 
 // =========================================================
-// PASSWORD SECURITY FOR MY CHILDHOOD VAULT
+// UPDATED PASSWORD SECURITY WITH ACTIVE ACCESS KEY: 90689720
 // =========================================================
-const SECRET_CHILDHOOD_PASSWORD = "90689720"; // AAP APNA MON-DESIRED PASSWORD YAHAN SET KAR SAKTE HO
+const SECRET_CHILDHOOD_PASSWORD = "90689720";
 
 function accessProtectedChildhood(type) {
-  const userEnteredPassword = prompt(`🔒 Security Verification:\nPlease enter the secret password to unlock Pravinder's Childhood ${type}:`);
+  if (type === 'videos') {
+    const pwd = prompt("🔒 Security Verification:\nPlease enter the secret password to access Childhood Videos:");
+    if (pwd === SECRET_CHILDHOOD_PASSWORD) {
+      alert("🎬 Childhood home videos uploading soon!");
+    } else if (pwd !== null) {
+      alert("❌ Access Denied: Incorrect Security Password!");
+    }
+    return;
+  }
+
+  const userEnteredPassword = prompt(`🔒 Security Verification:\nPlease enter the secret password to unlock Pravinder's Childhood Photos:`);
   
   if (userEnteredPassword === SECRET_CHILDHOOD_PASSWORD) {
-    alert(`Access Granted! Welcome to Pravinder's Childhood ${type}.`);
-    // Future me yahan Childhood photos / videos gallery open hone ka function trigger hoga
+    openChildModal();
   } else if (userEnteredPassword !== null) {
     alert("❌ Access Denied: Incorrect Security Password!");
   }
 }
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closeLightbox(); closePdfModal(); closeThankYouModal(); closeDiaryWorld(); closeBbaModal(); }
+  if (e.key === 'Escape') { closeLightbox(); closePdfModal(); closeThankYouModal(); closeDiaryWorld(); closeBbaModal(); closeChildModal(); }
   if (e.key === 'ArrowRight') navLightbox(1);
   if (e.key === 'ArrowLeft') navLightbox(-1);
 });
